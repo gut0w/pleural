@@ -1,0 +1,3602 @@
+<HTML>
+
+	<HEAD>
+		<meta http-equiv="Content-Type" content="text/html; charset=8859-1"/>
+		<TITLE> Question&aacute;rio </TITLE>
+
+		<link rel="stylesheet" type="text/css" href="css/quest.css">
+
+		<script language="javascript" src="habilitaCampos.js" charset="utf-8"></script>
+
+	</HEAD>
+
+	
+
+	<style type="text/css">   
+
+			.CSS_FOCUS_IN
+
+			{   
+
+				background-color:#D8BFD8;   
+
+			}   
+
+			.CSS_FOCUS_OUT
+
+			{   
+
+				background-color:#FFFFFF;   
+
+			}   
+
+			.CSS_ENABLED_FALSE
+
+			{
+
+				background-color:#D3D3D3;
+
+			}
+
+			.CSS_ENABLED_TRUE
+
+			{
+
+				background-color:#FFFFFF;
+
+			}
+
+	</style> 
+
+	
+
+	<BODY onLoad="inicializaOculta('tabelaAvaliacaoComplementar'); inicializaOculta('tabelaCaracterizacao'); inicializaOculta('tabelaAvaliacaoInicial');">
+
+		<CENTER>
+
+		
+
+		<FORM NAME = "frm_caracterizacao" METHOD = "post" ACTION = "cgi-bin/newAddPatient.cgi" target="frameMenu">
+<!--onSubmit="return enviarDados()"-->
+			<TABLE BORDER="0" WIDTH="90% ALIGN="CENTER" CELLSPACING="0" id="tabelaCaracterizacao">
+
+					<H3>1. Caracteriza&ccedil;&atilde;o Socioecon&ocirc;mica / S&oacute;cio-demogr&aacute;fica / H&aacute;bitos de vida</H3>
+
+					<TH width="5%"></TH>
+
+					<TH width="50%"></TH>
+
+					<TH width="45%"></TH>
+
+				<!--LINHA 1-->
+
+				<TR class=odd>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">N&uacute;mero Paciente</TD>
+
+					<TD ALIGN="CENTER">
+						<INPUT TYPE="TEXT" NAME="numeroPaciente" SIZE=16 MAXLENGTH=16 onFocus="this.className = 'CSS_FOCUS_IN'" onBlur="if(this.disabled  == false) { validarCampoNumerico(this); this.className = 'CSS_FOCUS_OUT'; }">
+						<INPUT type="checkbox" onclick="disableText(numeroPaciente)">N&atilde;o foi definido
+					</TD>
+
+				</TR>
+
+				<!--LINHA 2-->
+
+				<TR class=even>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Endere&ccedil;o</TD> 
+
+					<TD ALIGN="CENTER">
+
+						<TABLE BORDER=0>
+
+						<TR>
+
+							<TD ALIGN="right">Logradouro:</TD>
+							<TD><INPUT TYPE="TEXT" NAME="logradouro" SIZE=33 MAXLENGTH=100 onFocus="this.className = 'CSS_FOCUS_IN'" onBlur="if(this.disabled  == false) { validarCampoAlfabetico(this); this.className = 'CSS_FOCUS_OUT'; }"></TD>
+						</TR>
+						<TR>
+							<TD align="center" colspan=2><INPUT type="checkbox" onclick="disableText(logradouro)">N&atilde;o foi definido</TD>
+						</TR>
+						<TR>
+
+							<TD ALIGN="right">Numero:</TD><TD><INPUT TYPE="TEXT" NAME="numero" SIZE=2 MAXLENGTH=6 onBlur="if(this.disabled == false){validarCampoNumerico(numero); this.className = 'CSS_FOCUS_OUT';}" onFocus="this.className = 'CSS_FOCUS_IN'"><INPUT type="checkbox" onclick="disableText(numero)">N&atilde;o foi definido
+							</TD>
+						</TR>
+						<TR>
+							<TD ALIGN="right">Complemento:</TD><TD><INPUT TYPE="TEXT" NAME="complemento" SIZE=11 MAXLENGTH="20" onFocus="this.className = 'CSS_FOCUS_IN'" onBlur="if(this.disabled == false){validarCampoAlfabeticoENumerico(this); this.className = 'CSS_FOCUS_OUT'}">
+							<INPUT type="checkbox" onclick="disableText(complemento)">N&atilde;o foi definido
+							</TD>
+
+						</TR>
+
+						<TR>
+
+							<TD ALIGN="right">Estado:</TD>
+
+							<TD><SELECT NAME = "estadoEndereco">
+
+									<OPTION VALUE = "Acre AC">Acre AC</OPTION>
+
+									<OPTION VALUE = "Alagoas AL">Alagoas AL</OPTION>
+
+									<OPTION VALUE = "Amapa AP">Amap&aacute; AP</OPTION>
+
+									<OPTION VALUE = "Amazonas AM">Amazonas AM</OPTION>
+
+									<OPTION VALUE = "Bahia BA">Bahia BA</OPTION>
+
+									<OPTION VALUE = "Ceara CE">Cear&aacute; CE</OPTION>
+
+									<OPTION VALUE = "Distrito Federal DF">Distrito Federal DF</OPTION>
+
+									<OPTION VALUE = "Goias GO">Goi&aacute;s GO</OPTION>
+
+									<OPTION VALUE = "Espirito Santo ES">Esp&iacute;rito Santo ES</OPTION>
+
+									<OPTION VALUE = "Maranhao MA">Maranh&atilde;o MA</OPTION>
+
+									<OPTION VALUE = "Mato Grosso MT">Mato Grosso MT</OPTION>
+
+									<OPTION VALUE = "Mato Grosso do Sul MS">Mato Grosso do Sul MS</OPTION>
+
+									<OPTION VALUE = "Minas Gerais MG">Minas Gerais MG</OPTION>
+
+									<OPTION VALUE = "Para PA">Par&aacute; PA</OPTION>
+
+									<OPTION VALUE = "Paraiba PB">Paraiba PB</OPTION>
+
+									<OPTION VALUE = "Parana PR">Paran&aacute; PR</OPTION>
+
+									<OPTION VALUE = "Pernambuco PE">Pernambuco PE</OPTION>
+
+									<OPTION VALUE = "Piaui PI">Piau&iacute; PI</OPTION>
+
+									<OPTION VALUE = "Rio de Janeiro RJ">Rio de Janeiro RJ</OPTION>
+
+									<OPTION VALUE = "Rio Grande do Norte RN">Rio Grande do Norte RN</OPTION>
+
+									<OPTION VALUE = "Rio Grande do Sul RS">Rio Grande do Sul RS</OPTION>
+
+									<OPTION VALUE = "Rondonia RO">Rond&ocirc;nia RO</OPTION>
+
+									<OPTION VALUE = "Roraima RR">Ror&acirc;ima RR</OPTION>
+
+									<OPTION VALUE = "Sao Paulo SP">S&atilde;o Paulo SP</OPTION>
+
+									<OPTION VALUE = "Santa Catarina SC">Santa Catarina SC</OPTION>
+
+									<OPTION VALUE = "Sergipe SE">Sergipe SE</OPTION>
+
+									<OPTION VALUE = "Tocantins TO">Tocantins TO</OPTION>
+
+								</SELECT></TD>
+
+						</TR>
+
+						<TR>
+
+							<TD ALIGN="right">Munic&iacute;pio:</TD>
+
+							<TD><INPUT TYPE="TEXT" NAME="municipioEndereco" SIZE=32 MAXLENGTH=50 onFocus="this.className = 'CSS_FOCUS_IN'" onBlur="if(this.disabled == false){validarCampoAlfabetico(this); this.className = 'CSS_FOCUS_OUT';}"></TD>
+						</TR>
+						<TR>
+							<TD align="center" colspan=2><INPUT type="checkbox" onclick="disableText(municipioEndereco)">N&atilde;o foi definido
+							</TD>
+
+						</TR>
+
+						<TR>
+
+							<TD ALIGN="right">Bairro:</TD>
+
+							<TD><INPUT TYPE="TEXT" NAME="bairroEndereco" SIZE=32 MAXLENGTH = 50 onFocus="this.className = 'CSS_FOCUS_IN'" onBlur="if(this.disabled == false) {validarCampoAlfabetico(this); this.className = 'CSS_FOCUS_OUT';}"></TD>
+						</TR>
+						<TR>
+							<TD align="center" colspan=2><INPUT type="checkbox" onclick="disableText(bairroEndereco)">N&atilde;o foi definido</TD>
+						</TR>
+
+						<TR>
+
+							<TD ALIGN="right">CEP:</TD>
+
+							<TD><INPUT TYPE="TEXT" NAME="cep" SIZE=8 MAXLENGTH=8 onBlur="if(this.disabled == false ) {validarCampoNumerico(this);}"><I>(sem hifen)</I>
+							<INPUT type="checkbox" onclick="disableText(cep)">N&atilde;o foi definido
+							</TD>
+
+						</TR>
+
+						<TR>
+							<TD ALIGN="left" colspan="2">Telefones para contato:</TD>
+						</TR>
+						<TR>
+							<TD align="right">telefone:</TD>
+							<TD><INPUT TYPE="TEXT" NAME="telefone1" SIZE=10 MAXLENGTH=8 onBlur="if(this.disabled == false){validarCampoNumerico(telefone1);}"><INPUT type="checkbox" onclick="disableText(telefone1)">N&atilde;o foi definido
+							</TD>
+						</TR>
+						<TR>
+							<TD align="right">telefone:</TD>
+							<TD><INPUT TYPE="TEXT" NAME="telefone2" SIZE=10 MAXLENGTH=8 onBlur="if(this.disabled == false){validarCampoNumerico(telefone2);}">
+							<INPUT type="checkbox" onclick="disableText(telefone2)">N&atilde;o foi definido
+							</TD>
+						</TR>
+					    </TABLE>
+
+					</TD>
+
+				</TR>
+
+				<!--LINHA 3-->
+
+				<TR class=odd>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Georreferenciamento do domic&iacute;lio</TD>
+
+					<TD ALIGN="CENTER">
+
+						<TABLE BORDER=0>
+
+						<TR>
+
+							<TD ALIGN="right">Latitude:</TD>
+
+							<TD><INPUT TYPE="TEXT"  NAME="latitude" SIZE=30 MAXLENGTH=20 onFocus="this.className = 'CSS_FOCUS_IN'" onBlur="if(this.disabled == false){validarCampoNumerico(this); this.className = 'CSS_FOCUS_OUT';}"></TD>
+						</TR>
+						<TR>
+							<TD align="center" colspan=2><INPUT type="checkbox" onclick="disableText(latitude)">N&atilde;o foi definido</TD>
+						</TR>
+
+						<TR>
+
+							<TD ALIGN="right">Longitude:</TD>
+
+							<TD><INPUT TYPE="TEXT" NAME="longitude" SIZE=30 MAXLENGTH=20 onFocus="this.className = 'CSS_FOCUS_IN'" onBlur="if(this.disabled ==false){ validarCampoNumerico(this); this.className = 'CSS_FOCUS_OUT'; }"></TD>
+						</TR>
+						<TR>
+							<TD align="center" colspan=2><INPUT type="checkbox" onclick="disableText(longitude)">N&atilde;o foi definido</TD>
+						</TR>
+
+						</TABLE>
+
+					</TD>
+
+				</TR>
+
+				<!--LINHA 4-->
+
+				<TR class=even>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Data de Nascimento</TD>
+
+					<TD ALIGN="CENTER">
+
+						<INPUT TYPE="TEXT" NAME="txt_diaNascimento" SIZE =1 MAXLENGTH=2 
+
+						onKeyUp="if(txt_diaNascimento.value.length < 2)
+										validarCampoNumerico(this);
+								else
+
+									if (validarDia(txt_diaNascimento))
+
+									{
+
+											if (txt_mesNascimento.value == '')
+
+												txt_mesNascimento.focus();
+
+											else
+
+												txt_anoNascimento.focus();
+
+									}"
+
+						 onfocus="this.className = 'CSS_FOCUS_IN'" onBlur="this.className = 'CSS_FOCUS_OUT'">
+
+						/<INPUT TYPE="TEXT" NAME="txt_mesNascimento" SIZE =1 MAXLENGTH=2 
+
+						onKeyUp="if(txt_mesNascimento.value.length < 2)
+											validarCampoNumerico(this);
+								else
+
+									if (validarMes(txt_mesNascimento))
+
+									{
+
+										if (txt_diaNascimento.value == '')
+
+											txt_diaNascimento.focus();
+
+										else
+
+											txt_anoNascimento.focus();
+
+									}"
+
+						 onfocus="this.className = 'CSS_FOCUS_IN'" onBlur="this.className = 'CSS_FOCUS_OUT'">
+
+						/<INPUT TYPE="TEXT" NAME="txt_anoNascimento" SIZE =3 MAXLENGTH=4
+
+						onKeyUp="if(txt_anoNascimento.value.length < 4)
+											validarCampoNumerico(this);
+								else
+									if (validarAno(txt_anoNascimento))
+
+										if (validarData(document.frm_caracterizacao))
+
+											txt_anoNascimento.blur();"
+
+						 onfocus="this.className = 'CSS_FOCUS_IN'" onBlur="this.className = 'CSS_FOCUS_OUT'">
+
+						<I>(dd/mm/aaaa)</I></TD>
+
+				</TR>
+
+				<!--LINHA 5-->
+
+				<TR class=odd>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Qual sexo?</TD>
+
+					<input type="hidden" name="selecionouSexo" value="falso">
+
+					<TD ALIGN="LEFT"><INPUT TYPE="RADIO" NAME="sexo" VALUE="Masculino" onClick = "selecionouSexo.value = 'verdadeiro'">Masculino<BR>
+
+									 <INPUT TYPE="RADIO" NAME="sexo" VALUE="Feminino" onClick ="selecionouSexo.value = 'verdadeiro'">Feminino</TD>		
+
+				</TR>
+
+				<!--LINHA 6-->
+
+				<TR class=even>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Qual seu estado civil?</TD>
+
+					<input type="hidden" name="selecionouEstadoCivil" value="falso">
+
+					<TD ALIGN="LEFT"><INPUT TYPE="RADIO" NAME="estadoCivil" VALUE="Solteiro" onClick="selecionouEstadoCivil.value = 'verdadeiro';">Solteiro<BR>
+
+						<INPUT TYPE="RADIO" NAME="estadoCivil" VALUE="Casado" onClick="selecionouEstadoCivil.value = 'verdadeiro';">Casado<BR>
+
+						<INPUT TYPE="RADIO" NAME="estadoCivil" VALUE="Junto/amigado" onClick="selecionouEstadoCivil.value = 'verdadeiro';">Junto/amigado<BR>
+
+						<INPUT TYPE="RADIO" NAME="estadoCivil" VALUE="Divorciado" onClick="selecionouEstadoCivil.value = 'verdadeiro';">Divorciado<BR>
+
+						<INPUT TYPE="RADIO" NAME="estadoCivil" VALUE="Desquitado/separado" onClick="selecionouEstadoCivil.value = 'verdadeiro';">Desquitado/separado<BR>
+
+						<INPUT TYPE="RADIO" NAME="estadoCivil" VALUE="Viúvo" onClick="selecionouEstadoCivil.value = 'verdadeiro';">Vi&uacute;vo<BR>
+
+						<INPUT TYPE="RADIO" NAME="estadoCivil" VALUE="Nâo respondeu" onClick="selecionouEstadoCivil.value = 'verdadeiro';">N&atilde;o respondeu</TD>
+
+				</TR>
+
+				<!--LINHA 7-->
+
+				<TR class=odd>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Estudando no momento?</TD>
+
+					<input type = "hidden" name="selecionouEstudaMomento" value = "falso">
+
+					<TD ALIGN="LEFT"><INPUT TYPE="RADIO" NAME="estudaMomento" VALUE="Sim" onClick="selecionouEstudaMomento.value = 'verdadeiro'">Sim<BR>
+
+						<INPUT TYPE="RADIO" NAME="estudaMomento" VALUE="Não" onClick="selecionouEstudaMomento.value = 'verdadeiro'">N&atilde;o<BR>
+
+						<INPUT TYPE="RADIO" NAME="estudaMomento" VALUE="Não Respondeu" onClick="selecionouEstudaMomento.value = 'verdadeiro'">N&atilde;o Respondeu</TD>
+
+				</TR>
+
+				<!--LINHA 8-->
+
+				<TR class=even>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Voc&ecirc; estudou at&eacute; que s&eacute;rie?</TD>
+
+					<input type = "hidden" name="selecinouGrauInstrucao" value = "falso">
+
+					<TD ALIGN="LEFT"><INPUT NAME="grauInstrucao" TYPE="RADIO" onClick="selecinouGrauInstrucao.value = 'verdadeiro'" VALUE="Não frequentou">
+			    N&atilde;o frequentou<BR>
+
+						<INPUT TYPE="RADIO" NAME="grauInstrucao" VALUE="Primario Incompleto" onClick="selecinouGrauInstrucao.value = 'verdadeiro'">Prim&aacute;rio Incompleto<BR>
+
+						<INPUT TYPE="RADIO" NAME="grauInstrucao" VALUE="Primario completo/Ginasio incompleto" onClick="selecinouGrauInstrucao.value = 'verdadeiro'">Prim&aacute;rio completo/Gin&aacute;sio incompleto<BR>
+
+						<INPUT TYPE="RADIO" NAME="grauInstrucao" VALUE="Ginasio (atual primeiro grau) completo/Segundo grau incompleto" onClick="selecinouGrauInstrucao.value = 'verdadeiro'">Gin&aacute;sio (atual primeiro grau) completo/Segundo grau incompleto<BR>
+
+						<INPUT TYPE="RADIO" NAME="grauInstrucao" VALUE="Segundo grau completo/Superior incompleto" onClick="selecinouGrauInstrucao.value = 'verdadeiro'">Segundo grau completo/Superior incompleto<BR>
+
+						<INPUT TYPE="RADIO" NAME="grauInstrucao" VALUE="Superior completo" onClick="selecinouGrauInstrucao.value = 'verdadeiro'">Superior completo<BR>
+
+						<INPUT TYPE="RADIO" NAME="grauInstrucao" VALUE="Pos-graduacao" onClick="selecinouGrauInstrucao.value = 'verdadeiro'">P&oacute;s-gradua&ccedil;&atilde;o<BR>
+
+						<INPUT TYPE="RADIO" NAME="grauInstrucao" VALUE="Não sei" onClick="selecinouGrauInstrucao.value = 'verdadeiro'">N&atilde;o sei<BR>
+
+						<INPUT TYPE="RADIO" NAME="grauInstrucao" VALUE="Nã respondeu" onClick="selecinouGrauInstrucao.value = 'verdadeiro'">N&atilde;o respondeu</TD>
+
+				</TR>
+
+				<!--LINHA 9-->
+
+				<TR class=odd>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">No momento voc&ecirc; est&aacute; (situa&ccedil;&atilde;o ocupacional):</TD>
+
+					<input type = "hidden" name="selecinouOcupacao" value = "falso">
+
+					<TD ALIGN="LEFT"><INPUT TYPE="RADIO" NAME="ocupacao" VALUE="Não se aplica" onClick="selecinouOcupacao.value = 'verdadeiro'; outraFuncao.readOnly = true; outraFuncao.className ='CSS_ENABLED_FALSE'; outraFuncao.value ='';">N&atilde;o se aplica<BR>
+
+						<INPUT TYPE="RADIO" NAME="ocupacao" VALUE="Empregado" onClick="selecinouOcupacao.value = 'verdadeiro'; outraFuncao.readOnly = true; outraFuncao.className ='CSS_ENABLED_FALSE'; outraFuncao.value ='';">Empregado<BR>
+
+						<INPUT TYPE="RADIO" NAME="ocupacao" VALUE="Desempregado" onClick="selecinouOcupacao.value = 'verdadeiro'; outraFuncao.readOnly = true; outraFuncao.className ='CSS_ENABLED_FALSE'; outraFuncao.value ='';">Desempregado<BR>
+
+						<INPUT TYPE="RADIO" NAME="ocupacao" VALUE="Autonomo, trabalha por conta propria" onClick="selecinouOcupacao.value = 'verdadeiro'; outraFuncao.readOnly = true; outraFuncao.className ='CSS_ENABLED_FALSE'; outraFuncao.value ='';">Aut&ocirc;nomo, trabalha por conta pr&oacute;pria<BR>
+
+						<INPUT TYPE="RADIO" NAME="ocupacao" VALUE="Empregador" onClick="selecinouOcupacao.value = 'verdadeiro'; outraFuncao.readOnly = true; outraFuncao.className ='CSS_ENABLED_FALSE'; outraFuncao.value ='';">Empregador<BR>
+
+						<INPUT TYPE="RADIO" NAME="ocupacao" VALUE="Dono de negocio familiar (não tem empregados)" onClick="selecinouOcupacao.value = 'verdadeiro'; outraFuncao.readOnly = true; outraFuncao.className ='CSS_ENABLED_FALSE'; outraFuncao.value ='';">Dono de neg&oacute;cio familiar (n&atilde;o tem empregados)<BR>	
+
+						<INPUT TYPE="RADIO" NAME="ocupacao" VALUE="Fazendo bicos" onClick="selecinouOcupacao.value = 'verdadeiro'; outraFuncao.readOnly = true; outraFuncao.className ='CSS_ENABLED_FALSE'; outraFuncao.value ='';">Fazendo bicos<BR>
+						
+						<INPUT TYPE="RADIO" NAME="ocupacao" VALUE="aposentado cumulativa com a atividade anterior	" onClick="selecinouOcupacao.value = 'verdadeiro'; outraFuncao.readOnly = true; outraFuncao.className ='CSS_ENABLED_FALSE'; outraFuncao.value ='';">aposentado cumulativa com a atividade anterior<BR>
+
+						<INPUT TYPE="RADIO" NAME="ocupacao" VALUE="Outros" onClick="selecinouOcupacao.value = ''; outraFuncao.readOnly = false; outraFuncao.focus();">
+
+						Outros <INPUT TYPE="TEXT" NAME="outraFuncao" SIZE=37
+
+										onfocus="if (this.readOnly == false)
+
+												 {
+
+													this.className = 'CSS_FOCUS_IN';
+
+												 }
+
+												 else
+
+												 {
+
+													this.className = 'CSS_ENABLED_FALSE';
+
+												 }
+												 this.className = 'CSS_FOCUS_IN;'"
+
+										onblur="if (this.readOnly == false)
+
+												{
+
+													this.className = 'CSS_FOCUS_OUT';
+
+												}
+
+												else
+
+												{
+
+													this.className = 'CSS_ENABLED_FALSE';
+
+												}
+												validarCampoAlfabetico(this); this.className = 'CSS_FOCUS_OUT'"><BR>
+
+						<INPUT TYPE="RADIO" NAME="ocupacao" VALUE="Não sabe informar" onClick="selecinouOcupacao.value = 'verdadeiro'; outraFuncao.readOnly = true; outraFuncao.className ='CSS_ENABLED_FALSE'; outraFuncao.value ='';">N&atilde;o sabe informar<BR>
+
+						<INPUT TYPE="RADIO" NAME="ocupacao" VALUE="Não quer informar" onClick="selecinouOcupacao.value = 'verdadeiro'; outraFuncao.readOnly = true; outraFuncao.className ='CSS_ENABLED_FALSE'; outraFuncao.value ='';">N&atilde;o quer informar</TD>
+
+				</TR>
+
+				<!--LINHA 10-->
+
+				<TR class=even>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Profissional de Sa&uacute;de</TD>
+
+					<input type = "hidden" name="selecinouProfissionalSaude" value = "falso">
+
+					<TD ALIGN="LEFT"><INPUT TYPE="RADIO" NAME="profissionalSaude" VALUE="Sim" onClick="selecinouProfissionalSaude.value = 'verdadeiro'">Sim<BR>
+
+						<INPUT TYPE="RADIO" NAME="profissionalSaude" VALUE="Não" onClick="selecinouProfissionalSaude.value = 'verdadeiro'">N&atilde;o<BR>
+
+						<INPUT TYPE="RADIO" NAME="profissionalSaude" VALUE="Não respondeu" onClick="selecinouProfissionalSaude.value = 'verdadeiro'"> N&atilde;o respondeu<BR></TD>
+
+				</TR>
+
+				<!--LINHA 11-->
+
+				<TR class=odd>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Qual &eacute; a atividade principal de seu trabalho?</TD>
+
+					<input type = "hidden" name="selecinouAtividadeTrabalho" value = "falso">
+
+					<TD ALIGN="LEFT"><INPUT TYPE="RADIO" NAME="atividadeTrabalho" VALUE="Não se aplica" onClick="selecinouAtividadeTrabalho.value = 'verdadeiro'">N&atilde;o se aplica<BR>
+
+						<INPUT TYPE="RADIO" NAME="atividadeTrabalho" VALUE="Industria" onClick="selecinouAtividadeTrabalho.value = 'verdadeiro'">Ind&uacute;stria<BR>
+
+						<INPUT TYPE="RADIO" NAME="atividadeTrabalho" VALUE="Comercio" onClick="selecinouAtividadeTrabalho.value = 'verdadeiro'">Com&eacute;rcio<BR>
+
+						<INPUT TYPE="RADIO" NAME="atividadeTrabalho" VALUE="Prestacao de servico" onClick="selecinouAtividadeTrabalho.value = 'verdadeiro'">Presta&ccedil;&atilde;o de servi&ccedil;o<BR>
+
+						<INPUT TYPE="RADIO" NAME="atividadeTrabalho" VALUE="Agropecuaria" onClick="selecinouAtividadeTrabalho.value = 'verdadeiro'">Agropecu&aacute;ria<BR>
+
+						<INPUT TYPE="RADIO" NAME="atividadeTrabalho" VALUE="Construcao civil" onClick="selecinouAtividadeTrabalho.value = 'verdadeiro'">Constru&ccedil;&atilde;o civil<BR>
+
+						<INPUT TYPE="RADIO" NAME="atividadeTrabalho" VALUE="Servico Publico" onClick="selecinouAtividadeTrabalho.value = 'verdadeiro'">Servi&ccedil;o P&uacute;blico<BR>
+
+						<INPUT TYPE="RADIO" NAME="atividadeTrabalho" VALUE="Não sabe informar" onClick="selecinouAtividadeTrabalho.value = 'verdadeiro'">N&atilde;o sabe informar<BR>
+
+						<INPUT TYPE="RADIO" NAME="atividadeTrabalho" VALUE="Não quer informar" onClick="selecinouAtividadeTrabalho.value = 'verdadeiro'">N&atilde;o quer informar</TD>
+
+				</TR>
+
+				<!--LINHA 12-->
+
+				<TR class=even>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Em qual dessas faixas de renda a sua fam&iacute;lia se enquadra?
+
+						(m&eacute;dia em sal&aacute;rios m&iacute;nimos nos &uacute;ltimos tr&ecirc;s meses)</TD>
+
+					<input type = "hidden" name="selecinouRendaFamiliarAtual" value = "falso">
+
+					<TD ALIGN="LEFT"><INPUT TYPE="RADIO" NAME="rendaFamiliarAtual" VALUE="Sem rendimento" onClick="selecinouRendaFamiliarAtual.value = 'verdadeiro'">Sem rendimento<BR>
+
+						<INPUT TYPE="RADIO" NAME="rendaFamiliarAtual" VALUE="Menos de um salario minimo" onClick="selecinouRendaFamiliarAtual.value = 'verdadeiro'">Menos de um sal&aacute;rio m&iacute;nimo<BR>
+
+						<INPUT TYPE="RADIO" NAME="rendaFamiliarAtual" VALUE="Um a menos de quatro salarios minimos" onClick="selecinouRendaFamiliarAtual.value = 'verdadeiro'">Um a menos de quatro sal&aacute;rios m&iacute;nimos<BR>
+
+						<INPUT TYPE="RADIO" NAME="rendaFamiliarAtual" VALUE="Quatro a menos de oito salarios minimos" onClick="selecinouRendaFamiliarAtual.value = 'verdadeiro'">Quatro a menos de oito sal&aacute;rios m&iacute;nimos<BR>
+
+						<INPUT TYPE="RADIO" NAME="rendaFamiliarAtual" VALUE="Oito a menos de doze salarios minimos" onClick="selecinouRendaFamiliarAtual.value = 'verdadeiro'">Oito a menos de doze sal&aacute;rios m&iacute;nimos<BR>
+
+						<INPUT TYPE="RADIO" NAME="rendaFamiliarAtual" VALUE="Doze salarios minimos ou mais" onClick="selecinouRendaFamiliarAtual.value = 'verdadeiro'">Doze sal&aacute;rios m&iacute;nimos ou mais<BR>
+
+						<INPUT TYPE="RADIO" NAME="rendaFamiliarAtual" VALUE="Não sei" onClick="selecinouRendaFamiliarAtual.value = 'verdadeiro'">N&atilde;o sei<BR>
+
+						<INPUT TYPE="RADIO" NAME="rendaFamiliarAtual" VALUE="Não respondeu" onClick="selecinouRendaFamiliarAtual.value = 'verdadeiro'">N&atilde;o respondeu</TD>
+
+				</TR>
+
+				<!--LINHA 13-->
+
+				<TR class=odd>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">A renda da sua fam&iacute;lia h&aacute; cerca de 2 anos era:</TD>
+
+					<input type = "hidden" name="selecinouRendaFamiliarPassado" value = "falso">
+
+					<TD ALIGN="LEFT"><INPUT TYPE="RADIO" NAME="rendaFamiliarPassado" VALUE="Maior" onClick="selecinouRendaFamiliarPassado.value = 'verdadeiro'">Maior<BR>
+
+						<INPUT TYPE="RADIO" NAME="rendaFamiliarPassado" VALUE="Igual" onClick="selecinouRendaFamiliarPassado.value = 'verdadeiro'">Igual<BR>
+
+						<INPUT TYPE="RADIO" NAME="rendaFamiliarPassado" VALUE="Menor" onClick="selecinouRendaFamiliarPassado.value = 'verdadeiro'">Menor<BR>
+
+						<INPUT TYPE="RADIO" NAME="rendaFamiliarPassado" VALUE="Não sabe" onClick="selecinouRendaFamiliarPassado.value = 'verdadeiro'">N&atilde;o sabe<BR>
+
+						<INPUT TYPE="RADIO" NAME="rendaFamiliarPassado" VALUE="Não respondeu" onClick="selecinouRendaFamiliarPassado.value = 'verdadeiro'">N&atilde;o respondeu</TD>
+
+				</TR>
+
+				<!--LINHA 14-->
+
+				<TR class=even>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Qual o grau de instru&ccedil;&atilde;o do chefe da sua fam&iacute;lia?</TD>
+
+					<input type = "hidden" name="selecinouGrauInstrucaoChefe" value = "falso">
+
+					<TD ALIGN="LEFT"><INPUT TYPE="RADIO" NAME="grauInstrucaoChefe" VALUE="Não frequentou a escola" onClick="selecinouGrauInstrucaoChefe.value = 'verdadeiro'">N&atilde;o freq&uuml;entou a escola<BR>
+
+						<INPUT TYPE="RADIO" NAME="grauInstrucaoChefe" VALUE="Primario incompleto" onClick="selecinouGrauInstrucaoChefe.value = 'verdadeiro'">Prim&aacute;rio incompleto<BR>
+
+						<INPUT TYPE="RADIO" NAME="grauInstrucaoChefe" VALUE="Primario completo/Ginasio incompleto" onClick="selecinouGrauInstrucaoChefe.value = 'verdadeiro'">Prim&aacute;rio completo/Gin&aacute;sio incompleto<BR>
+
+						<INPUT TYPE="RADIO" NAME="grauInstrucaoChefe" VALUE="Ginasio (atual primeiro grau) completo/Segundo grau incompleto" onClick="selecinouGrauInstrucaoChefe.value = 'verdadeiro'">Gin&aacute;sio (atual primeiro grau) completo/Segundo grau incompleto<BR>
+
+						<INPUT TYPE="RADIO" NAME="grauInstrucaoChefe" VALUE="Segundo grau completo/Superior incompleto" onClick="selecinouGrauInstrucaoChefe.value = 'verdadeiro'">Segundo grau completo/Superior incompleto<BR>
+
+						<INPUT TYPE="RADIO" NAME="grauInstrucaoChefe" VALUE="Superior" onClick="selecinouGrauInstrucaoChefe.value = 'verdadeiro'">Superior<BR>
+
+						<INPUT TYPE="RADIO" NAME="grauInstrucaoChefe" VALUE="Pos-graduacao" onClick="selecinouGrauInstrucaoChefe.value = 'verdadeiro'">P&oacute;s-gradua&ccedil;&atilde;o<BR>
+
+						<INPUT TYPE="RADIO" NAME="grauInstrucaoChefe" VALUE="Não sei" onClick="selecinouGrauInstrucaoChefe.value = 'verdadeiro'">N&atilde;o sei<BR>
+
+						<INPUT TYPE="RADIO" NAME="grauInstrucaoChefe" VALUE="Não respondeu" onClick="selecinouGrauInstrucaoChefe.value = 'verdadeiro'">N&atilde;o respondeu<BR>
+
+						<INPUT TYPE="RADIO" NAME="grauInstrucaoChefe" VALUE="E o chefe da familia, ja respondeu " onClick="selecinouGrauInstrucaoChefe.value = 'verdadeiro'">&Eacute; o chefe da fam&iacute;lia, j&aacute; respondeu </TD>
+
+				</TR>
+
+				<!--LINHA 15-->
+
+				<TR class=odd>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Quantos destes itens voc&ecirc; possui em sua casa? (MARQUE A QUANTIDADE)</TD>
+
+					<TD ALIGN="LEFT">
+
+					<TABLE BORDER=0 CELLSPACING=3">
+
+					<TR>
+
+						<TD>Aspirador de p&oacute;</TD>
+
+						<input type = "hidden" name="selecinouAspiradorPo" value = "falso">
+
+						<TD><INPUT TYPE="RADIO" NAME="aspiradorPo" VALUE="0" onClick = "selecinouAspiradorPo.value = 'verdadeiro'">0</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="aspiradorPo" VALUE="1" onClick = "selecinouAspiradorPo.value = 'verdadeiro'">1</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="aspiradorPo" VALUE="2" onClick = "selecinouAspiradorPo.value = 'verdadeiro'">2</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="aspiradorPo" VALUE="3" onClick = "selecinouAspiradorPo.value = 'verdadeiro'">3</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="aspiradorPo" VALUE="4/+" onClick = "selecinouAspiradorPo.value = 'verdadeiro'">4/+</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="aspiradorPo" VALUE="NS" onClick = "selecinouAspiradorPo.value = 'verdadeiro'">NS</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="aspiradorPo" VALUE="NR" onClick = "selecinouAspiradorPo.value = 'verdadeiro'">NR</TD>
+
+					</TR>
+
+					<TR>
+
+						<TD>Autom&oacute;vel</TD>
+
+						<input type = "hidden" name="selecinouAutomovel" value = "falso">
+
+						<TD><INPUT TYPE="RADIO" NAME="automovel" VALUE="0" onClick = "selecinouAutomovel.value = 'verdadeiro'">0</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="automovel" VALUE="1" onClick = "selecinouAutomovel.value = 'verdadeiro'">1</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="automovel" VALUE="2" onClick = "selecinouAutomovel.value = 'verdadeiro'">2</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="automovel" VALUE="3" onClick = "selecinouAutomovel.value = 'verdadeiro'">3</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="automovel" VALUE="4/+" onClick = "selecinouAutomovel.value = 'verdadeiro'">4/+</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="automovel" VALUE="NS" onClick = "selecinouAutomovel.value = 'verdadeiro'">NS</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="automovel" VALUE="NR" onClick = "selecinouAutomovel.value = 'verdadeiro'">NR</TD>
+
+					</TR>
+
+					<TR>	
+
+						<TD>Banheiro</TD>
+
+						<input type = "hidden" name="selecinouBanheiro" value = "falso">
+
+						<TD><INPUT TYPE="RADIO" NAME="banheiro" VALUE="0" onClick = "selecinouBanheiro.value = 'verdadeiro'">0</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="banheiro" VALUE="1" onClick = "selecinouBanheiro.value = 'verdadeiro'">1</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="banheiro" VALUE="2" onClick = "selecinouBanheiro.value = 'verdadeiro'">2</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="banheiro" VALUE="3" onClick = "selecinouBanheiro.value = 'verdadeiro'">3</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="banheiro" VALUE="4/+" onClick = "selecinouBanheiro.value = 'verdadeiro'">4/+</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="banheiro" VALUE="NS" onClick = "selecinouBanheiro.value = 'verdadeiro'">NS</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="banheiro" VALUE="NR" onClick = "selecinouBanheiro.value = 'verdadeiro'">NR</TD>
+
+					</TR>
+
+					<TR>
+
+						<TD>Empregada mensalista</TD>
+
+						<input type = "hidden" name="selecinouEmpregada" value = "falso">
+
+						<TD><INPUT TYPE="RADIO" NAME="empregada" VALUE="0" onClick = "selecinouEmpregada.value = 'verdadeiro'">0</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="empregada" VALUE="1" onClick = "selecinouEmpregada.value = 'verdadeiro'">1</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="empregada" VALUE="2" onClick = "selecinouEmpregada.value = 'verdadeiro'">2</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="empregada" VALUE="3" onClick = "selecinouEmpregada.value = 'verdadeiro'">3</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="empregada" VALUE="4/+" onClick = "selecinouEmpregada.value = 'verdadeiro'">4/+</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="empregada" VALUE="NS" onClick = "selecinouEmpregada.value = 'verdadeiro'">NS</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="empregada" VALUE="NR" onClick = "selecinouEmpregada.value = 'verdadeiro'">NR</TD>
+
+					</TR>
+
+					<TR>
+
+						<TD>Freezer</TD>
+
+						<input type = "hidden" name="selecinouFreezer" value = "falso">
+
+						<TD><INPUT TYPE="RADIO" NAME="freezer" VALUE="0" onClick = "selecinouFreezer.value = 'verdadeiro'">0</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="freezer" VALUE="1" onClick = "selecinouFreezer.value = 'verdadeiro'">1</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="freezer" VALUE="2" onClick = "selecinouFreezer.value = 'verdadeiro'">2</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="freezer" VALUE="3" onClick = "selecinouFreezer.value = 'verdadeiro'">3</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="freezer" VALUE="4/+" onClick = "selecinouFreezer.value = 'verdadeiro'">4/+</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="freezer" VALUE="NS" onClick = "selecinouFreezer.value = 'verdadeiro'">NS</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="freezer" VALUE="NR" onClick = "selecinouFreezer.value = 'verdadeiro'">NR</TD>
+
+					</TR>
+
+					<TR>
+
+						<TD>Geladeira duplex</TD>
+
+						<input type = "hidden" name="selecinouGeladeiraDuplex" value = "falso">
+
+						<TD><INPUT TYPE="RADIO" NAME="geladeiraDuplex" VALUE="0" onClick = "selecinouGeladeiraDuplex.value = 'verdadeiro'">0</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="geladeiraDuplex" VALUE="1" onClick = "selecinouGeladeiraDuplex.value = 'verdadeiro'">1</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="geladeiraDuplex" VALUE="2" onClick = "selecinouGeladeiraDuplex.value = 'verdadeiro'">2</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="geladeiraDuplex" VALUE="3" onClick = "selecinouGeladeiraDuplex.value = 'verdadeiro'">3</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="geladeiraDuplex" VALUE="4/+" onClick = "selecinouGeladeiraDuplex.value = 'verdadeiro'">4/+</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="geladeiraDuplex" VALUE="NS" onClick = "selecinouGeladeiraDuplex.value = 'verdadeiro'">NS</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="geladeiraDuplex" VALUE="NR" onClick = "selecinouGeladeiraDuplex.value = 'verdadeiro'">NR</TD>
+
+					</TR>
+
+					<TR>
+
+						<TD>Geladeira simples</TD>
+
+						<input type = "hidden" name="selecinouGeladeiraSimples" value = "falso">
+
+						<TD><INPUT TYPE="RADIO" NAME="geladeiraSimples" VALUE="0" onClick = "selecinouGeladeiraSimples.value = 'verdadeiro'">0</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="geladeiraSimples" VALUE="1" onClick = "selecinouGeladeiraSimples.value = 'verdadeiro'">1</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="geladeiraSimples" VALUE="2" onClick = "selecinouGeladeiraSimples.value = 'verdadeiro'">2</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="geladeiraSimples" VALUE="3" onClick = "selecinouGeladeiraSimples.value = 'verdadeiro'">3</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="geladeiraSimples" VALUE="4/+" onClick = "selecinouGeladeiraSimples.value = 'verdadeiro'">4/+</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="geladeiraSimples" VALUE="NS" onClick = "selecinouGeladeiraSimples.value = 'verdadeiro'">NS</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="geladeiraSimples" VALUE="NR" onClick = "selecinouGeladeiraSimples.value = 'verdadeiro'">NR</TD>
+
+					</TR>
+
+					<TR>
+
+						<TD>M&aacute;quina. de lavar roupa</TD>
+
+						<input type = "hidden" name="selecinouMaquinaLavar" value = "falso">
+
+						<TD><INPUT TYPE="RADIO" NAME="maquinaLavar" VALUE="0" onClick = "selecinouMaquinaLavar.value = 'verdadeiro'">0</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="maquinaLavar" VALUE="1" onClick = "selecinouMaquinaLavar.value = 'verdadeiro'">1</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="maquinaLavar" VALUE="2" onClick = "selecinouMaquinaLavar.value = 'verdadeiro'">2</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="maquinaLavar" VALUE="3" onClick = "selecinouMaquinaLavar.value = 'verdadeiro'">3</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="maquinaLavar" VALUE="4/+" onClick = "selecinouMaquinaLavar.value = 'verdadeiro'">4/+</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="maquinaLavar" VALUE="NS" onClick = "selecinouMaquinaLavar.value = 'verdadeiro'">NS</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="maquinaLavar" VALUE="NR" onClick = "selecinouMaquinaLavar.value = 'verdadeiro'">NR</TD>
+
+					</TR>
+
+					<TR>
+
+						<TD>R&aacute;dio</TD>
+
+						<input type = "hidden" name="selecinouRadio" value = "falso">
+
+						<TD><INPUT TYPE="RADIO" NAME="radio" VALUE="0" onClick = "selecinouRadio.value = 'verdadeiro'">0</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="radio" VALUE="1" onClick = "selecinouRadio.value = 'verdadeiro'">1</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="radio" VALUE="2" onClick = "selecinouRadio.value = 'verdadeiro'">2</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="radio" VALUE="3" onClick = "selecinouRadio.value = 'verdadeiro'">3</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="radio" VALUE="4/+" onClick = "selecinouRadio.value = 'verdadeiro'">4/+</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="radio" VALUE="NS" onClick = "selecinouRadio.value = 'verdadeiro'">NS</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="radio" VALUE="NR" onClick = "selecinouRadio.value = 'verdadeiro'">NR</TD>
+
+					</TR>
+
+					<TR>
+
+						<TD>TV em cores</TD>
+
+						<input type = "hidden" name="selecinouTv" value = "falso">
+
+						<TD><INPUT TYPE="RADIO" NAME="tv" VALUE="0" onClick = "selecinouTv.value = 'verdadeiro'">0</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="tv" VALUE="1" onClick = "selecinouTv.value = 'verdadeiro'">1</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="tv" VALUE="2" onClick = "selecinouTv.value = 'verdadeiro'">2</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="tv" VALUE="3" onClick = "selecinouTv.value = 'verdadeiro'">3</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="tv" VALUE="4/+" onClick = "selecinouTv.value = 'verdadeiro'">4/+</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="tv" VALUE="NS" onClick = "selecinouTv.value = 'verdadeiro'">NS</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="tv" VALUE="NR" onClick = "selecinouTv.value = 'verdadeiro'">NR</TD>
+
+					</TR>
+
+					<TR>
+
+						<TD>Videocassete/DVD</TD>
+
+						<input type = "hidden" name="selecinouDvd" value = "falso">
+
+						<TD><INPUT TYPE="RADIO" NAME="dvd" VALUE="0" onClick = "selecinouDvd.value = 'verdadeiro'">0</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="dvd" VALUE="1" onClick = "selecinouDvd.value = 'verdadeiro'">1</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="dvd" VALUE="2" onClick = "selecinouDvd.value = 'verdadeiro'">2</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="dvd" VALUE="3" onClick = "selecinouDvd.value = 'verdadeiro'">3</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="dvd" VALUE="4/+" onClick = "selecinouDvd.value = 'verdadeiro'">4/+</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="dvd" VALUE="NS" onClick = "selecinouDvd.value = 'verdadeiro'">NS</TD>
+
+						<TD><INPUT TYPE="RADIO" NAME="dvd" VALUE="NR" onClick = "selecinouDvd.value = 'verdadeiro'">NR</TD>
+
+					</TR>
+
+					</TABLE>
+
+				</TR>
+
+				<!--LINHA 16-->
+
+				<TR class=even>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Naturalidade</TD>
+
+					<TD ALIGN="left">
+
+						<TABLE BORDER=0>
+
+						<TR>
+
+							<TD ALIGN="right">Estado</TD>
+
+							<TD><SELECT NAME = "estadoNaturalidade">
+
+									<OPTION VALUE = "Acre AC">Acre AC</OPTION>
+
+									<OPTION VALUE = "Alagoas AL">Alagoas AL</OPTION>
+
+									<OPTION VALUE = "Amapa AP">Amap&aacute; AP</OPTION>
+
+									<OPTION VALUE = "Amazonas AM">Amazonas AM</OPTION>
+
+									<OPTION VALUE = "Bahia BA">Bahia BA</OPTION>
+
+									<OPTION VALUE = "Ceara CE">Cear&aacute; CE</OPTION>
+
+									<OPTION VALUE = "Distrito Federal DF">Distrito Federal DF</OPTION>
+
+									<OPTION VALUE = "Goias GO">Goi&aacute;s GO</OPTION>
+
+									<OPTION VALUE = "Espirito Santo ES">Esp&iacute;rito Santo ES</OPTION>
+
+									<OPTION VALUE = "Maranhao MA">Maranh&atilde;o MA</OPTION>
+
+									<OPTION VALUE = "Mato Grosso MT">Mato Grosso MT</OPTION>
+
+									<OPTION VALUE = "Mato Grosso do Sul MS">Mato Grosso do Sul MS</OPTION>
+
+									<OPTION VALUE = "Minas Gerais MG">Minas Gerais MG</OPTION>
+
+									<OPTION VALUE = "Para PA">Par&aacute; PA</OPTION>
+
+									<OPTION VALUE = "Paraiba PB">Paraiba PB</OPTION>
+
+									<OPTION VALUE = "Parana PR">Paran&aacute; PR</OPTION>
+
+									<OPTION VALUE = "Pernambuco PE">Pernambuco PE</OPTION>
+
+									<OPTION VALUE = "Piaui PI">Piau&iacute; PI</OPTION>
+
+									<OPTION VALUE = "Rio de Janeiro RJ">Rio de Janeiro RJ</OPTION>
+
+									<OPTION VALUE = "Rio Grande do Norte RN">Rio Grande do Norte RN</OPTION>
+
+									<OPTION VALUE = "Rio Grande do Sul RS">Rio Grande do Sul RS</OPTION>
+
+									<OPTION VALUE = "Rondonia RO">Rond&ocirc;nia RO</OPTION>
+
+									<OPTION VALUE = "Roraima RR">Ror&acirc;ima RR</OPTION>
+
+									<OPTION VALUE = "Sao Paulo SP">S&atilde;o Paulo SP</OPTION>
+
+									<OPTION VALUE = "Santa Catarina SC">Santa Catarina SC</OPTION>
+
+									<OPTION VALUE = "Sergipe SE">Sergipe SE</OPTION>
+
+									<OPTION VALUE = "Tocantins TO">Tocantins TO</OPTION>
+
+								</SELECT></TD>
+
+						</TR>
+
+						<TR>
+
+							<TD ALIGN="right">Cidade</TD>
+
+							<TD><INPUT TYPE="TEXT" NAME="cidadeNaturalidade" SIZE=25 onFocus="this.className = 'CSS_FOCUS_IN'" onBlur="if(this.disabled == false) {validarCampoAlfabetico(this); this.className = 'CSS_FOCUS_OUT'; }"></TD>
+
+						</TR>
+						<TR>
+							<TD align="center" colspan=2><INPUT type="checkbox" onclick="disableText(cidadeNaturalidade)">N&atilde;o foi definido</TD>
+						</TR>
+
+						</TABLE>
+
+				</TR>
+
+				<!--LINHA 17-->
+
+				<TR class=odd>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">H&aacute; quanto tempo mora no endere&ccedil;o atual?</TD>
+
+					<TD ALIGN="left">
+					<INPUT TYPE="TEXT" NAME="tempoEnderecoAtual" SIZE=2 onBlur="if(this.disabled == false){ validarCampoNumerico(tempoEnderecoAtual); this.className = 'CSS_FOCUS_OUT';}" onFocus="this.className = 'CSS_FOCUS_IN'">meses
+					<INPUT type="checkbox" onclick="disableText(tempoEnderecoAtual)">N&atilde;o foi definido
+					</TD>
+				</TR>
+
+				<!--LINHA 18-->
+
+				<TR class=even>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">J&aacute; morou em outro local diferente do munic&iacute;pio atual? (considerar os &uacute;ltimos dois anos)</TD>
+
+					<input type = "hidden" name = "selecionouMorouOutro" value = 'falso'>
+
+					<TD ALIGN="LEFT"><INPUT TYPE="RADIO" NAME="morouOutro" VALUE="Sim" onClick = "selecionouMorouOutro.value = 'verdadeiro';">Sim<BR>
+
+									 <INPUT TYPE="RADIO" NAME="morouOutro" VALUE="Não" onClick = "selecionouMorouOutro.value = 'verdadeiro';">N&atilde;o</TD>
+
+				</TR>
+
+				<!--LINHA 19-->
+
+				<TR class=odd>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">N&uacute;mero m&eacute;dio de pessoas que mora (morava) no domic&iacute;lio - &uacute;ltimos 2 anos?</TD>
+
+					<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="numeroPessoas" SIZE=2 onBlur="if(this.disabled == false){ validarCampoNumerico(numeroPessoas); this.className = 'CSS_FOCUS_OUT'; }" onFocus="this.className = 'CSS_FOCUS_IN'">
+					<INPUT type="checkbox" onclick="disableText(numeroPessoas)">N&atilde;o foi definido</TD>
+					</TD>
+
+				</TR>
+
+				<!--LINHA 20-->
+
+				<TR class=even>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">N&uacute;mero de c&ocirc;modos da resid&ecirc;ncia atual</TD>
+
+					<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="numeroComodos" SIZE=2 onBlur="if(this.disabled == false){ validarCampoNumerico(numeroComodos); this.className = 'CSS_FOCUS_OUT'; }" onFocus="this.className = 'CSS_FOCUS_IN';">
+					<INPUT type="checkbox" onclick="disableText(numeroComodos)">N&atilde;o foi definido
+					</TD>
+
+				</TR>
+
+				<!--LINHA 21-->
+
+				<TR class=odd>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">N&uacute;mero de c&ocirc;modos utilizados como dormit&oacute;rio</TD>
+
+					<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="numeroDormitorios" SIZE=2 onBlur="if(this.disabled == false){	validarCampoNumerico(numeroDormitorios); this.className = 'CSS_FOCUS_OUT'; }" onFocus="this.className = 'CSS_FOCUS_IN'">
+					<INPUT type="checkbox" onclick="disableText(numeroDormitorios)">N&atilde;o foi definido
+					</TD>
+
+				</TR>
+
+				<!--LINHA 22-->
+ 
+				<TR class=even>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Morador de rua nos &uacute;ltimos dois anos?</TD>
+
+					<input type = "hidden" name="selecionouMoradorRua" value = "falso">
+
+					<TD ALIGN="LEFT"><INPUT TYPE="RADIO" NAME="moradorRua" VALUE="Sim" onclick = "selecionouMoradorRua.value = 'verdadeiro'">Sim<BR>
+
+						<INPUT TYPE="RADIO" NAME="moradorRua" VALUE="Não" onclick = "selecionouMoradorRua.value = 'verdadeiro'">N&atilde;o</TD>
+
+				</TR>
+
+				<!--LINHA 23-->
+
+				<TR class=odd>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Mora(ou) em asilos nos &uacute;ltimos dois anos?</TD>
+
+					<input type = "hidden" name="selecionouMoradorAsilo" value = "falso">
+
+					<TD ALIGN="LEFT"><INPUT TYPE="RADIO" NAME="moradorAsilo" VALUE="Sim" onclick = "selecionouMoradorAsilo.value = 'verdadeiro'">Sim<BR>
+
+						<INPUT TYPE="RADIO" NAME="moradorAsilo" VALUE="Não" onclick = "selecionouMoradorAsilo.value = 'verdadeiro'">N&atilde;o</TD>
+
+				</TR>
+
+				<!--LINHA 24-->
+
+				<TR class=even>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Ex-detento? (&uacute;ltimos dois anos) – pres&iacute;dios e/ou delegacias</TD>
+
+					<input type = "hidden" name="selecionouExDetento" value = "falso">
+
+					<TD ALIGN="LEFT"><INPUT TYPE="RADIO" NAME="exDetento" VALUE="Sim" onclick = "selecionouExDetento.value = 'verdadeiro'">Sim<BR>
+
+						<INPUT TYPE="RADIO" NAME="exDetento" VALUE="Não" onclick = "selecionouExDetento.value = 'verdadeiro'">N&atilde;o</TD>
+
+				</TR>
+
+				<!--Habito de fumar-->
+
+				<!--LINHA 25-->
+
+				<TR class=odd>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Em rela&ccedil;&atilde;o ao h&aacute;bito de fumar...</TD>
+
+					<input type="hidden" name="selecionouHabitoFumar" value = "falso">
+
+					<TD ALIGN="LEFT"><INPUT TYPE="RADIO" NAME="habitoFumar" VALUE="Jamais Fumante" onClick="exibeLinhaOculta('tabelaCaracterizacao', 26);ocultaLinha('tabelaCaracterizacao', 27);ocultaLinha('tabelaCaracterizacao', 28); selecionouHabitoFumar.value = 'jamaisFumante';">Jamais fumante<BR>
+
+						<INPUT TYPE="RADIO" NAME="habitoFumar" VALUE="Ex-fumante" onClick="exibeLinhaOculta('tabelaCaracterizacao', 28);ocultaLinha('tabelaCaracterizacao', 26); ocultaLinha('tabelaCaracterizacao', 27); selecionouHabitoFumar.value = 'exFumante';">Ex-fumante<BR>
+
+						<INPUT TYPE="RADIO" NAME="habitoFumar" VALUE="Fumante atual" onClick="exibeLinhaOculta('tabelaCaracterizacao', 27);ocultaLinha('tabelaCaracterizacao', 26); ocultaLinha('tabelaCaracterizacao', 26); selecionouHabitoFumar.value = 'fumanteAtual';">Fumante atual<BR>
+
+						<INPUT TYPE="RADIO" NAME="habitoFumar" VALUE="Ignorado" onClick="ocultaLinha('tabelaCaracterizacao', 26); ocultaLinha('tabelaCaracterizacao', 27); ocultaLinha('tabelaCaracterizacao', 28); selecionouHabitoFumar.value = 'ignorado';">Ignorado</TD>
+
+				</TR>
+
+				<!--Se nao for fumante (resposta = 1 na P25)-->
+
+				<!--LINHA 26-->
+
+				<TR class=odd>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Inala a fuma&ccedil;a?</TD>
+
+					<input type = "hidden" name="selecionouInalaFumaca" value = "falso">
+
+					<TD ALIGN="LEFT"><INPUT TYPE="RADIO" NAME="inalaFumaca" VALUE="Sim" onclick = "selecionouInalaFumaca.value = 'verdadeiro'">Sim<BR>
+
+					<INPUT TYPE="RADIO" NAME="inalaFumaca" VALUE="Não" onclick = "selecionouInalaFumaca.value = 'verdadeiro'">N&atilde;o</TD>	
+
+				</TR>
+
+				<!--Se for fumante (resposta = 3 na P25)-->
+
+				<!--LINHA 27-->
+
+				<TR class=odd>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Carga tab&aacute;gica</TD>
+
+					<TD ALIGN="LEFT">
+
+						<TABLE BORDER=0>
+
+						<TR>
+
+							<TD>N&uacute;mero de cigarros que fuma ou fumava por dia?</TD>
+
+							<TD><INPUT TYPE="TEXT" NAME="cigarrosDia" SIZE=4 MAXLENGTH = 2 onBlur="if(this.disabled == false){ validarCampoNumerico(cigarrosDia); this.className = 'CSS_FOCUS_OUT';}" onFocus="this.className = 'CSS_FOCUS_IN'">cigarros
+							<INPUT type="checkbox" onchange="disableText(cigarrosDia)">N&atilde;o foi definido
+							</TD>
+
+						</TR>
+
+						<TR>
+
+							<TD>N&uacute;mero de anos que fuma ou fumou?</TD>
+
+							<TD><INPUT TYPE="TEXT" NAME="anosFuma" SIZE=4 MAXLENGTH=2 onfocus = "this.className = 'CSS_FOCUS_IN'" onBlur="if(this.disabled == false){ if(cigarrosDia.value != '' && anosFuma.value != '')
+
+								{
+
+									validarCampoNumerico(anosFuma);
+
+									this.className = 'CSS_FOCUS_OUT';
+
+									cargaTabagica.value = calcularCarga(cigarrosDia, anosFuma);
+
+								}
+								}"
+
+								>anos
+								<INPUT type="checkbox" onchange="disableText(anosFuma)">N&atilde;o foi definido
+								</TD>
+
+						</TR>
+
+						<TR>
+
+							<TD>Carga tab&aacute;gica:</TD>
+
+							<TD><INPUT TYPE="TEXT" NAME="cargaTabagica" SIZE=4> (ma&ccedil;os-cigarros/ano)</TD>
+
+						</TR>
+
+						</TABLE>
+
+				</TR>
+
+				<!--Se for ex-fumante (resposta = 2 na P25)-->
+
+				<!--LINHA 28-->
+
+				<TR class=odd>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Parou h&aacute; quanto tempo?</TD>
+
+					<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="tempoParouDias" SIZE=2 MAXLENGTH=1
+
+																onBlur ="if(this.disabled == false){ if (tempoParouDias.value == '')
+
+																		 {
+
+																			tempoParouDias.value = '0';
+
+																		 }
+
+																		 
+
+																		 validarCampoNumerico(tempoParouDias); 
+
+																		 this.className = 'CSS_FOCUS_OUT'; }" 
+
+																onfocus="this.className = 'CSS_FOCUS_IN'">semanas
+									<INPUT type="checkbox" onchange="disableText(tempoParouDias)">N&atilde;o foi definido
+																<BR>
+
+																
+
+									 <INPUT TYPE="TEXT" NAME="tempoParouMeses" SIZE=2 MAXLENGTH=2
+
+									 onBlur="if(this.disabled == false) { if (tempoParouMeses.value == '')
+
+											  {
+
+												tempoParouMeses.value = '0';
+
+											  }
+
+											  
+
+											  validarCampoNumerico(tempoParouMeses);
+
+											  this.className = 'CSS_FOCUS_OUT'; }" 
+
+									 onfocus="this.className = 'CSS_FOCUS_IN'">meses
+									 <INPUT type="checkbox" onchange="disableText(tempoParouMeses)">N&atilde;o foi definido
+									 <BR>
+
+									 
+
+									 <INPUT TYPE="TEXT" NAME="tempoParouAnos" SIZE=2 MAXLENGTH=2
+
+									 onBlur=" if(this.disabled == false) { if (tempoParouAnos.value == '')
+
+											  {
+
+													tempoParouAnos.value ='0';
+
+											  }
+
+											 									  
+
+											  validarCampoNumerico(tempoParouAnos);
+
+											  this.className = 'CSS_FOCUS_OUT'; }" 
+
+									 onfocus="this.className = 'CSS_FOCUS_IN'">anos
+									 <INPUT type="checkbox" onchange="disableText(tempoParouAnos)">N&atilde;o foi definido
+									 <BR>
+
+				</TR>
+
+				<!--LINHA 29-->
+
+				<TR class=even>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Uso de drogas (inalat&oacute;rias / injet&aacute;veis)? (alguma vez na vida)</TD>
+
+					<input type="hidden" name="selecionouUsuarioDrogas" value = "falso">
+
+					<TD ALIGN="LEFT"><INPUT TYPE="RADIO" NAME="usuarioDrogas" VALUE="Sim" onClick="selecionouUsuarioDrogas.value = 'verdadeiro'">Sim<BR>
+
+						<INPUT TYPE="RADIO" NAME="usuarioDrogas" VALUE="Não" onClick="selecionouUsuarioDrogas.value = 'verdadeiro'">N&atilde;o</TD>
+
+				</TR>
+
+				<!--LINHA 30-->
+
+				<TR class=odd>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Qual o tipo de bebida alco&oacute;lica voc&ecirc; prefere?</TD>
+
+					<input type="hidden" name="selecionouBebidaPreferida" value = "falso">
+
+					<TD ALIGN="LEFT"><INPUT TYPE="RADIO" NAME="bebidaPreferida" VALUE="Nenhuma" onClick="selecionouBebidaPreferida.value = 'verdadeiro'; outraBebidaPreferida.readOnly = true; outraBebidaPreferida.className = 'CSS_ENABLED_FALSE'; outraBebidaPreferida.value = '';">Nenhuma<BR>
+
+						<INPUT TYPE="RADIO" NAME="bebidaPreferida" VALUE="Cerveja" onClick="selecionouBebidaPreferida.value = 'verdadeiro'; outraBebidaPreferida.readOnly = true; outraBebidaPreferida.className = 'CSS_ENABLED_FALSE'; outraBebidaPreferida.value = '';">Cerveja<BR>
+
+						<INPUT TYPE="RADIO" NAME="bebidaPreferida" VALUE="Vinho" onClick="selecionouBebidaPreferida.value = 'verdadeiro'; outraBebidaPreferida.readOnly = true; outraBebidaPreferida.className = 'CSS_ENABLED_FALSE'; outraBebidaPreferida.value = '';">Vinho<BR>
+
+						<INPUT TYPE="RADIO" NAME="bebidaPreferida" VALUE="Whisky" onClick="selecionouBebidaPreferida.value = 'verdadeiro'; outraBebidaPreferida.readOnly = true; outraBebidaPreferida.className = 'CSS_ENABLED_FALSE'; outraBebidaPreferida.value = '';">Whisky<BR>
+
+						<INPUT TYPE="RADIO" NAME="bebidaPreferida" VALUE="Cachaca" onClick="selecionouBebidaPreferida.value = 'verdadeiro'; outraBebidaPreferida.readOnly = true; outraBebidaPreferida.className = 'CSS_ENABLED_FALSE'; outraBebidaPreferida.value = '';">Cacha&ccedil;a<BR>
+
+						<INPUT TYPE="RADIO" NAME="bebidaPreferida" VALUE="Outras" onClick="selecionouBebidaPreferida.value = ''; outraBebidaPreferida.readOnly = false; outraBebidaPreferida.focus(); outraBebidaPreferida.className = 'CSS_ENABLED_TRUE';">Outras
+
+						<INPUT TYPE="TEXT" NAME="outraBebidaPreferida" SIZE=10
+
+											onfocus="if (this.readOnly == false)
+
+													{
+
+													 	this.className = 'CSS_FOCUS_IN';
+
+													}
+
+													else
+
+													{
+
+														this.className = 'CSS_ENABLED_FALSE';
+
+													}
+
+													this.className = 'CSS_FOCUS_IN'"
+
+											onblur="if (this.readOnly == false)
+
+													{
+
+														this.className = 'CSS_FOCUS_OUT';
+
+													}
+
+													else
+
+													{
+
+														this.className = 'CSS_ENABLED_FALSE';
+
+													}
+													validarCampoAlfabetico(this); this.className = 'CSS_FOCUS_OUT'
+													"></TD>
+
+				</TR>
+
+				<!--LINHA 31-->
+
+				<TR class=even>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Toma alguma bebida alco&oacute;lica, mesmo que de vez em quando?</TD>
+
+					<input type ="hidden" name = "selecionouTomaBebida" value = "falso">
+
+					<TD><INPUT TYPE="RADIO" NAME="tomaBebida" VALUE="Sim" onClick="selecionouTomaBebida.value = 'sim'; exibeLinhaOculta('tabelaCaracterizacao', 33);exibeLinhaOculta('tabelaCaracterizacao', 34);exibeLinhaOculta('tabelaCaracterizacao', 35);exibeLinhaOculta('tabelaCaracterizacao', 36);exibeLinhaOculta('tabelaCaracterizacao', 37);">Sim<BR>
+
+					    <INPUT TYPE="RADIO" NAME="tomaBebida" VALUE="Não" onClick="selecionouTomaBebida.value = 'nao';ocultaLinha('tabelaCaracterizacao', 33);ocultaLinha('tabelaCaracterizacao', 34);ocultaLinha('tabelaCaracterizacao', 35);ocultaLinha('tabelaCaracterizacao', 36);ocultaLinha('tabelaCaracterizacao', 37);">N&atilde;o</TD>
+
+					
+
+				</TR>
+
+				<!--se responde sim para bebida-->
+
+				<!--LINHA 32-->
+
+				<TR class=even>
+
+					<TD></TD>
+
+					<TD>Voc&ecirc; tem facilidade de fazer amizades?</TD>
+
+					<input type="hidden" name="selecionouFacilidadeAmizades" value = "falso">
+
+					<TD><INPUT TYPE="RADIO" NAME="facilidadeAmizades" VALUE="Sim" onClick="selecionouFacilidadeAmizades.value = 'verdadeiro'">Sim<BR>
+
+								<INPUT TYPE="RADIO" NAME="facilidadeAmizades" VALUE="Não" onClick="selecionouFacilidadeAmizades.value = 'verdadeiro'">N&atilde;o</TD>
+
+				</TR>
+
+				<!--se responde sim para bebida-->
+
+				<!--LINHA 33-->
+
+				<TR class=even>
+
+					<TD></TD>
+
+					<TD>Alguma vez sentiu que deveria diminuir a quantidade da bebida?</TD>
+
+					<input type="hidden" name="selecionouDeveriaDiminuir" value = "falso">
+
+					<TD><INPUT TYPE="RADIO" NAME="deveriaDiminuir" VALUE="Sim" onClick="selecionouDeveriaDiminuir.value = 'verdadeiro'">Sim<BR>
+
+						<INPUT TYPE="RADIO" NAME="deveriaDiminuir" VALUE="Não" onClick="selecionouDeveriaDiminuir.value = 'verdadeiro'">N&atilde;o</TD>
+
+				</TR>
+
+				<!--se responde sim para bebida-->
+
+				<!--LINHA 34-->
+
+				<TR class=even>
+
+					<TD></TD>
+
+					<TD>Algu&eacute;m critica ou j&aacute; criticou o seu modo de beber?</TD>
+
+					<input type="hidden" name="selecionouRecebeuCritica" value = "falso">
+
+					<TD><INPUT TYPE="RADIO" NAME="recebeuCritica" VALUE="Sim" onClick="selecionouRecebeuCritica.value = 'verdadeiro'">Sim<BR>
+
+						<INPUT TYPE="RADIO" NAME="recebeuCritica" VALUE="Não" onClick="selecionouRecebeuCritica.value = 'verdadeiro'">N&atilde;o<TD>
+
+				</TR>
+
+				<!--se responde sim para bebida-->
+
+				<!--LINHA 35-->
+
+				<TR class=even>
+
+					<TD></TD>
+
+					<TD>Voc&ecirc; costuma beber de manh&atilde; para diminuir o nervosismo/ressaca?</TD>
+
+					<input type="hidden" name="selecionouBebeManha" value = "falso">
+
+					<TD><INPUT TYPE="RADIO" NAME="bebeManha" VALUE="Sim" onClick="selecionouBebeManha.value = 'verdadeiro'">Sim<BR>
+
+						<INPUT TYPE="RADIO" NAME="bebeManha" VALUE="Não" onClick="selecionouBebeManha.value = 'verdadeiro'">N&atilde;o</TD>
+
+				</TR>
+
+				<!--se responde sim para bebida-->
+
+				<!--LINHA 36-->	
+
+				<TR class=even>
+
+					<TD></TD>
+
+					<TD>Voc&ecirc; se sente culpado pela maneira que costuma beber?</TD>
+
+					<input type="hidden" name="selecionouSenteCulpa" value = "falso">
+
+					<TD><INPUT TYPE="RADIO" NAME="senteCulpa" VALUE="Sim" onClick="selecionouSenteCulpa.value = 'verdadeiro'">Sim<BR>
+
+						<INPUT TYPE="RADIO" NAME="senteCulpa" VALUE="Não" onClick="selecionouSenteCulpa.value = 'verdadeiro'">N&atilde;o</TD>
+
+				</TR>
+
+			</TABLE>
+
+			<BR>
+
+		<!--</FORM>-->
+
+		</CENTER>
+
+
+
+		<!--<FORM NAME = "frm_avaliacao" METHOD = "post" ACTION = "informacoesGerais.html">-->
+
+			<TABLE BORDER="0" WIDTH="90%" ALIGN="CENTER" CELLSPACING="0" id="tabelaAvaliacaoInicial">
+
+				<BR><BR><BR><H3><CENTER>2.	Avalia&ccedil;&atilde;o Inicial/Cl&iacute;nico-Radiol&oacute;gica</CENTER></H3>
+
+					<TH width="5%"></TH>
+
+					<TH width="25%"></TH>
+
+					<TH width="70%"></TH>
+
+				<!--LINHA 1-->
+
+				<TR class=odd>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">J&aacute; morou antes com algu&eacute;m com tuberculose?</TD>
+
+					<input type = "hidden" name="selecionouMorouTuberculose" value = "falso">
+
+					<TD ALIGN="LEFT"><INPUT TYPE="RADIO" NAME="morouTuberculose" VALUE="Sim" onClick="selecionouMorouTuberculose.value = ''; exibeLinhaOculta('tabelaAvaliacaoInicial', 4); exibeLinhaOculta('tabelaAvaliacaoInicial', 5);">Sim<BR>
+
+				                     <INPUT TYPE="RADIO" NAME="morouTuberculose" VALUE="Não" onClick="selecionouMorouTuberculose.value = 'nao';if(selecionouMorouTuberculose.value != '' && selecionouFamiliaTuberculose.value != '' &&  selecionouTrabalhoTuberculose.value != ''){ ocultaLinha('tabelaAvaliacaoInicial', 4); ocultaLinha('tabelaAvaliacaoInicial', 5); }">N&atilde;o</TD>
+
+				</TR>
+				<!--LINHA 2-->
+
+				<TR class=even>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Teve (tem) algu&eacute;m da fam&iacute;lia com tuberculose? (n&atilde;o residente no mesmo domic&iacute;lio)</TD>
+
+					<input type = "hidden" name="selecionouFamiliaTuberculose" value = "falso">
+
+					<TD ALIGN="LEFT"><INPUT TYPE="RADIO" NAME="familiaTuberculose" VALUE="Sim" onClick="selecionouFamiliaTuberculose.value = ''; exibeLinhaOculta('tabelaAvaliacaoInicial', 4); exibeLinhaOculta('tabelaAvaliacaoInicial', 5);">Sim<BR>
+
+									 <INPUT TYPE="RADIO" NAME="familiaTuberculose" VALUE="Não" onClick="selecionouFamiliaTuberculose.value = 'nao'; if(selecionouMorouTuberculose.value != '' && selecionouFamiliaTuberculose.value != '' &&  selecionouTrabalhoTuberculose.value != ''){ ocultaLinha('tabelaAvaliacaoInicial', 4); ocultaLinha('tabelaAvaliacaoInicial', 5); }">N&atilde;o</TD>
+
+				</TR>
+
+				<!--LINHA 3-->
+
+				<TR class=odd>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Teve (tem) algu&eacute;m do c&iacute;rculo de amizade/trabalho com tuberculose? (n&atilde;o residente no mesmo domic&iacute;lio)</TD>
+
+					<input type = "hidden" name="selecionouTrabalhoTuberculose" value = "falso">
+
+					<TD ALIGN="LEFT"><INPUT TYPE="RADIO" NAME="trabalhoTuberculose" VALUE="Sim" onClick="selecionouTrabalhoTuberculose.value = ''; exibeLinhaOculta('tabelaAvaliacaoInicial', 4); exibeLinhaOculta('tabelaAvaliacaoInicial', 5);">Sim<BR>
+
+									 <INPUT TYPE="RADIO" NAME="trabalhoTuberculose" VALUE="Não" onClick="selecionouTrabalhoTuberculose.value = 'nao'; if(selecionouMorouTuberculose.value != '' && selecionouFamiliaTuberculose.value != '' &&  selecionouTrabalhoTuberculose.value != ''){  ocultaLinha('tabelaAvaliacaoInicial', 4); ocultaLinha('tabelaAvaliacaoInicial', 5); }">N&atilde;o</TD>
+
+				</TR>
+
+				<!--campo que surge com sim da linha 1-->
+
+				<!--LINHA 4-->
+
+				<TR class=odd>
+
+					<TD></TD>
+
+					<TD ALIGN="LEFT">H&aacute; quanto tempo foi o contato com TB?</TD>
+
+					<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="quantoTempoContato" SIZE=2 onBlur="if(this.disabled == false){ this.className = 'CSS_FOCUS_OUT'; validarCampoNumerico(quantoTempoContato); }" onFocus="this.className = 'CSS_FOCUS_IN';">meses
+					<INPUT type="checkbox" onchange="disableText(quantoTempoContato)">N&atilde;o foi definido
+					</TD>
+
+				</TR>
+
+				<!--campo q surge com sim da linha 1-->
+
+				<TR class=odd>
+
+					<TD></TD>
+
+					<TD ALIGN="LEFT"> Quantas horas semanais de contato?</TD>
+
+					<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="horasSemanaisContato" SIZE=2 onBlur="if(this.disabled == false ){ this.className = 'CSS_FOCUS_OUT'; validarCampoNumerico(horasSemanaisContato); }" onFocus="this.className = 'CSS_FOCUS_IN';">horas
+					<INPUT type="checkbox" onchange="disableText(horasSemanaisContato)">N&atilde;o foi definido
+					</TD>
+
+				</TR>
+
+				<!--LINHA 6-->
+
+				<TR class=even>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">J&aacute; teve tuberculose?</TD>
+
+					<input type = "hidden" name="selecionouTeveTuberculose" value = "falso">
+
+					<TD ALIGN="LEFT"><INPUT TYPE="RADIO" NAME="teveTuberculose" VALUE="Sim" onClick="selecionouTeveTuberculose.value = 'sim'; exibeLinhaOculta('tabelaAvaliacaoInicial', 7); exibeLinhaOculta('tabelaAvaliacaoInicial', 8); exibeLinhaOculta('tabelaAvaliacaoInicial', 9);">Sim<BR>
+
+									 <INPUT TYPE="RADIO" NAME="teveTuberculose" VALUE="Não" onClick="selecionouTeveTuberculose.value = 'nao'; ocultaLinha('tabelaAvaliacaoInicial', 7); ocultaLinha('tabelaAvaliacaoInicial', 8); ocultaLinha('tabelaAvaliacaoInicial', 9);">N&atilde;o</TD>
+
+				</TR>
+
+				<!--campo que surge com sim da linha 6-->
+
+				<!--LINHA 7-->
+
+				<TR class=even>
+
+					<TD></TD>
+
+					<TD ALIGN="LEFT">H&aacute; quantos anos?</TD>
+
+					<TD ALIGN="LEFT"><INPUT TYPE="TEXT" NAME="quantosAnos" SIZE=2 onBlur="if(this.disabled == false){ this.className = 'CSS_FOCUS_OUT'; validarCampoNumerico(quantosAnos); }" onFocus="this.className = 'CSS_FOCUS_IN';">
+					<INPUT type="checkbox" onchange="disableText(quantosAnos)">N&atilde;o foi definido
+					</TD>
+
+				</TR>
+
+				<!--campo que surge com sim da linha 6-->
+
+				<!--LINHA 8-->
+
+				<TR class=even>
+
+					<TD></TD>
+
+					<TD ALIGN="LEFT">Qual tratamento?</TD>
+
+					<input type = "hidden" name="selecionouTratamento" value = "falso">
+
+					<TD ALIGN="LEFT"><INPUT TYPE="RADIO" NAME="tratamento" VALUE="Rifampicina" onClick = "selecionouTratamento.value = 'verdadeiro'; outroTratamento.value = ''; outroTratamento.readOnly = true; outroTratamento.className = 'CSS_ENABLED_FALSE';">Rifampicina<BR>
+
+									 <INPUT TYPE="RADIO" NAME="tratamento" VALUE="Isoniazida" onClick = "selecionouTratamento.value = 'verdadeiro'; outroTratamento.value = ''; outroTratamento.readOnly = true; outroTratamento.className = 'CSS_ENABLED_FALSE';">Isoniazida<BR>
+
+								     <INPUT TYPE="RADIO" NAME="tratamento" VALUE="Pirazinamida" onClick = "selecionouTratamento.value = 'verdadeiro'; outroTratamento.value = ''; outroTratamento.readOnly = true; outroTratamento.className = 'CSS_ENABLED_FALSE';">Pirazinamida<BR>
+
+									 <INPUT TYPE="RADIO" NAME="tratamento" VALUE="Etambutol" onClick = "selecionouTratamento.value = 'verdadeiro'; outroTratamento.value = ''; outroTratamento.readOnly = true; outroTratamento.className = 'CSS_ENABLED_FALSE';">Etambutol<BR>
+
+									 <INPUT TYPE="RADIO" NAME="tratamento" VALUE="Etionamida" onClick = "selecionouTratamento.value = 'verdadeiro'; outroTratamento.value = ''; outroTratamento.readOnly = true; outroTratamento.className = 'CSS_ENABLED_FALSE';">Etionamida<BR>
+
+									 <INPUT TYPE="RADIO" NAME="tratamento" VALUE="Estreptomicina" onClick = "selecionouTratamento.value = 'verdadeiro'; outroTratamento.value = ''; outroTratamento.readOnly = true; outroTratamento.className = 'CSS_ENABLED_FALSE';">Estreptomicina<BR>
+
+									 <INPUT TYPE="RADIO" NAME="tratamento" VALUE="Ofloxacina" onClick = "selecionouTratamento.value = 'verdadeiro'; outroTratamento.value = ''; outroTratamento.readOnly = true; outroTratamento.className = 'CSS_ENABLED_FALSE';">Ofloxacina<BR>
+
+									 <INPUT TYPE="RADIO" NAME="tratamento" VALUE="Outro" onClick = "selecionouTratamento.value = 'outro'; outroTratamento.readOnly = false; outroTratamento.focus();">Outro
+
+									 <INPUT TYPE="TEXT" NAME="outroTratamento" SIZE=15
+
+															onfocus="if (outroTratamento.readOnly == false)
+
+																	 {
+
+																		this.className = 'CSS_FOCUS_IN';
+
+																	 }
+
+																	 else
+
+																	 {
+
+																		this.className = 'CSS_ENABLED_FALSE';
+
+																	 }
+																	 this.className = 'CSS_FOCUS_IN'"
+
+															onblur="if (outroTratamento.readOnly == false)
+
+																	 {
+
+																		this.className = 'CSS_FOCUS_OUT';
+
+																	 }
+
+																	 else
+
+																	 {
+
+																		this.className = 'CSS_ENABLED_FALSE';
+
+																	 }
+																	 validarCampoAlfabetico(this); this.className = 'CSS_FOCUS_OUT'"></TD>
+
+				</TR>
+
+				<!--campo que surge com sim da linha 6-->
+
+				<!--LINHA 9-->
+
+				<TR class=even>
+
+					<TD></TD>
+
+					<TD ALIGN="LEFT">Desfecho da TB</TD>
+
+					<input type = "hidden" name="selecionouDesfecho" value = "falso">
+
+					<TD ALIGN="LEFT"><INPUT TYPE="RADIO" NAME="desfecho" VALUE="Cura" onClick="selecionouDesfecho.value = 'verdadeiro';">Cura<BR>
+
+									 <INPUT TYPE="RADIO" NAME="desfecho" VALUE="Completou tratamento (sem realizacao de exame de escarro)" onClick="selecionouDesfecho.value = 'verdadeiro';">Completou tratamento (sem realiza&ccedil;&atilde;o de exame de escarro)<BR>
+
+									 <INPUT TYPE="RADIO" NAME="desfecho" VALUE="Falencia" onClick="selecionouDesfecho.value = 'verdadeiro';">Fal&ecirc;ncia<BR>
+
+									 <INPUT TYPE="RADIO" NAME="desfecho" VALUE="Abandono" onClick="selecionouDesfecho.value = 'verdadeiro';">Abandono<BR>
+
+									 <INPUT TYPE="RADIO" NAME="desfecho" VALUE="Não se aplica" onClick="selecionouDesfecho.value = 'verdadeiro';">N&atilde;o se aplica<BR>
+
+									 <INPUT TYPE="RADIO" NAME="desfecho" VALUE="Ignorado" onClick="selecionouDesfecho.value = 'verdadeiro';">Ignorado</TD>
+
+				</TR>
+
+				<!--LINHA 10-->
+
+				<TR class=odd>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Fatores de risco para TB MDR </TD>
+
+					<input type = "hidden" name="selecionouRiscoTbMdr" value = "falso">
+
+					<TD ALIGN="LEFT">
+
+						<INPUT TYPE="RADIO" NAME="riscoTbMdr" VALUE="Suspeita de recidiva" onClick="selecionouRiscoTbMdr.value = 'verdadeiro';">Suspeita de recidiva<BR>
+
+						<INPUT TYPE="RADIO" NAME="riscoTbMdr" VALUE="Suspeita de falencia" onClick="selecionouRiscoTbMdr.value = 'verdadeiro';">Suspeita de fal&ecirc;ncia<BR>
+
+						<INPUT TYPE="RADIO" NAME="riscoTbMdr" VALUE="Contato intimo de caso de TBP MDR" onClick="selecionouRiscoTbMdr.value = 'verdadeiro';">Contato intimo de caso de TBP MDR  (reside no mesmo domicilio, ou refere contato di&aacute;rio na comunidade pelo menos nos &uacute;ltimos tr&ecirc;s meses ou dividiu espa&ccedil;o f&iacute;sico na pris&atilde;o ou em hospital)<BR>
+						
+						<INPUT TYPE="RADIO" NAME="riscoTbMdr" VALUE="Sem risco" onClick="selecionouRiscoTbMdr.value = 'verdadeiro';">Sem risco<BR></TD>
+
+				</TR>
+
+				<!--LINHA 11-->
+
+				<TR class=even>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Cicatriz vacinal BCG? (avaliar delt&oacute;ide direito)</TD>
+
+					<input type = "hidden" name="selecionouCicatrizBcg" value = "falso">
+
+					<TD ALIGN="LEFT"><INPUT TYPE="RADIO" NAME="cicatrizBcg" VALUE="Não" onClick="selecionouCicatrizBcg.value = 'verdadeiro';">N&atilde;o<BR>
+
+									 <INPUT TYPE="RADIO" NAME="cicatrizBcg" VALUE="Sim, uma cicatriz" onClick="selecionouCicatrizBcg.value = 'verdadeiro';">Sim, uma cicatriz<BR>
+
+									 <INPUT TYPE="RADIO" NAME="cicatrizBcg" VALUE="Sim, duas cicatrizes" onClick="selecionouCicatrizBcg.value = 'verdadeiro';">Sim, duas cicatrizes<BR></TD>
+
+				</TR>
+
+				<!--LINHA 12-->
+
+				<TR class=odd> 
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Esteve internado nos ultimos dois anos? (excluir a presente interna&ccedil;&atilde;o)</TD>
+
+					<input type = "hidden" name="selecionouInternadoUltimoAnos" value = "falso">
+
+					<TD ALIGN="LEFT"><INPUT TYPE="RADIO" NAME="internadoUltimosAnos" VALUE="Sim" onClick="selecionouInternadoUltimoAnos.value = 'verdadeiro';">Sim<BR>
+
+									 <INPUT TYPE="RADIO" NAME="internadoUltimosAnos" VALUE="Não" onClick="selecionouInternadoUltimoAnos.value = 'verdadeiro';">N&atilde;o<BR></TD>
+
+				</TR>
+
+				<!--LINHA 13-->
+
+				<TR class=even>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Co-morbidades?</TD>
+
+					<input type = "hidden" name="selecionouComorbidades" value = "falso">
+
+					<TD ALIGN="LEFT"><INPUT TYPE="RADIO" NAME="comorbidades" VALUE="Sim" onClick="selecionouComorbidades.value = 'sim'; exibeLinhaOculta('tabelaAvaliacaoInicial', 14);">Sim<BR>
+
+									 <INPUT TYPE="RADIO" NAME="comorbidades" VALUE="Não" onClick="selecionouComorbidades.value = 'nao'; ocultaLinha('tabelaAvaliacaoInicial', 14);">N&atilde;o<BR>
+
+									 <INPUT TYPE="RADIO" NAME="comorbidades" VALUE="Ignorado" onClick="selecionouComorbidades.value = 'ignorado'; ocultaLinha('tabelaAvaliacaoInicial', 14);">Ignorado</TD>
+
+				</TR>
+
+				<!--campo que surge com sim da linha 13-->
+
+				<!--LINHA 14-->
+
+				<TR class=even>
+
+					<TD></TD>
+
+					<TD ALIGN="LEFT">Quais co-morbidades?</TD>
+
+					<input type = "hidden" name="selecionouQuaisComorbidades" value = "falso">
+
+					<TD ALIGN="LEFT"><INPUT TYPE="CHECKBOX" VALUE="Transplantes" NAME="transplantes" onClick = "nenhumaAlteracao.status = false; if (this.status == true){selecionouQuaisComorbidades.value = 'verdadeiro';}else{selecionouQuaisComorbidades.value = 'falso';} if (outras.status == true){selecionouQuaisComorbidades.value = 'outras';}">Transplantes<BR>
+
+						<INPUT TYPE="CHECKBOX" VALUE="Uso Corticoide/ Imunossupressor (não transplante)" NAME="imunossupressor" onClick = "nenhumaAlteracao.status = false; if (this.status == true){selecionouQuaisComorbidades.value = 'verdadeiro';}else{selecionouQuaisComorbidades.value = 'falso';} if (outras.status == true){selecionouQuaisComorbidades.value = 'outras';}">Uso Cortic&oacute;ide/ Imunossupressor (n&atilde;o transplante)<BR>
+
+						<INPUT TYPE="CHECKBOX" VALUE="Diabetes" NAME="diabetes" onClick = "nenhumaAlteracao.status = false; if (this.status == true){selecionouQuaisComorbidades.value = 'verdadeiro';}else{selecionouQuaisComorbidades.value = 'falso';} if (outras.status == true){selecionouQuaisComorbidades.value = 'outras';}">Diabetes<BR>
+
+						<INPUT TYPE="CHECKBOX" VALUE="Sarcoidose" NAME="sarcoidose" onClick = "nenhumaAlteracao.status = false; if (this.status == true){selecionouQuaisComorbidades.value = 'verdadeiro';}else{selecionouQuaisComorbidades.value = 'falso';} if (outras.status == true){selecionouQuaisComorbidades.value = 'outras';}">Sarcoidose<BR>
+
+						<INPUT TYPE="CHECKBOX" VALUE="Silicose (ou outra pneumoconiose)" NAME="silicose" onClick = "nenhumaAlteracao.status = false; if (this.status == true){selecionouQuaisComorbidades.value = 'verdadeiro';}else{selecionouQuaisComorbidades.value = 'falso';} if (outras.status == true){selecionouQuaisComorbidades.value = 'outras';}">Silicose (ou outra pneumoconiose)<BR>
+
+						<INPUT TYPE="CHECKBOX" VALUE="Gastrectomia/Ulcera Peptica" NAME="ulcera" onClick = "nenhumaAlteracao.status = false; if (this.status == true){selecionouQuaisComorbidades.value = 'verdadeiro';}else{selecionouQuaisComorbidades.value = 'falso';} if (outras.status == true){selecionouQuaisComorbidades.value = 'outras';}">Gastrectomia/Úlcera P&eacute;ptica<BR>
+
+						<INPUT TYPE="CHECKBOX" VALUE="RCU" NAME="rcu" onClick = "nenhumaAlteracao.status = false; if (this.status == true){selecionouQuaisComorbidades.value = 'verdadeiro';}else{selecionouQuaisComorbidades.value = 'falso';} if (outras.status == true){selecionouQuaisComorbidades.value = 'outras';}">RCU<BR>
+
+						<INPUT TYPE="CHECKBOX" VALUE="Doenca Hepatica Cronica" NAME="doencaHepaticaCronica" onClick = "nenhumaAlteracao.status = false; if (this.status == true){selecionouQuaisComorbidades.value = 'verdadeiro';}else{selecionouQuaisComorbidades.value = 'falso';} if (outras.status == true){selecionouQuaisComorbidades.value = 'outras';}">Doen&ccedil;a Hep&aacute;tica Cr&ocirc;nica<BR>
+
+						<INPUT TYPE="CHECKBOX" VALUE="Insuficiencia Renal Cronica" NAME="insuficienciaRenalCronica" onClick = "nenhumaAlteracao.status = false; if (this.status == true){selecionouQuaisComorbidades.value = 'verdadeiro';}else{selecionouQuaisComorbidades.value = 'falso';} if (outras.status == true){selecionouQuaisComorbidades.value = 'outras';}">Insufici&ecirc;ncia Renal Cr&ocirc;nica<BR> 
+
+						<INPUT TYPE="CHECKBOX" VALUE="Cancer/ Leucemia/Linfoma" NAME="cancer" onClick = "nenhumaAlteracao.status = false; if (this.status == true){selecionouQuaisComorbidades.value = 'verdadeiro';}else{selecionouQuaisComorbidades.value = 'falso';} if (outras.status == true){selecionouQuaisComorbidades.value = 'outras';}">C&acirc;ncer/ Leucemia/Linfoma<BR> 
+
+						<INPUT TYPE="CHECKBOX" VALUE="Infeccao pelo HIV/Aids" NAME="infeccaoHiv" onClick = "nenhumaAlteracao.status = false; if (this.status == true){selecionouQuaisComorbidades.value = 'verdadeiro';}else{selecionouQuaisComorbidades.value = 'falso';} if (outras.status == true){selecionouQuaisComorbidades.value = 'outras';}">Infec&ccedil;&atilde;o pelo HIV/Aids<BR>
+
+						<INPUT TYPE="CHECKBOX" VALUE="DPOC" NAME="dpoc" onClick = "nenhumaAlteracao.status = false; if (this.status == true){selecionouQuaisComorbidades.value = 'verdadeiro';}else{selecionouQuaisComorbidades.value = 'falso';}">DPOC<BR>
+
+						<INPUT TYPE="CHECKBOX" VALUE="Asma bronquica" NAME="asmaBronquica" onClick = "nenhumaAlteracao.status = false; if (this.status == true){selecionouQuaisComorbidades.value = 'verdadeiro';}else{selecionouQuaisComorbidades.value = 'falso';} if (outras.status == true){selecionouQuaisComorbidades.value = 'outras';}">Asma br&ocirc;nquica<BR>
+
+						<INPUT NAME="outras" TYPE="CHECKBOX" VALUE="Outras">
+				    Outras
+<!-- onClick"nenhumaAlteracao.status = false; if (outras.status == true){quaisComorbidadesOutras.readOnly = false; quaisComorbidadesOutras.focus(); selecionouQuaisComorbidades.value = 'outras'; quaisComorbidadesOutras.className = 'CSS_ENABLED_TRUE';}else{quaisComorbidadesOutras.value = ''; quaisComorbidadesOutras.readOnly = true; quaisComorbidadesOutras.focus(); selecionouQuaisComorbidades.value = 'falso'; quaisComorbidadesOutras.className = 'CSS_ENABLED_FALSE';}" VALUE="Outras">                   -->
+<INPUT TYPE="TEXT" NAME="quaisComorbidadesOutras" SIZE=10
+
+													onfocus= "if (quaisComorbidadesOutras.readOnly == false)
+
+															 {
+
+																this.className = 'CSS_FOCUS_IN';
+
+															 }
+
+															 else
+
+															 {
+
+																this.className = 'CSS_ENABLED_FALSE';
+
+															 }
+															 this.className = 'CSS_FOCUS_IN';"
+
+													onblur= "if (quaisComorbidadesOutras.readOnly == false)
+
+															 {
+
+																this.className = 'CSS_FOCUS_OUT';
+
+															 }
+
+															 else
+
+															 {
+
+																this.className = 'CSS_ENABLED_FALSE';
+
+															 }
+															 validarCampoAlfabetico(this); this.className = 'CSS_FOCUS_OUT';"><BR>
+
+						<INPUT TYPE="CHECKBOX" NAME="nenhumaAlteracao" VALUE="Nenhuma Alteracao" onClick="if (nenhumaAlteracao.status == true){selecionouQuaisComorbidades.value = 'verdadeiro'; transplantes.status = false; imunossupressor.status = false; diabetes.status = false; sarcoidose.status = false; silicose.status = false; ulcera.status = false; rcu.status = false; doencaHepaticaCronica.status = false; insuficienciaRenalCronica.status = false; cancer.status = false; infeccaoHiv.status = false; dpoc.status = false; asmaBronquica.status = false; outras.status = false; quaisComorbidadesOutras.value = ''; quaisComorbidadesOutras.readOnly = true; quaisComorbidadesOutras.focus(); quaisComorbidadesOutras.value = '';}else{selecionouQuaisComorbidades.value = 'falso';}">Nenhuma Altera&ccedil;&atilde;o</TD>
+
+				</TR>
+
+				<!--LINHA 15-->
+
+				<TR class=odd>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Sinais e Sintomas?</TD>
+
+					<input type="hidden" name="selecionouSinaisSintomas" value="falso">
+
+					<TD ALIGN="LEFT"><INPUT TYPE="RADIO" NAME="sinaisSintomas" VALUE="Sim" onClick="exibeLinhaOculta('tabelaAvaliacaoInicial', 16); selecionouSinaisSintomas.value = 'sim';">Sim<BR>
+
+									 <INPUT TYPE="RADIO" NAME="sinaisSintomas" VALUE="Não" onClick="ocultaLinha('tabelaAvaliacaoInicial', 16); selecionouSinaisSintomas.value = 'nao';">N&atilde;o<BR>
+
+									 <INPUT TYPE="RADIO" NAME="sinaisSintomas" VALUE="Ignorado" onClick="ocultaLinha('tabelaAvaliacaoInicial', 16); selecionouSinaisSintomas.value = 'ignorado';">Ignorado</TD>
+
+				</TR>
+
+				<!--campo que surge com sim da linha 15-->
+
+				<!--LINHA 16-->
+
+				<TR class=odd>
+
+					<TD></TD>
+
+					<TD ALIGN="LEFT">Quais sinais e sintomas?</TD>
+
+					<input type="hidden" name="selecionouQuaisSinaisSintomas" value="falso">
+
+					<TD ALIGN="LEFT">
+
+							<INPUT TYPE="CHECKBOX" VALUE="Tosse por > 2 Semanas" NAME="tosse" onClick = "assintomatico.status = false; if (this.status == true){selecionouQuaisSinaisSintomas.value = 'verdadeiro';}else{selecionouQuaisSinaisSintomas.value = 'falso';} if (outros.status == true){selecionouQuaisSinaisSintomas.value = 'outros';}">Tosse por > 2 Semanas<BR>
+
+							<INPUT TYPE="CHECKBOX" VALUE="Expectoracao por > 2 Semanas" NAME="expectoracao" onClick = "assintomatico.status = false; if (this.status == true){selecionouQuaisSinaisSintomas.value = 'verdadeiro';}else{selecionouQuaisSinaisSintomas.value = 'falso';} if (outros.status == true){selecionouQuaisSinaisSintomas.value = 'outros';}">Expectora&ccedil;&atilde;o por > 2 Semanas<BR>
+
+							<INPUT TYPE="CHECKBOX" VALUE="Hemoptise" NAME="hemoptise" onClick = "assintomatico.status = false; if (this.status == true){selecionouQuaisSinaisSintomas.value = 'verdadeiro';}else{selecionouQuaisSinaisSintomas.value = 'falso';} if (outros.status == true){selecionouQuaisSinaisSintomas.value = 'outros';}">Hemoptise<BR>
+
+							<INPUT TYPE="CHECKBOX" VALUE="Escarro Hemoptoico" NAME="escarro" onClick = "assintomatico.status = false; if (this.status == true){selecionouQuaisSinaisSintomas.value = 'verdadeiro';}else{selecionouQuaisSinaisSintomas.value = 'falso';} if (outros.status == true){selecionouQuaisSinaisSintomas.value = 'outros';}">Escarro Hemopt&oacute;ico<BR>
+
+							<INPUT TYPE="CHECKBOX" VALUE="Dor Toracica" NAME="dor" onClick = "assintomatico.status = false; if (this.status == true){selecionouQuaisSinaisSintomas.value = 'verdadeiro';}else{selecionouQuaisSinaisSintomas.value = 'falso';} if (outros.status == true){selecionouQuaisSinaisSintomas.value = 'outros';}">Dor Tor&aacute;cica<BR>
+
+							<INPUT TYPE="CHECKBOX" VALUE="Febre" NAME="febre" onClick = "assintomatico.status = false; if (this.status == true){selecionouQuaisSinaisSintomas.value = 'verdadeiro';}else{selecionouQuaisSinaisSintomas.value = 'falso';} if (outros.status == true){selecionouQuaisSinaisSintomas.value = 'outros';}">Febre<BR>
+
+							<INPUT TYPE="CHECKBOX" VALUE="Sudorese Noturna" NAME="sudorese" onClick = "assintomatico.status = false; if (this.status == true){selecionouQuaisSinaisSintomas.value = 'verdadeiro';}else{selecionouQuaisSinaisSintomas.value = 'falso';} if (outros.status == true){selecionouQuaisSinaisSintomas.value = 'outros';}">Sudorese Noturna<BR>
+
+							<INPUT TYPE="CHECKBOX" VALUE="Hiporexia" NAME="hiporexia" onClick = "assintomatico.status = false; if (this.status == true){selecionouQuaisSinaisSintomas.value = 'verdadeiro';}else{selecionouQuaisSinaisSintomas.value = 'falso';} if (outros.status == true){selecionouQuaisSinaisSintomas.value = 'outros';}">Hiporexia<BR>
+
+							<INPUT TYPE="CHECKBOX" VALUE="Emagrecimento" NAME="emagrecimento" onClick = "assintomatico.status = false; if (this.status == true){selecionouQuaisSinaisSintomas.value = 'verdadeiro';}else{selecionouQuaisSinaisSintomas.value = 'falso';} if (outros.status == true){selecionouQuaisSinaisSintomas.value = 'outros';}">Emagrecimento<BR>
+
+							<INPUT TYPE="CHECKBOX" VALUE="Cansaco (Astenia)" NAME="cansaco" onClick = "assintomatico.status = false; if (this.status == true){selecionouQuaisSinaisSintomas.value = 'verdadeiro';}else{selecionouQuaisSinaisSintomas.value = 'falso';} if (outros.status == true){selecionouQuaisSinaisSintomas.value = 'outros';}">Cansa&ccedil;o (Astenia)<BR>
+
+							<INPUT TYPE="CHECKBOX" VALUE="Rouquidao" NAME="rouquidao" onClick = "assintomatico.status = false; if (this.status == true){selecionouQuaisSinaisSintomas.value = 'verdadeiro';}else{selecionouQuaisSinaisSintomas.value = 'falso';} if (outros.status == true){selecionouQuaisSinaisSintomas.value = 'outros';}">Rouquid&atilde;o<BR>
+
+							<INPUT TYPE="CHECKBOX" VALUE="Linfadenomegalia" NAME="linfadenomegalia" onClick = "assintomatico.status = false; if (this.status == true){selecionouQuaisSinaisSintomas.value = 'verdadeiro';}else{selecionouQuaisSinaisSintomas.value = 'falso';} if (outros.status == true){selecionouQuaisSinaisSintomas.value = 'outros';}">Linfadenomegalia<BR>
+
+							<INPUT TYPE="CHECKBOX" VALUE="Falta de ar (Dispneia)" NAME="faltaAr" onClick = "assintomatico.status = false; if (this.status == true){selecionouQuaisSinaisSintomas.value = 'verdadeiro';}else{selecionouQuaisSinaisSintomas.value = 'falso';} if (outros.status == true){selecionouQuaisSinaisSintomas.value = 'outros';}">Falta de ar (Dispn&eacute;ia) <BR>
+
+							<INPUT TYPE="CHECKBOX" VALUE="Perda de peso (> 10%)" NAME="faltaPeso" onClick = "assintomatico.status = false; if (this.status == true){selecionouQuaisSinaisSintomas.value = 'verdadeiro';}else{selecionouQuaisSinaisSintomas.value = 'falso';} if (outros.status == true){selecionouQuaisSinaisSintomas.value = 'outros';}">Perda de peso (> 10%)<BR>	
+
+							<INPUT TYPE="CHECKBOX" VALUE="Chiado no peito" NAME="chiado" onClick = "assintomatico.status = false; if (this.status == true){selecionouQuaisSinaisSintomas.value = 'verdadeiro';}else{selecionouQuaisSinaisSintomas.value = 'falso';} if (outros.status == true){selecionouQuaisSinaisSintomas.value = 'outros';}">Chiado no peito	<br>						
+
+							<INPUT TYPE="CHECKBOX" VALUE="Outros" NAME="outros" onClick = "assintomatico.status = false; outrosSintomas.readOnly = false; outrosSintomas.focus(); selecionouQuaisSinaisSintomas.value = 'outros';  outrosSintomas.className='CSS_ENABLED_TRUE'; if( outros.checked == false ){ outrosSintomas.value = ''; outrosSintomas.readOnly = true; outrosSintomas.focus(); selecionouQuaisSinaisSintomas.value = 'falso'; outrosSintomas.className='CSS_ENABLED_FALSE';}">Outros
+
+							<INPUT TYPE="TEXT" NAME="outrosSintomas" SIZE=10
+
+														onfocus="if (this.readOnly == false)
+
+																 {
+
+																	this.className = 'CSS_FOCUS_IN';
+
+																 }
+
+																 else
+
+																 {
+
+																	this.className = 'CSS_ENABLED_FALSE';
+
+																 }
+																 this.className = 'CSS_FOCUS_IN';"
+
+														onblur ="if (this.readOnly == false)
+
+																 {
+
+																	this.className = 'CSS_FOCUS_OUT';
+
+																 }
+
+																 else
+
+																 {
+
+																	this.className = 'CSS_ENABLED_FALSE';
+
+																 }
+																 validarCampoAlfabetico(this); this.className = 'CSS_FOCUS_OUT';"><BR>
+
+							<INPUT TYPE="CHECKBOX" VALUE="Assintomatico" NAME="assintomatico" onClick = "if (this.status == true){selecionouQuaisSinaisSintomas.value = 'verdadeiro';tosse.status = false; expectoracao.status = false; hemoptise.status = false; escarro.status = false; dor.status = false; febre.status = false; sudorese.status = false; hiporexia.status = false; emagrecimento.status = false; cansaco.status = false; rouquidao.status = false; linfadenomegalia.status = false; faltaAr.status = false; faltaPeso.status = false; chiado.status = false; outros.status = false; outrosSintomas.readOnly = true; outrosSintomas.value =''; outrosSintomas.focus();}else{selecionouQuaisSinaisSintomas.value = 'falso';}">Assintom&aacute;tico<BR>							
+
+					</TD>
+
+				</TR>				
+
+				<!--LINHA 17-->
+
+				<TR class=even>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Exame f&iacute;sico (afora derrame pleural)</TD>
+
+					<input type="hidden" name="selecionouExameFisico" value="falso">
+
+					<TD ALIGN="LEFT">
+
+						<INPUT TYPE="RADIO" NAME="exameFisico" VALUE="Normal" onClick="selecionouExameFisico.value='normal'; ocultaLinha('tabelaAvaliacaoInicial', 18);">Normal<BR>
+
+						<INPUT TYPE="RADIO" NAME="exameFisico" VALUE="Alterado" onClick="exibeLinhaOculta('tabelaAvaliacaoInicial', 18); selecionouExameFisico.value = 'alterado';">Alterado<BR>
+
+						<INPUT TYPE="RADIO" NAME="exameFisico" VALUE="Ignorado" onClick="ocultaLinha('tabelaAvaliacaoInicial', 18); selecionouExameFisico.value = 'ignorado';">Ignorado</TD>
+
+				</TR>
+
+				<!--campo que surge com sim da linha 17-->
+
+				<!--LINHA 18-->
+
+				<TR class=even>
+
+					<TD></TD>
+
+					<TD ALIGN="LEFT">Altera&ccedil;&otilde;es ao exame f&iacute;sico</TD>
+
+					<TD><TEXTAREA NAME="alteracoesExameFisico" COLS=50 ROWS=6 MAXLENGTH=500 onFocus="this.className = 'CSS_FOCUS_IN'" onBlur="if(this.disabled == false){ validarCampoAlfabetico(this); this.className = 'CSS_FOCUS_OUT';}"></TEXTAREA>
+					<INPUT type="checkbox" onchange="disableText(alteracoesExameFisico)">N&atilde;o foi definido
+					</TD>
+
+				</TR>
+
+				<!--LINHA 19-->
+
+				<TR class=odd>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Resultado do Anti-HIV</TD>
+
+					<input type="hidden" name="selecionouResultadoAntiHiv" value="falso">
+
+					<TD ALIGN="LEFT">
+
+						<INPUT TYPE="RADIO" NAME="resultadoAntiHiv" VALUE="Positivo" onClick="selecionouResultadoAntiHiv.value = 'verdadeiro';">Positivo<BR>
+
+						<INPUT TYPE="RADIO" NAME="resultadoAntiHiv" VALUE="Negativo" onClick="selecionouResultadoAntiHiv.value = 'verdadeiro';">Negativo<BR>
+
+						<INPUT TYPE="RADIO" NAME="resultadoAntiHiv" VALUE="Ignorado" onClick="selecionouResultadoAntiHiv.value = 'verdadeiro';">Ignorado</TD>
+
+				</TR>
+
+				<!--LINHA 20-->
+
+				<TR class=even>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Probabilidade de tuberculose pleural sem a avalia&ccedil;&atilde;o complementar </TD>
+
+					<input type="hidden" name="selecionouProbabilidadeSemAvaliacao" value="falso">
+
+					<TD ALIGN="LEFT">
+
+						<INPUT TYPE="RADIO" NAME="probabilidadeSemAvaliacao" VALUE="Alta" onClick="selecionouProbabilidadeSemAvaliacao.value = 'verdadeiro';">Alta<BR>
+
+						<INPUT TYPE="RADIO" NAME="probabilidadeSemAvaliacao" VALUE="Media" onClick="selecionouProbabilidadeSemAvaliacao.value = 'verdadeiro';">M&eacute;dia<BR>
+
+						<INPUT TYPE="RADIO" NAME="probabilidadeSemAvaliacao" VALUE="Baixa" onClick="selecionouProbabilidadeSemAvaliacao.value = 'verdadeiro';">Baixa<BR>
+
+						<INPUT TYPE="RADIO" NAME="probabilidadeSemAvaliacao" VALUE="Ignorado" onClick="selecionouProbabilidadeSemAvaliacao.value = 'verdadeiro';">Ignorado<BR>
+
+						<INPUT TYPE="RADIO" NAME="probabilidadeSemAvaliacao" VALUE="Não se aplica" onClick="selecionouProbabilidadeSemAvaliacao.value = 'verdadeiro';">N&atilde;o se aplica<BR></TD>
+
+				</TR>
+
+				<!--LINHA 21-->
+
+				<TR class=odd>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Observa&ccedil;&otilde;es</TD>
+
+					<TD><TEXTAREA NAME="observacoes" COLS=50 ROWS=6 MAXLENGTH=500 ></TEXTAREA>
+						<INPUT type="checkbox" onclick="disableText(observacoes)">N&atilde;o foi definido
+					</TD>
+
+				</TR>
+
+			</TABLE>
+
+			<!--<CENTER>
+
+			<BR>
+
+			<INPUT TYPE="submit" NAME="btn_salvarAvaliacao" VALUE="Salvar">
+
+			</CENTER>-->
+
+		<!--</FORM>-->
+
+
+
+		<!--<FORM NAME = "frm_avaliacaoComplementar" METHOD = "post" ACTION = "informacoesGerais.html">-->
+
+			<TABLE BORDER="0" WIDTH="90%" ALIGN="CENTER" CELLSPACING="0" id="tabelaAvaliacaoComplementar">
+
+				<BR><BR><BR><H3><CENTER>3. Avalia&ccedil;&atilde;o Complementar</CENTER></H3>
+
+					<TH width="5%"></TH>
+
+					<TH width="45%"></TH>
+
+					<TH width="50%"></TH>
+
+				<!--LINHA 1-->
+
+				<TR class=even>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Telerradiografia de t&oacute;rax (PA e perfil) - Laudo:</TD>
+
+					<input type="hidden" name="selecionouTelerradiografia" value="falso">
+
+					<TD ALIGN="LEFT">
+
+						<INPUT TYPE="RADIO" NAME="telerradiografia" VALUE="Normal" onClick="selecionouTelerradiografia.value = 'verdadeiro'; exibeLinhaOculta('tabelaAvaliacaoComplementar', 2); exibeLinhaOculta('tabelaAvaliacaoComplementar', 3); ocultaLinha('tabelaAvaliacaoComplementar', 4);">Normal<BR>
+
+						<INPUT TYPE="RADIO" NAME="telerradiografia" VALUE="Tuberculose ativa" onClick="selecionouTelerradiografia.value = 'verdadeiro'; exibeLinhaOculta('tabelaAvaliacaoComplementar', 2); exibeLinhaOculta('tabelaAvaliacaoComplementar', 3); exibeLinhaOculta('tabelaAvaliacaoComplementar', 4);">Tuberculose ativa<BR>
+
+						<INPUT TYPE="RADIO" NAME="telerradiografia" VALUE="Tuberculose Inativa/Sequela" onClick="selecionouTelerradiografia.value = 'verdadeiro'; exibeLinhaOculta('tabelaAvaliacaoComplementar', 2); exibeLinhaOculta('tabelaAvaliacaoComplementar', 3); exibeLinhaOculta('tabelaAvaliacaoComplementar', 4);">Tuberculose Inativa/Seq&uuml;ela <BR>
+
+						<INPUT TYPE="RADIO" NAME="telerradiografia" VALUE="Outra(s) Doenca(s)" onClick="selecionouTelerradiografia.value = 'verdadeiro'; exibeLinhaOculta('tabelaAvaliacaoComplementar', 2); exibeLinhaOculta('tabelaAvaliacaoComplementar', 3); exibeLinhaOculta('tabelaAvaliacaoComplementar', 4);">Outra(s) Doen&ccedil;a(s)<BR>
+
+						<INPUT TYPE="RADIO" NAME="telerradiografia" VALUE="Não Realizada" onClick="selecionouTelerradiografia.value = ''; ocultaLinha('tabelaAvaliacaoComplementar', 2); ocultaLinha('tabelaAvaliacaoComplementar', 3); ocultaLinha('tabelaAvaliacaoComplementar', 4);">N&atilde;o Realizada</TD>
+
+				</TR>
+
+				<!--campo que surge com sim da linha 1-->
+
+				<!--LINHA 2-->
+
+				<TR class=even>
+
+					<TD></TD>
+
+					<TD ALIGN="LEFT">Data do exame</TD>
+
+					<TD ALIGN="LEFT">
+
+					<INPUT TYPE="TEXT" NAME="txt_diaExame" SIZE =1 MAXLENGTH=2
+
+						onKeyUp="if(txt_diaExame.value.length < 2)
+											validarCampoNumerico(this);
+								else
+
+									if (validarDia(txt_diaExame))
+
+									{
+
+											if (txt_mesExame.value == '')
+
+												txt_mesExame.focus();
+
+											else
+
+												txt_anoExame.focus();
+
+									}"
+
+						onfocus="this.className = 'CSS_FOCUS_IN';"
+
+						onblur ="this.className = 'CSS_FOCUS_OUT';">
+
+						/<INPUT TYPE="TEXT" NAME="txt_mesExame" SIZE =1 MAXLENGTH=2 
+
+						onKeyUp="if(txt_mesExame.value.length < 2)
+										validarCampoNumerico(this);
+								else
+
+									{
+
+									if (validarMes(txt_mesExame))
+
+										if (txt_diaExame.value == '')
+
+											txt_diaExame.focus();
+
+										else
+
+											txt_anoExame.focus();
+
+									}"
+
+						onfocus="this.className = 'CSS_FOCUS_IN';"
+
+						onblur ="this.className = 'CSS_FOCUS_OUT';">
+
+						/<INPUT TYPE="TEXT" NAME="txt_anoExame" SIZE =3 MAXLENGTH=4
+
+						onKeyUp="if(txt_anoExame.value.length < 4)
+											validarCampoNumerico(this);
+								else
+
+									if (validarAno(txt_anoExame))
+
+										if (validarDataExame(document.frm_avaliacaoComplementar))
+
+											txt_anoExame.blur();"
+
+						onfocus="this.className = 'CSS_FOCUS_IN';"
+
+						onblur ="this.className = 'CSS_FOCUS_OUT';">
+
+						<I>(dd/mm/aaaa)</I></TD>
+
+				</TR>
+
+				<!--campo que surge com sim da linha 1-->
+
+				<!--LINHA 3-->
+
+				<TR class=even>
+					<TD></TD>
+
+					<TD ALIGN="LEFT">Identifica&ccedil;&atilde;o da &aacute;rea acometida</TD>
+					<TD>
+					<TABLE border = 0>
+					<TR>
+					<input type="hidden" name="selecionouAreaAcometida" value="falso">
+					</TR>
+					<TR>
+					<TD ALIGN="LEFT"> 
+						<INPUT TYPE="checkbox" NAME="superior" VALUE="Superior (Sup.)" onClick="if(this.checked == true){ selecionouAreaAcometida.value = 'verdadeiro'; superiorEsquerdo.value = 'Esquerdo'; superiorDireito.value = 'Direito'; superiorEsquerdo.checked=true;superiorDireito.checked=true;}else{ if(medio.checked==false&&inferior.check==false){ selecionouAreaAcometida.value='false';}  superior.value = ''; superiorEsquerdo.value = ''; superiorDireito.value = ''; superiorEsquerdo.checked=false; superiorDireito.checked=false;  }">Superior (Sup.)					
+					</TD>
+					<!-- tentar esconder esses campos -->
+					<TD ALIGN="LEFT"> 
+						<INPUT TYPE="checkbox" NAME="superiorEsquerdo" VALUE="Esquerdo" onClick="if(this.checked == true){ superior.checked = true; superior.value = 'Superior (Sup.)'; selecionouAreaAcometida.value= 'verdadeiro';}else { superiorEsquerdo.value = ''; }">Esquerdo(Sup.)
+					</TD>
+					<TD ALIGN="LEFT"> 
+						<INPUT TYPE="checkbox" NAME="superiorDireito" VALUE="Direito" onClick="if(this.checked == true){ superior.checked = true; superior.value = 'Superior (Sup.)'; selecionouAreaAcometida.value= 'verdadeiro';}else { superiorDireito.value = ''; }">Direito(Sup.)
+					</TD>
+					<!-- tentar esconder esses campos -->
+					</TR>
+					<TR>
+					<TD ALIGN="LEFT"> 
+						<INPUT TYPE="checkbox" NAME="medio" VALUE="Medio (Med.)" onClick="if(this.checked == true){ selecionouAreaAcometida.value = 'verdadeiro'; medioEsquerdo.value = 'Esquerdo'; medioDireito.value = 'Direito'; ;medioEsquerdo.checked=true; medioDireito.checked=true;}else{ if(superior.checked==false&&inferior.check==false){ selecionouAreaAcometida.value='false';}  medio.value = ''; medioEsquerdo.value = ''; medioDireito.value = ''; medioEsquerdo.checked=false; medioDireito.checked=false;  }">M&eacute;dio (M&eacute;d.)
+					</TD>
+					<!-- tentar esconder esses campos -->
+					<TD ALIGN="LEFT"> 
+						<INPUT TYPE="checkbox" NAME="medioEsquerdo" VALUE="Esquerdo" onClick="if(this.checked == true){ medio.checked = true; medio.value = 'verdadeiro'; medioEsquerdo.value = 'verdadeiro'; selecionouAreaAcometida.value = 'verdadeiro';}else { medioEsquerdo.value = ''; }">Esquerdo(Sup.)
+					</TD>
+					<TD ALIGN="LEFT"> 
+						<INPUT TYPE="checkbox" NAME="medioDireito" VALUE="Direito" onClick="if(this.checked == true){ medio.checked = true; medio.value = 'verdadeiro'; medioDireito.value = 'verdadeiro'; selecionouAreaAcometida.value = 'verdadeiro';}else { medioDireito.value = ''; }">Direito(Sup.)
+					</TD>
+					</TR>
+					<TR>
+					<TD ALIGN="LEFT"> 
+						<INPUT TYPE="checkbox" NAME="inferior" VALUE="Inferior (Inf.)" onClick="if(this.checked == true){ selecionouAreaAcometida.value = 'verdadeiro'; inferiorEsquerdo.value = 'Esquerdo'; inferiorDireito.value = 'Direito'; inferiorEsquerdo.checked=true;inferiorDireito.checked=true;}else{ if(medio.checked==false&&superior.check==false){ selecionouAreaAcometida.value='false';}  inferior.value = ''; inferiorEsquerdo.value = ''; inferiorDireito.value = ''; inferiorEsquerdo.checked=false; inferiorDireito.checked=false;  }">Inferior (Inf.)
+					</TD>
+					<!-- tentar esconder esses campos -->
+					<TD ALIGN="LEFT"> 
+						<INPUT TYPE="checkbox" NAME="inferiorEsquerdo" VALUE="Esquerdo" onClick="if(this.checked == true){ inferior.checked = true; inferior.value = 'verdadeiro'; inferiorDireito.value = 'verdadeiro'; selecionouAreaAcometida.value = 'verdadeiro';}else { inferiorEsquerdo.value = ''; }">Esquerdo(Sup.)
+					</TD>
+					<TD ALIGN="LEFT"> 
+						<INPUT TYPE="checkbox" NAME="inferiorDireito" VALUE="Direito" onClick="if(this.checked == true){ inferior.checked = true; inferior.value = 'verdadeiro'; inferiorDireito.value = 'verdadeiro'; selecionouAreaAcometida.value = 'verdadeiro';}else { inferiorDireito.value = ''; }">Direito(Sup.)
+					</TD>
+					</TR>
+					</TABLE>
+					</TD>
+				</TR>
+				
+				<!--LINHA 4-->
+				
+				<TR class=even>
+					<TD></TD>
+					<TD></TD>
+						<TD ALIGN="center">
+						<IMG SRC="local.gif"></CENTER><BR>
+						</TD>
+				</TR>
+
+				<!--LINHA 5-->
+
+				<TR class=odd>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Volume do derrame pleural</TD>
+
+					<input type="hidden" name="selecionouVolumeDerramePleural" value="falso">
+
+					<TD ALIGN="LEFT"> 
+
+						<INPUT TYPE="RADIO" NAME="volumeDerramePleural" VALUE="Pequeno" onClick="selecionouVolumeDerramePleural.value = 'verdadeiro';">Pequeno<BR>
+
+						<INPUT TYPE="RADIO" NAME="volumeDerramePleural" VALUE="Medio" onClick="selecionouVolumeDerramePleural.value = 'verdadeiro';">M&eacute;dio<BR>
+
+						<INPUT TYPE="RADIO" NAME="volumeDerramePleural" VALUE="Volumoso" onClick="selecionouVolumeDerramePleural.value = 'verdadeiro';">Volumoso<BR></TD>
+
+				</TR>
+
+				<!--LINHA 6-->
+
+				<TR class=even>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Derrame pleural livre?</TD>
+
+					<input type="hidden" name="selecionouDerramePleuralLivre" value="falso">
+
+					<TD ALIGN="LEFT"> 
+
+						<INPUT TYPE="RADIO" NAME="derramePleuralLivre" VALUE="Livre" onClick="selecionouDerramePleuralLivre.value = 'verdadeiro';">Livre<BR>
+
+						<INPUT TYPE="RADIO" NAME="derramePleuralLivre" VALUE="Encistado" onClick="selecionouDerramePleuralLivre.value = 'verdadeiro';">Encistado<BR></TD>
+
+				</TR>
+
+				<!--LINHA 7-->
+
+				<TR class=odd>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Associa&ccedil;&atilde;o com altera&ccedil;&otilde;es pulmonares?</TD>
+
+					<input type="hidden" name="selecionouAlteracoesPulmonares" value="falso">
+
+					<TD ALIGN="LEFT"> 
+
+						<INPUT TYPE="RADIO" NAME="associacaoAlteracoesPulmonares" VALUE="Sim" onClick="selecionouAlteracoesPulmonares.value = 'sim'; exibeLinhaOculta('tabelaAvaliacaoComplementar', 8);">Sim<BR>
+
+						<INPUT TYPE="RADIO" NAME="associacaoAlteracoesPulmonares" VALUE="Não" onClick="selecionouAlteracoesPulmonares.value = 'nao'; ocultaLinha('tabelaAvaliacaoComplementar', 8);">N&atilde;o<BR>
+
+						<INPUT TYPE="RADIO" NAME="associacaoAlteracoesPulmonares" VALUE="Ignorado" onClick="selecionouAlteracoesPulmonares.value = 'ignorado'; ocultaLinha('tabelaAvaliacaoComplementar', 8);">Ignorado<BR></TD>
+
+				</TR>
+
+				<!--campo que surge com sim da linha 7-->
+
+				<!--LINHA 8-->
+
+				<TR class=odd>
+
+					<TD></TD>
+
+					<TD ALIGN="LEFT">Qual associa&ccedil;&atilde;o com altera&ccedil;&otilde;es pulmonares</TD>
+
+					<input type="hidden" name="selecionouQualAssociacao" value="falso">
+
+					<TD ALIGN="LEFT"> 
+
+						<INPUT TYPE="RADIO" NAME="qualAssociacao" VALUE="Cavitacao" onClick="selecionouQualAssociacao.value = 'verdadeiro';">Cavita&ccedil;&atilde;o<BR>
+
+						<INPUT TYPE="RADIO" NAME="qualAssociacao" VALUE="Padrao tipico (infiltrado em lobo(s) superior(es) e/ou segmento apical de lobo inferior)" onClick="selecionouQualAssociacao.value = 'verdadeiro';">Padr&atilde;o t&iacute;pico (infiltrado em lobo(s) superior(es) e/ou segmento apical de lobo inferior)  <BR>
+
+						<INPUT TYPE="RADIO" NAME="qualAssociacao" VALUE="Compativel (alargamento mediastinal ou linfonodo  hilar, padrao miliar,ou derrame pleural)" onClick="selecionouQualAssociacao.value = 'verdadeiro';">Compat&iacute;vel (alargamento mediastinal ou linfonodo  hilar, padr&atilde;o miliar,ou derrame pleural)<BR>
+
+						<INPUT TYPE="RADIO" NAME="qualAssociacao" VALUE="Atipico (qualquer outro padrao)" onClick="selecionouQualAssociacao.value = 'verdadeiro';">At&iacute;pico (qualquer outro padr&atilde;o)<BR>
+
+						<INPUT TYPE="RADIO" NAME="qualAssociacao" VALUE="Ignorado" onClick="selecionouQualAssociacao.value = 'verdadeiro';">Ignorado<BR></TD>
+
+				</TR>
+
+				<!--LINHA 9-->
+
+				<TR class=even>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Outras altera&ccedil;&otilde;es pulmonares n&atilde;o suspeitas de TB ativa?</TD>
+
+					<input type="hidden" name="selecionouOutrasAlteracoes" value="falso">
+
+					<TD ALIGN="LEFT"> 
+
+						<INPUT TYPE="RADIO" NAME="outrasAlteracoes" VALUE="Sim" onClick="selecionouOutrasAlteracoes.value = 'sim'; exibeLinhaOculta('tabelaAvaliacaoComplementar', 10);">Sim<BR>
+
+						<INPUT TYPE="RADIO" NAMoutrasAlteracoes" VALUE="Não" onClick="selecionouOutrasAlteracoes,value = 'nao'; ocultaLinha('tabelaAvaliacaoComplementar', 10);">N&atilde;o<BR>
+
+						<INPUT TYPE="RADIO" NAME="outrasAlteracoes" VALUE="Ignorado" onClick="selecionouOutrasAlteracoes.value = 'ignorado'; ocultaLinha('tabelaAvaliacaoComplementar', 10);">Ignorado<BR></TD>
+
+				</TR>
+
+				<!--campo que surge com sim da linha 9-->
+
+				<!--LINHA 10-->
+
+				<TR class=even>
+
+					<TD></TD>
+
+					<TD ALIGN="LEFT">Qual altera&ccedil;&atilde;o pulmonares n&atilde;o suspeitas de TB ativa?</TD>
+
+					<input type="hidden" name="selecionouQualAlteracao" value="falso">
+
+					<TD ALIGN="LEFT"> 
+
+						<INPUT TYPE="RADIO" NAME="qualAlteracao" VALUE="TB inativa/sequela" onClick="selecionouQualAlteracao.value = 'verdadeiro';">TB inativa/seq&uuml;ela<BR>
+
+						<INPUT TYPE="RADIO" NAME="qualAlteracao" VALUE="Outra doenca" onClick="selecionouQualAlteracao.value = 'verdadeiro';">Outra doen&ccedil;a<BR>
+
+						<INPUT TYPE="RADIO" NAME="qualAlteracao" VALUE="Normal" onClick="selecionouQualAlteracao.value = 'verdadeiro';">Normal<BR>
+
+						<INPUT TYPE="RADIO" NAME="qualAlteracao" VALUE="Ignorado" onClick="selecionouQualAlteracao.value = 'verdadeiro';">Ignorado<BR></TD>
+
+				</TR>
+
+				<!--LINHA 11-->
+
+				<TR class=odd>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT"> Fez prova tubercul&iacute;nica (PT) ?</TD>
+
+					<input type="hidden" name="selecionouProvaTuberculinicaReatora" value="falso">
+
+					<TD ALIGN="LEFT"> 
+
+						<INPUT TYPE="RADIO" NAME="provaTuberculinicaReatora" VALUE="Sim" onClick="selecionouProvaTuberculinicaReatora.value = 'sim'; exibeLinhaOculta('tabelaAvaliacaoComplementar', 12); exibeLinhaOculta('tabelaAvaliacaoComplementar', 13);">Sim<BR>
+
+						<INPUT TYPE="RADIO" NAME="provaTuberculinicaReatora" VALUE="Não" onClick="selecionouProvaTuberculinicaReatora.value = 'nao'; ocultaLinha('tabelaAvaliacaoComplementar', 12); ocultaLinha('tabelaAvaliacaoComplementar', 13);">N&atilde;o<BR>
+
+						<INPUT TYPE="RADIO" NAME="provaTuberculinicaReatora" VALUE="Ignorado" onClick="selecionouProvaTuberculinicaReatora.value = 'ignorado'; ocultaLinha('tabelaAvaliacaoComplementar', 12); ocultaLinha('tabelaAvaliacaoComplementar', 13);">Ignorado<BR></TD>
+
+				</TR>
+
+				<!--campo que surge com sim da linha 11-->
+
+				<!--LINHA 12-->
+
+				<TR class=odd>
+
+					<TD></TD>
+
+					<TD ALIGN="LEFT">Data da aplica&ccedil;&atilde;o da prova tuberculinica (PT)</TD>
+
+					<TD ALIGN="LEFT"><INPUT TYPE="TEXT" NAME="txt_diaProva" SIZE=1 MAXLENGTH=2 
+
+									onKeyUp="if(txt_diaProva.value.length < 2)
+												validarCampoNumerico(this);
+								else
+
+									if (validarDia(txt_diaProva))
+
+									{
+
+											if (txt_mesProva.value == '')
+
+												txt_mesProva.focus();
+
+											else
+
+												txt_anoProva.focus();
+
+									}"
+
+									onfocus="this.className = 'CSS_FOCUS_IN';"
+
+									onblur ="this.className = 'CSS_FOCUS_OUT';">/
+
+									 <INPUT TYPE="TEXT" NAME="txt_mesProva" SIZE=1 MAXLENGTH=2
+
+									onKeyUp="if(txt_mesProva.value.length < 2)
+														validarCampoNumerico(this);
+								else								
+
+									if (validarMes(txt_mesProva))
+
+										if (txt_diaProva.value == '')
+
+											txt_diaProva.focus();
+
+										else
+
+											txt_anoProva.focus();
+
+									"
+
+									onfocus="this.className = 'CSS_FOCUS_IN';"
+
+									onblur ="this.className = 'CSS_FOCUS_OUT';">/
+
+									 <INPUT TYPE="TEXT" NAME="txt_anoProva" SIZE=3 MAXLENGTH=4
+
+									onKeyUp="if(txt_anoProva.value.length < 4)
+												validarCampoNumerico(this);
+								else
+
+									if (validarAno(txt_anoProva))
+
+										if (validarDataProva(document.frm_avaliacaoComplementar))
+
+											txt_anoProva.blur();"
+
+									onfocus="this.className = 'CSS_FOCUS_IN';"
+
+									onblur ="this.className = 'CSS_FOCUS_OUT';"><i>(dd/mm/aaaa)</i></TD> 
+
+				</TR>
+
+				<!--campo que surge com sim da linha 11-->
+
+				<!--LINHA 13-->
+
+				<TR class=odd>
+
+					<TD></TD>
+
+					<TD ALIGN="LEFT">Quantos mil&iacute;metros de endura&ccedil;&atilde;o?</TD>
+
+					<TD ALIGN="LEFT">
+
+						<TABLE BORDER=0>						
+
+						<TR>
+
+							<TD>Data da Leitura</TD>
+
+							<TD><INPUT TYPE="TEXT" NAME="txt_diaLeitura" SIZE=1 MAXLENGTH=2
+
+									onKeyUp="if(txt_diaLeitura.value.length < 2)
+												validarCampoNumerico(this);
+								else
+									if (validarDia(txt_diaLeitura))
+
+									{
+
+											if (txt_mesLeitura.value == '')
+
+												txt_mesLeitura.focus();
+
+											else
+
+												txt_anoLeitura.focus();
+
+									}"
+
+									onfocus="this.className = 'CSS_FOCUS_IN';"
+
+									onblur ="this.className = 'CSS_FOCUS_OUT';">/
+
+									<INPUT TYPE="TEXT" NAME="txt_mesLeitura" SIZE=1 MAXLENGTH=2
+
+									onKeyUp="if(txt_mesLeitura.value.length < 2)
+													validarCampoNumerico(this);
+								else
+									if (validarMes(txt_mesLeitura))
+
+										if (txt_diaLeitura.value == '')
+
+											txt_diaLeitura.focus();
+
+										else
+
+											txt_anoLeitura.focus();
+
+									"
+
+									onfocus="this.className = 'CSS_FOCUS_IN';"
+
+									onblur ="this.className = 'CSS_FOCUS_OUT';">/
+
+									<INPUT TYPE="TEXT" NAME="txt_anoLeitura" SIZE=3 MAXLENGTH=4
+
+									onKeyUp="if(txt_anoLeitura.value.length < 4)
+													validarCampoNumerico(this);
+								else
+									if (validarAno(txt_anoLeitura))
+
+										if (validarDataLeitura(document.frm_avaliacaoComplementar))
+
+											txt_anoLeitura.blur();"
+
+									onfocus="this.className = 'CSS_FOCUS_IN';"
+
+									onblur ="this.className = 'CSS_FOCUS_OUT';"><I>(dd/mm/aaaa)</I></TD>
+
+						</TR>
+
+                        <TR>
+
+							<TD ALIGN="left">Milimetros<INPUT TYPE="TEXT" NAME="milimetrosEnduracao" SIZE=2 onBlur="if(this.disabled == false){ this.className = 'CSS_FOCUS_OUT'; validarCampoNumerico(milimetrosEnduracao); }" onFocus="this.className = 'CSS_FOCUS_IN';">
+							<INPUT type="checkbox" onchange="disableText(milimetrosEnduracao)">N&atilde;o foi definido
+							</TD>							
+
+						</TR>
+
+						<TR>							
+
+							<TD align="left">Leitor<INPUT TYPE="TEXT" NAME="leitor" SIZE=12 onFocus="this.className = 'CSS_FOCUS_IN'" onBlur="if(this.disabled == false){ validarCampoAlfabetico(this); this.className = 'CSS_FOCUS_OUT'; }">
+							<INPUT type="checkbox" onchange="disableText(leitor)">N&atilde;o foi definido
+							</TD>
+
+						</TR>
+
+						</TABLE>
+
+					</TD>
+
+				</TR>
+
+				<!--LINHA 14-->
+
+				<TR class=even>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Resultado citometria l&iacute;quido pleural: porcentagem de c&eacute;lulas mononucleares</TD>
+
+					<input type="hidden" name="selecionouResultadoCitometria" value="falso">
+
+					<TD ALIGN="LEFT"> 
+
+<!--						<INPUT TYPE="RADIO" NAME="resultadoCitometria" VALUE="< 50%" onClick="selecionouResultadoCitometria.value = 'verdadeiro';">< 50%<BR>
+
+						<INPUT TYPE="RADIO" NAME="resultadoCitometria" VALUE="50 a 75%" onClick="selecionouResultadoCitometria.value = 'verdadeiro';">50 a 75%<BR>
+
+						<INPUT TYPE="RADIO" NAME="resultadoCitometria" VALUE="> 75%" onClick="selecionouResultadoCitometria.value = 'verdadeiro';">> 75%<BR>
+
+						<INPUT TYPE="RADIO" NAME="resultadoCitometria" VALUE="Ignorado" onClick="selecionouResultadoCitometria.value = 'verdadeiro';">Ignorado<BR>
+
+-->
+
+                        <INPUT TYPE="TEXT" NAME="resultadoCiometria" SIZE=3 MAXLENGTH=10 onFocus="this.className = 'CSS_FOCUS_IN'" onBlur="if(this.disabled == false){ validarCampoNumericoReal(this); this.className = 'CSS_FOCUS_OUT';} "><i>%</i>
+						<INPUT type="checkbox" onclick="disableText(resultadoCiometria)">N&atilde;o foi definido
+						</TD>
+
+				</TR>
+
+				<!--LINHA 15-->
+
+				<TR class=odd>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Resultado prote&iacute;nas no l&iacute;quido pleural</TD>
+
+					<input type="hidden" name="selecionouResultadoProteinas" value="falso">
+
+					<TD ALIGN="LEFT"> 
+
+<!--						<INPUT TYPE="RADIO" NAME="resultadoProteinas" VALUE="< 2,5g" onClick="selecionouResultadoProteinas.value = 'verdadeiro';">< 2,5g<BR>
+
+						<INPUT TYPE="RADIO" NAME="resultadoProteinas" VALUE="2,5 a 3,5g" onClick="selecionouResultadoProteinas.value = 'verdadeiro';">2,5 a 3,5g<BR>
+
+						<INPUT TYPE="RADIO" NAME="resultadoProteinas" VALUE=">  3,5g" onClick="selecionouResultadoProteinas.value = 'verdadeiro';">>  3,5g<BR>
+
+						<INPUT TYPE="RADIO" NAME="resultadoProteinas" VALUE="Ignorado" onClick="selecionouResultadoProteinas.value = 'verdadeiro';">Ignorado<BR>
+
+-->
+
+                        <INPUT TYPE="TEXT" NAME="resultadoProteinas" SIZE=3 MAXLENGTH=10 onFocus="this.className = 'CSS_FOCUS_IN'" onBlur="if(this.disabled == false){ validarCampoNumericoReal(this); this.className = 'CSS_FOCUS_OUT'; }"><i>g</i>
+						<INPUT type="checkbox" onclick="disableText(resultadoProteinas)">N&atilde;o foi definido
+						</TD>
+
+				</TR>
+
+				<!--LINHA 16-->
+
+				<TR class=even>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Resultado da raz&atilde;o prote&iacute;na LP/prote&iacute;na soro</TD>
+
+					<input type="hidden" name="selecionouResultadoRazaoProteinas" value="falso">
+
+					<TD ALIGN="LEFT"> 
+
+<!--						<INPUT TYPE="RADIO" NAME="resultadoRazaoProteina" VALUE="< 0,5" onClick="selecionouResultadoRazaoProteinas.value = 'verdadeiro';">< 0,5<BR>
+
+						<INPUT TYPE="RADIO" NAME="resultadoRazaoProteina" VALUE=" > = 0,5" onClick="selecionouResultadoRazaoProteinas.value = 'verdadeiro';"> > = 0,5<BR>
+
+						<INPUT TYPE="RADIO" NAME="resultadoRazaoProteina" VALUE="Ignorado" onClick="selecionouResultadoRazaoProteinas.value = 'verdadeiro';">Ignorado<BR>
+
+-->
+
+						<INPUT TYPE="TEXT" NAME="resultadoRazaoProteina" SIZE=3 MAXLENGTH=10 onFocus="this.className = 'CSS_FOCUS_IN'" onBlur="if(this.disabled == false){ validarCampoNumericoReal(this); this.className = 'CSS_FOCUS_OUT';}"><i></i>
+						<INPUT type="checkbox" onclick="disableText(resultadoRazaoProteina)">N&atilde;o foi definido
+						</TD>
+
+				</TR>
+
+				<!--LINHA 17-->
+
+				<TR class=odd>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Resultado da raz&atilde;o LDH LP/prote&iacute;na soro</TD>
+
+					<input type="hidden" name="selecionouResultadoRazaoLdh" value="falso">
+
+					<TD ALIGN="LEFT"> 
+
+<!--						<INPUT TYPE="RADIO" NAME="resultadoRazaoLdh" VALUE="< 0,6" onClick="selecionouResultadoRazaoLdh.value = 'verdadeiro';"> < 0,6<BR>
+
+						<INPUT TYPE="RADIO" NAME="resultadoRazaoLdh" VALUE="> = 0,6" onClick="selecionouResultadoRazaoLdh.value = 'verdadeiro';"> > = 0,6<BR>
+
+						<INPUT TYPE="RADIO" NAME="resultadoRazaoLdh" VALUE="Ignorado" onClick="selecionouResultadoRazaoLdh.value = 'verdadeiro';">Ignorado<BR>
+
+-->
+
+						<INPUT TYPE="TEXT" NAME="resultadoRazaoLdh" SIZE=3 MAXLENGTH=10 onFocus="this.className = 'CSS_FOCUS_IN'" onBlur="if(this.disabled == false){ validarCampoNumericoReal(this); this.className = 'CSS_FOCUS_OUT'; }"><i></i>
+						<INPUT type="checkbox" onclick="disableText(resultadoRazaoLdh)">N&atilde;o foi definido
+						</TD>
+
+				</TR>
+
+				<!--LINHA 18-->
+
+				<TR class=even>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">BAAR LP</TD>
+
+					<input type="hidden" name="selecionouBaarLp" value="falso">
+
+					<TD ALIGN="LEFT"> 
+
+						<INPUT TYPE="RADIO" NAME="baarLp" VALUE="Positivo" onClick="selecionouBaarLp.value='verdadeiro'; exibeLinhaOculta('tabelaAvaliacaoComplementar', 19); exibeLinhaOculta('tabelaAvaliacaoComplementar', 21); exibeLinhaOculta('tabelaAvaliacaoComplementar', 23);">Positivo<BR>
+
+						<INPUT TYPE="RADIO" NAME="baarLp" VALUE="Negativo" onClick="selecionouBaarLp.value='verdadeiro'; ocultaLinha('tabelaAvaliacaoComplementar', 19); ocultaLinha('tabelaAvaliacaoComplementar', 21); ocultaLinha('tabelaAvaliacaoComplementar', 23);">Negativo<BR>
+
+						<INPUT TYPE="RADIO" NAME="baarLp" VALUE="Ignorado" onClick="selecionouBaarLp.value='verdadeiro'; ocultaLinha('tabelaAvaliacaoComplementar', 19); ocultaLinha('tabelaAvaliacaoComplementar', 21); ocultaLinha('tabelaAvaliacaoComplementar', 23);">Ignorado<BR></TD>
+
+				</TR>
+
+				<!--LINHA 19-->
+
+				<TR class=even>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">BAAR escarro (1ª amostra)</TD>
+
+					<input type="hidden" name="selecionouBaarEscarro1" value="falso">
+
+					<TD ALIGN="LEFT"> 
+
+						<INPUT TYPE="RADIO" NAME="baarEscarro1" VALUE="Positivo" onClick="selecionouBaarEscarro1.value = 'positivo'; exibeLinhaOculta('tabelaAvaliacaoComplementar', 20);">Positivo<BR>
+
+						<INPUT TYPE="RADIO" NAME="baarEscarro1" VALUE="Negativo" onClick="selecionouBaarEscarro1.value = 'negativo'; ocultaLinha('tabelaAvaliacaoComplementar', 20);">Negativo<BR>
+
+						<INPUT TYPE="RADIO" NAME="baarEscarro1" VALUE="Ignorado" onClick="selecionouBaarEscarro1.value = 'ignorado'; ocultaLinha('tabelaAvaliacaoComplementar', 20);">Ignorado<BR></TD>
+
+				</TR>
+
+				<!--campo que surge com sim da linha 19-->
+
+				<!--LINHA 20-->
+
+				<TR class=even>
+
+					<TD></TD>
+
+					<TD ALIGN="LEFT">Qual a intensidade?</TD>
+
+					<input type="hidden" name="selecionouIntensidade1" value="falso">
+
+					<TD ALIGN="LEFT"> 
+
+						<INPUT TYPE="RADIO" NAME="intensidade1" VALUE="+" onClick="selecionouIntensidade1.value = 'verdadeiro';">+<BR>
+
+						<INPUT TYPE="RADIO" NAME="intensidade1" VALUE="++" onClick="selecionouIntensidade1.value = 'verdadeiro';">++<BR>
+
+						<INPUT TYPE="RADIO" NAME="intensidade1" VALUE="+++" onClick="selecionouIntensidade1.value = 'verdadeiro';">+++<BR>
+
+						<INPUT TYPE="RADIO" NAME="intensidade1" VALUE="Ignorado" onClick="selecionouIntensidade1.value = 'verdadeiro';">Ignorado<BR></TD>				
+
+				</TR>
+
+				<!--LINHA 21-->
+
+				<TR class=odd>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">BAAR escarro (2ª amostra)</TD>
+
+					<input type="hidden" name="selecionouBaarEscarro2" value="falso">
+
+					<TD ALIGN="LEFT"> 
+
+						<INPUT TYPE="RADIO" NAME="baarEscarro2" VALUE="Positivo" onClick="selecionouBaarEscarro2.value = 'positivo'; exibeLinhaOculta('tabelaAvaliacaoComplementar', 22);">Positivo<BR>
+
+						<INPUT TYPE="RADIO" NAME="baarEscarro2" VALUE="Negativo" onClick="selecionouBaarEscarro2.value = 'negativo'; ocultaLinha('tabelaAvaliacaoComplementar', 22);">Negativo<BR>
+
+						<INPUT TYPE="RADIO" NAME="baarEscarro2" VALUE="Ignorado" onClick="selecionouBaarEscarro2.value = 'ignorado'; ocultaLinha('tabelaAvaliacaoComplementar', 22);">Ignorado<BR></TD>
+
+				</TR>
+
+				<!--campo que surge com sim da linha 21-->
+
+				<!--LINHA 22-->
+
+				<TR class=odd>
+
+					<TD></TD>
+
+					<TD ALIGN="LEFT">Qual a intensidade?</TD>
+
+					<input type="hidden" name="selecionouIntensidade2" value="falso">
+
+					<TD ALIGN="LEFT"> 
+
+						<INPUT TYPE="RADIO" NAME="intensidade2" VALUE="+" onClick="selecionouIntensidade2.value = 'verdadeiro';">+<BR>
+
+						<INPUT TYPE="RADIO" NAME="intensidade2" VALUE="++" onClick="selecionouIntensidade2.value = 'verdadeiro';">++<BR>
+
+						<INPUT TYPE="RADIO" NAME="intensidade2" VALUE="+++" onClick="selecionouIntensidade2.value = 'verdadeiro';">+++<BR>
+
+						<INPUT TYPE="RADIO" NAME="intensidade2" VALUE="Ignorado" onClick="selecionouIntensidade2.value = 'verdadeiro';">Ignorado<BR></TD>
+
+				</TR>
+
+				<!--LINHA 23-->
+
+				<TR class=even>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">BAAR escarro induzido</TD>
+
+					<input type="hidden" name="selecionouBaarEscarroInduzido" value="falso">
+
+					<TD ALIGN="LEFT"> 
+
+						<INPUT TYPE="RADIO" NAME="baarEscarroInduzido" VALUE="Positivo" onClick="selecionouBaarEscarroInduzido.value = 'positivo'; exibeLinhaOculta('tabelaAvaliacaoComplementar', 24);">Positivo<BR>
+
+						<INPUT TYPE="RADIO" NAME="baarEscarroInduzido" VALUE="Negativo" onClick="selecionouBaarEscarroInduzido.value = 'negado'; ocultaLinha('tabelaAvaliacaoComplementar', 24);">Negativo<BR>
+
+						<INPUT TYPE="RADIO" NAME="baarEscarroInduzido" VALUE="Ignorado" onClick="selecionouBaarEscarroInduzido.value = 'ignorado'; ocultaLinha('tabelaAvaliacaoComplementar', 24);">Ignorado<BR></TD>
+
+				</TR>
+
+				<!--campo que surge com sim da linha 23-->
+
+				<!--LINHA 24-->
+
+				<TR class=even>
+
+					<TD></TD>
+
+					<TD ALIGN="LEFT">Qual a intensidade?</TD>
+
+					<input type="hidden" name="selecionouIntensidadeInduzido" value="falso">
+
+					<TD ALIGN="LEFT"> 
+
+						<INPUT TYPE="RADIO" NAME="intensidadeInduzido" VALUE="+" onClick="selecionouIntensidadeInduzido.value = 'verdadeiro';">+<BR>
+
+						<INPUT TYPE="RADIO" NAME="intensidadeInduzido" VALUE="++" onClick="selecionouIntensidadeInduzido.value = 'verdadeiro';">++<BR>
+
+						<INPUT TYPE="RADIO" NAME="intensidadeInduzido" VALUE="+++" onClick="selecionouIntensidadeInduzido.value = 'verdadeiro';">+++<BR>
+
+						<INPUT TYPE="RADIO" NAME="intensidadeInduzido" VALUE="Ignorado" onClick="selecionouIntensidadeInduzido.value = 'verdadeiro';">Ignorado<BR></TD>
+
+				</TR>
+
+				<!--LINHA 25-->
+
+				<TR class=odd>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">ADA l&iacute;quido pleural?</TD>
+
+					<input type="hidden" name="selecionouAdaLiquidoPleural" value="falso">
+
+					<TD ALIGN="LEFT">
+
+						<INPUT TYPE="RADIO" NAME="adaLiquidoPleural" VALUE="Positivo" onClick="selecionouAdaLiquidoPleural.value = 'positivo'; exibeLinhaOculta('tabelaAvaliacaoComplementar', 26);">Positivo<BR>
+
+						<INPUT TYPE="RADIO" NAME="adaLiquidoPleural" VALUE="Negativo" onClick="selecionouAdaLiquidoPleural.value = 'negativo'; ocultaLinha('tabelaAvaliacaoComplementar', 26);">Negativo<BR>
+
+						<INPUT TYPE="RADIO" NAME="adaLiquidoPleural" VALUE="Indeterminado" onClick="selecionouAdaLiquidoPleural.value = 'indeterminado'; ocultaLinha('tabelaAvaliacaoComplementar', 26);">Indeterminado<BR>
+
+						<INPUT TYPE="RADIO" NAME="adaLiquidoPleural" VALUE="Não realizado" onClick="selecionouAdaLiquidoPleural.value = 'naoRealizado'; ocultaLinha('tabelaAvaliacaoComplementar', 26);">N&atilde;o realizado<BR></TD>
+
+				</TR>
+
+				<!--campo que surge com sim da linha 25-->
+
+				<!--LINHA 26-->
+
+				<TR class=odd>
+
+					<TD></TD>
+
+					<TD ALIGN="LEFT">Quantidade</TD>
+
+					<TD>
+
+						<TABLE BORDER=0>
+
+						<TR>
+
+							<TD><INPUT TYPE="TEXT" NAME="quantidade" SIZE=12 onBlur="this.className = 'CSS_FOCUS_OUT'; validarCampoNumericoReal(this);" onFocus="this.className = 'CSS_FOCUS_IN';"></TD>
+
+							<TD>UI/mL<BR></TD>
+
+						</TR>
+
+						</TABLE>
+
+					</TD>
+
+				</TR>
+
+				<!--LINHA 27-->
+
+				<TR class=even>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Probabilidade de tuberculose pleural com a avalia&ccedil;&atilde;o complementar do l&iacute;quido pleural<BR></TD>
+
+					<input type="hidden" name="selecionouProbabilidadeComAvaliacao" value="falso">
+
+					<TD ALIGN="LEFT"> 
+
+						<INPUT TYPE="RADIO" NAME="probabilidadeComAvaliacao" VALUE="Alta" onClick="selecionouProbabilidadeComAvaliacao.value = 'verdadeiro';">Alta<BR>
+
+						<INPUT TYPE="RADIO" NAME="probabilidadeComAvaliacao" VALUE="Media" onClick="selecionouProbabilidadeComAvaliacao.value = 'verdadeiro';">M&eacute;dia<BR>
+
+						<INPUT TYPE="RADIO" NAME="probabilidadeComAvaliacao" VALUE="Baixa" onClick="selecionouProbabilidadeComAvaliacao.value = 'verdadeiro';">Baixa<BR>
+
+						<INPUT TYPE="RADIO" NAME="probabilidadeComAvaliacao" VALUE="Ignorado" onClick="selecionouProbabilidadeComAvaliacao.value = 'verdadeiro';">Ignorado<BR>
+
+						<INPUT TYPE="RADIO" NAME="probabilidadeComAvaliacao" VALUE="Não se aplica" onClick="selecionouProbabilidadeComAvaliacao.value = 'verdadeiro';">N&atilde;o se aplica<BR></TD>
+
+				</TR>
+
+				<!--LINHA 28-->
+
+				<TR class=odd>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Cultura para microbact&eacute;rias no LP </TD>
+
+					<input type="hidden" name="selecionouCultura" value="falso">
+
+					<TD ALIGN="LEFT"><INPUT TYPE="RADIO" NAME="cultura" VALUE="Sim" onClick="selecionouCultura.value = 'sim'; exibeLinhaOculta('tabelaAvaliacaoComplementar', 29); exibeLinhaOculta('tabelaAvaliacaoComplementar', 30);">Sim<BR>
+
+									 <INPUT TYPE="RADIO" NAME="cultura" VALUE="Não" onClick="selecionouCultura.value = 'nao'; ocultaLinha('tabelaAvaliacaoComplementar', 29); ocultaLinha('tabelaAvaliacaoComplementar', 30);">N&atilde;o</TD>
+
+				</TR>
+
+				<!--campo que surge com sim da linha 28-->
+
+				<!--LINHA 29-->
+
+				<TR class=odd>
+
+					<TD></TD>
+
+					<TD>M&eacute;todo</TD>
+
+					<TD><INPUT TYPE="TEXT" NAME="metodo" SIZE=12 onFocus="this.className = 'CSS_FOCUS_IN';" onBlur="validarCampoAlfabetico(this); this.className = CSS_FOCUS_OUT';"><BR></TD>
+
+				</TR>
+
+				<!--campo que surge com sim da linha 28-->
+
+				<!--LINHA 30-->
+
+				<TR class=odd>
+
+					<TD></TD>
+
+					<TD>Resultado</TD>
+
+					<input type="hidden" name="selecionouResultado" value="falso">
+
+					<TD ALIGN="LEFT"> 
+
+						<INPUT TYPE="RADIO" NAME="resultado" VALUE="Positivo" onClick="selecionouResultado.value = 'positivo'; exibeLinhaOculta('tabelaAvaliacaoComplementar', 31);">Positivo<BR>
+
+						<INPUT TYPE="RADIO" NAME="resultado" VALUE="Negativo" onClick="selecionouResultado.value = 'negativo'; ocultaLinha('tabelaAvaliacaoComplementar', 31);">Negativo<BR>
+
+						<INPUT TYPE="RADIO" NAME="resultado" VALUE="Indeterminado" onClick="selecionouResultado.value = 'indeterminado'; ocultaLinha('tabelaAvaliacaoComplementar', 31);">Indeterminada<BR>
+
+				  		<INPUT TYPE="RADIO" NAME="resultado" VALUE="Não realizado" onClick="selecionouResultado.value = 'naoRealizado'; ocultaLinha('tabelaAvaliacaoComplementar', 31);">N&atilde;o realizado<BR></TD>
+
+				</TR>
+
+				<!--campo que surge com sim da linha 30-->
+
+				<!--LINHA 31-->
+
+				<TR class=odd>
+
+					<TD></TD>
+
+					<TD ALIGN="LEFT">Tipifica&ccedil;ao <BR></TD>
+
+					<input type="hidden" name="selecionouTipificacao" value="falso">
+
+					<TD ALIGN="LEFT"> 
+
+						<INPUT TYPE="RADIO" NAME="tipificacao" VALUE="Mycobacterium tuberculosis" onClick="selecionouTipificacao.value = 'verdadeiro';"><I>Mycobacterium tuberculosis</I><BR>
+
+						<INPUT TYPE="RADIO" NAME="tipificacao" VALUE="Outra microbacteria" onClick="selecionouTipificacao.value = 'verdadeiro';">Outra microbact&eacute;ria<BR></TD>					
+
+				</TR>
+
+				<!--LINHA 32-->
+
+				<TR class=even>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Resultado do exame histopatol&oacute;gico<BR></TD>
+
+					<input type="hidden" name="selecionouResultadoExameHistopatologico" value="falso">
+
+					<TD ALIGN="LEFT"> 
+
+						<INPUT TYPE="RADIO" NAME="resultadoExameHistopatologico" VALUE="Sugestivo de TB" onClick="selecionouResultadoExameHistopatologico.value = 'verdadeiro'; exibeLinhaOculta('tabelaAvaliacaoComplementar', 33);">Sugestivo de TB<BR>
+
+						<INPUT TYPE="RADIO" NAME="resultadoExameHistopatologico" VALUE="Não sugestivo de TB" onClick="selecionouResultadoExameHistopatologico.value = 'verdadeiro'; exibeLinhaOculta('tabelaAvaliacaoComplementar', 33);">N&atilde;o sugestivo de TB<BR>
+
+						<INPUT TYPE="RADIO" NAME="resultadoExameHistopatologico" VALUE="Não realizado (falta de material ou de LP suficiente)" onClick="selecionouResultadoExameHistopatologico.value = 'verdadeiro'; ocultaLinha('tabelaAvaliacaoComplementar', 33);">N&atilde;o realizado (falta de material ou de LP suficiente)<BR>
+
+						<INPUT TYPE="RADIO" NAME="resultadoExameHistopatologico" VALUE="Ignorado" onClick="selecionouResultadoExameHistopatologico.value = 'verdadeiro'; ocultaLinha('tabelaAvaliacaoComplementar', 33);">Ignorado<BR></TD>
+
+
+
+				</TR>
+				
+				<!--campo que surge com sim da linha 32-->
+				
+				<!--LINHA 33-->
+				
+				<TR class=even>
+					<TD ALIGN="RIGHT"></TD>
+					
+					<TD ALIGN="LEFT"></TD>
+					
+					<TD ALIGN="LEFT"> 
+						
+						<TEXTAREA NAME="exameHistopatologico" COLS=50 ROWS=6 MAXLENGTH=500></TEXTAREA>
+				
+				</TR>
+
+				<!--LINHA 34-->
+
+				<TR class=odd>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Cultura para microbact&eacute;rias escarro?</TD>
+
+					<input type="hidden" name="selecionouCulturaMicrobacterias" value="falso">
+
+					<TD ALIGN="LEFT"><INPUT TYPE="RADIO" NAME="culturaMicrobacterias" VALUE="Sim" onClick="selecionouCulturaMicrobacterias.value = 'sim'; exibeLinhaOculta('tabelaAvaliacaoComplementar', 35); exibeLinhaOculta('tabelaAvaliacaoComplementar', 36);">Sim<BR>
+
+						<INPUT TYPE="RADIO" NAME="culturaMicrobacterias" VALUE="Não" onClick="selecionouCulturaMicrobacterias.value = 'nao'; ocultaLinha('tabelaAvaliacaoComplementar', 35); ocultaLinha('tabelaAvaliacaoComplementar', 35);ocultaLinha('tabelaAvaliacaoComplementar', 36);">N&atilde;o</TD>
+
+				</TR>
+
+				<!--campo que surge com sim da linha 34-->
+
+				<!--LINHA 35-->
+
+				<TR class=odd>
+
+					<TD></TD>
+
+					<TD ALIGN="LEFT">M&eacute;todo</TD>
+
+					<TD><INPUT TYPE="TEXT" NAME="metodoCultura" SIZE=12 onFocus="this.className = 'CSS_FOCUS_IN';" onBlur="validarCampoAlfabetico(this); this.className = 'CSS_FOCUS_OUT';"></TD>
+
+				</TR>
+
+				<!--campo que surge com sim da linha 34-->
+
+				<!--LINHA 36-->
+
+				<TR class=odd>
+
+					<TD></TD>
+
+					<TD ALIGN="LEFT">Resultado</TD>
+
+					<input type="hidden" name="selecionouResultadoCultura" value="falso">
+
+					<TD ALIGN="LEFT"> 
+
+						<INPUT TYPE="RADIO" NAME="resultadoCultura" VALUE="Positivo" onClick="selecionouResultadoCultura.value = 'positivo'; exibeLinhaOculta('tabelaAvaliacaoComplementar', 37);">Positivo<BR>
+
+						<INPUT TYPE="RADIO" NAME="resultadoCultura" VALUE="Negativo" onClick="selecionouResultadoCultura.value = 'negativo'; ocultaLinha('tabelaAvaliacaoComplementar', 37);">Negativo<BR>
+
+						<INPUT TYPE="RADIO" NAME="resultadoCultura" VALUE="Indeterminado" onClick="selecionouResultadoCultura.value = 'indeterminado'; ocultaLinha('tabelaAvaliacaoComplementar', 37);">Indeterminada<BR>
+
+						<INPUT TYPE="RADIO" NAME="resultadoCultura" VALUE="Não realizado" onClick="selecionouResultadoCultura.value = 'naoRealizado'; ocultaLinha('tabelaAvaliacaoComplementar', 37);">N&atilde;o realizado<BR></TD>
+
+				</TR>
+
+				<!--campo que surge com sim da linha 34-->
+
+				<!--LINHA 37-->
+
+				<TR class=odd>
+
+					<TD></TD>
+
+					<TD ALIGN="LEFT">Tipifica&ccedil;ao <BR></TD>
+
+					<input type="hidden" name="selecionouTipificacaoCultura" value="falso">
+
+					<TD ALIGN="LEFT"> 
+
+						<INPUT TYPE="RADIO" NAME="tipificacaoCultura" VALUE="Mycobacterium tuberculosis" onClick="selecionouTipificacaoCultura.value = 'verdadeiro';"><I>Mycobacterium tuberculosis</I><BR>
+
+						<INPUT TYPE="RADIO" NAME="tipificacaoCultura" VALUE="Outra microbacteria" onClick="selecionouTipificacaoCultura.value = 'verdadeiro';">Outra microbact&eacute;ria<BR></TD>
+
+				</TR>
+
+				<!--LINHA 38-->
+
+				<TR class=even>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Sorologia LP </TD>
+
+					<input type="hidden" name="selecionouSorologiaLp" value="falso">
+
+					<TD ALIGN="LEFT"><INPUT TYPE="RADIO" NAME="sorologiaLp" VALUE="Sim" onClick="selecionouSorologiaLp.value = 'sim'; exibeLinhaOculta('tabelaAvaliacaoComplementar', 39); exibeLinhaOculta('tabelaAvaliacaoComplementar', 40);">Sim<BR>
+
+						             <INPUT TYPE="RADIO" NAME="sorologiaLp" VALUE="Não" onClick="selecionouSorologiaLp.value = 'nao'; ocultaLinha('tabelaAvaliacaoComplementar', 39); ocultaLinha('tabelaAvaliacaoComplementar', 40);">N&atilde;o</TD>
+
+				</TR>
+
+				<!--campo que surge com sim da linha 38-->
+
+				<!--LINHA 39-->
+
+				<TR class=even>
+
+					<TD></TD>
+
+					<TD ALIGN="LEFT">Ant&iacute;genos:</TD>
+
+					<TD ALIGN="LEFT">
+						<INPUT TYPE="TEXT" NAME="antigenos" SIZE=12 onFocus="this.className = 'CSS_FOCUS_IN';" onBlur="this.className = 'CSS_FOCUS_OUT';"><BR>					
+						<INPUT TYPE="TEXT" NAME="antigenos" SIZE=12 onFocus="this.className = 'CSS_FOCUS_IN';" onBlur="this.className = 'CSS_FOCUS_OUT';"><BR>					
+						<INPUT TYPE="TEXT" NAME="antigenos" SIZE=12 onFocus="this.className = 'CSS_FOCUS_IN';" onBlur="this.className = 'CSS_FOCUS_OUT';"><BR>					
+						<INPUT TYPE="TEXT" NAME="antigenos" SIZE=12 onFocus="this.className = 'CSS_FOCUS_IN';" onBlur="this.className = 'CSS_FOCUS_OUT';"><BR>					
+						<INPUT TYPE="TEXT" NAME="antigenos" SIZE=12 onFocus="this.className = 'CSS_FOCUS_IN';" onBlur="this.className = 'CSS_FOCUS_OUT';">
+					</TD>
+
+				</TR>
+
+				<!--campo que surge com sim da linha 38-->
+
+				<!--LINHA 40-->
+
+				<TR class=even>
+
+					<TD></TD>
+
+					<TD ALIGN="LEFT">Resultado</TD>
+
+					<input type="hidden" name="selecionouResultadoSorologia" value="falso">
+
+					<TD ALIGN="LEFT"> 
+
+						<INPUT TYPE="RADIO" NAME="resultadoSorologia" VALUE="Positivo" onClick="selecionouResultadoSorologia.value = 'verdadeiro';">Positivo<BR>
+
+						<INPUT TYPE="RADIO" NAME="resultadoSorologia" VALUE="Negativo" onClick="selecionouResultadoSorologia.value = 'verdadeiro';">Negativo<BR>
+
+						<INPUT TYPE="RADIO" NAME="resultadoSorologia" VALUE="Indeterminada" onClick="selecionouResultadoSorologia.value = 'verdadeiro';">Indeterminada<BR>
+
+						<INPUT TYPE="RADIO" NAME="resultadoSorologia" VALUE="Não realizado" onClick="selecionouResultadoSorologia.value = 'verdadeiro';">N&atilde;o realizado<BR></TD>
+
+				</TR>
+
+				<!--LINHA 41-->
+
+				<TR class=odd>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">PCR</TD>
+
+					<input type="hidden" name="selecionouPcr" value="falso">
+
+					<TD ALIGN="LEFT"><INPUT TYPE="RADIO" NAME="pcr" VALUE="Sim" onClick="selecionouPcr.value = 'sim'; exibeLinhaOculta('tabelaAvaliacaoComplementar', 42); exibeLinhaOculta('tabelaAvaliacaoComplementar', 43);">Sim<BR>
+
+						             <INPUT TYPE="RADIO" NAME="pcr" VALUE="Não" onClick="selecionouPcr.value = 'nao'; ocultaLinha('tabelaAvaliacaoComplementar', 42); ocultaLinha('tabelaAvaliacaoComplementar', 43);">N&atilde;o</TD>
+				</TR>
+
+				<!--campo que surge com sim da linha 41-->
+
+				<!--LINHA 42-->	
+
+				<TR class=odd>
+
+					<TD></TD>
+
+					<TD ALIGN="LEFT">T&eacute;cnica utilizada:</TD>
+
+					<TD><INPUT TYPE="TEXT" NAME="tecnicaUtilizada" SIZE=12 onFocus="this.className = 'CSS_FOCUS_IN';" onBlur="validarCampoAlfabetico(this); this.className = 'CSS_FOCUS_OUT';"></TD>
+
+				</TR>
+
+				<!--campo que surge com sim da linha 41-->
+
+				<!--LINHA 43-->
+
+				<TR class=odd>
+
+					<TD></TD>
+
+					<TD>Resultado</TD>
+
+					<input type="hidden" name="selecionouResultadoPcr" value="falso">
+
+					<TD ALIGN="LEFT"> 
+
+						<INPUT TYPE="RADIO" NAME="resultadoPcr" VALUE="Positivo" onClick="selecionouResultadoPcr.value = 'verdadeiro';">Positivo<BR>
+
+						<INPUT TYPE="RADIO" NAME="resultadoPcr" VALUE="Negativo" onClick="selecionouResultadoPcr.value = 'verdadeiro';">Negativo<BR>
+
+						<INPUT TYPE="RADIO" NAME="resultadoPcr" VALUE="Indeterminada" onClick="selecionouResultadoPcr.value = 'verdadeiro';">Indeterminada<BR>
+
+						<INPUT TYPE="RADIO" NAME="resultadoPcr" VALUE="Não realizado" onClick="selecionouResultadoPcr.value = 'verdadeiro';">N&atilde;o realizado<BR></TD>
+
+				</TR>
+
+				<!--LINHA 44-->
+
+				<TR class=even>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Outro exame</TD>
+
+					<input type="hidden" name="selecionouOutroExame" value="falso">
+
+					<TD ALIGN="LEFT"><INPUT TYPE="RADIO" NAME="outroExame" VALUE="Sim" onClick="selecionouOutroExame.value = 'sim'; exibeLinhaOculta('tabelaAvaliacaoComplementar', 45); exibeLinhaOculta('tabelaAvaliacaoComplementar', 46);">Sim<BR>
+
+						             <INPUT TYPE="RADIO" NAME="outroExame" VALUE="Não" onClick="selecionouOutroExame.value = 'nao'; ocultaLinha('tabelaAvaliacaoComplementar', 45); ocultaLinha('tabelaAvaliacaoComplementar', 46);">N&atilde;o</TD>
+
+				</TR>
+
+				<!--campo que surge com sim da linha 44-->
+
+				<!--LINHA 45-->
+
+				<TR class=even>
+
+					<TD></TD>
+
+					<TD ALIGN="LEFT">Exame:</TD>
+
+					<TD><INPUT TYPE="TEXT" NAME="exame" SIZE=12 onFocus="this.className = 'CSS_FOCUS_IN';" onBlur="validarCampoAlfabetico(this); this.className = 'CSS_FOCUS_OUT';"></TD>
+
+				</TR>
+
+				<!--campo que surge com sim da linha 44-->
+
+				<!--LINHA 46-->
+
+				<TR class=even>
+
+					<TD></TD>
+
+					<TD>Resultado</TD>
+
+					<input type="hidden" name="selecionouResultadoExame" value="falso">
+
+					<TD ALIGN="LEFT"> 
+
+						<INPUT TYPE="RADIO" NAME="resultadoExame" VALUE="Positivo" onClick="selecionouResultadoExame.value = 'verdadeiro';">Positivo<BR>
+
+						<INPUT TYPE="RADIO" NAME="resultadoExame" VALUE="Negativo" onClick="selecionouResultadoExame.value = 'verdadeiro';">Negativo<BR>
+
+						<INPUT TYPE="RADIO" NAME="resultadoExame" VALUE="Indeterminada" onClick="selecionouResultadoExame.value = 'verdadeiro';">Indeterminada<BR>
+
+						<INPUT TYPE="RADIO" NAME="resultadoExame" VALUE="Não realizado" onClick="selecionouResultadoExame.value = 'verdadeiro';">N&atilde;o realizado<BR></TD>
+
+				</TR>
+
+				<!--LINHA 47-->
+
+				<TR class=odd>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Probabilidade de tuberculose pleural ap&oacute;s resultado de todos os exames<BR></TD>
+
+					<input type="hidden" name="selecionouProbabilidadeAposExames" value="falso">
+
+					<TD ALIGN="LEFT"> 
+
+						<INPUT TYPE="RADIO" NAME="probabilidadeAposExames" VALUE="Alta" onClick="selecionouProbabilidadeAposExames.value = 'verdadeiro';">Alta<BR>
+
+						<INPUT TYPE="RADIO" NAME="probabilidadeAposExames" VALUE="Media" onClick="selecionouProbabilidadeAposExames.value = 'verdadeiro';">M&eacute;dia<BR>
+
+						<INPUT TYPE="RADIO" NAME="probabilidadeAposExames" VALUE="Baixa" onClick="selecionouProbabilidadeAposExames.value = 'verdadeiro';">Baixa<BR>
+
+						<INPUT TYPE="RADIO" NAME="probabilidadeAposExames" VALUE="Ignorado" onClick="selecionouProbabilidadeAposExames.value = 'verdadeiro';">Ignorado<BR>
+
+						<INPUT TYPE="RADIO" NAME="probabilidadeAposExames" VALUE="Não se aplica" onClick="selecionouProbabilidadeAposExames.value = 'verdadeiro';">N&atilde;o se aplica<BR></TD>
+
+				</TR>
+
+				<!--LINHA 48-->
+
+<!--                
+
+				<TR class=odd>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Desfecho do caso se TB<BR></TD>
+
+					<input type="hidden" name="selecionouDesfechoCasoTb" value="falso">
+
+					<TD ALIGN="LEFT"> 
+
+						<INPUT TYPE="RADIO" NAME="desfechoCasoTb" VALUE="Cura" onClick="selecionouDesfechoCasoTb.value = 'verdadeiro';">Cura<BR>
+
+						<INPUT TYPE="RADIO" NAME="desfechoCasoTb" VALUE="Abandono" onClick="selecionouDesfechoCasoTb.value = 'verdadeiro';">Abandono<BR>
+
+						<INPUT TYPE="RADIO" NAME="desfechoCasoTb" VALUE="Transferencia" onClick="selecionouDesfechoCasoTb.value = 'verdadeiro';">Transfer&ecirc;ncia<BR>
+
+						<INPUT TYPE="RADIO" NAME="desfechoCasoTb" VALUE="Obito" onClick="selecionouDesfechoCasoTb.value = 'verdadeiro';">Óbito<BR>
+
+						<INPUT TYPE="RADIO" NAME="desfechoCasoTb" VALUE="Não era TB" onClick="selecionouDesfechoCasoTb.value = 'verdadeiro';">N&atilde;o era TB<BR>
+
+						<INPUT TYPE="RADIO" NAME="desfechoCasoTb" VALUE="Ignorado" onClick="selecionouDesfechoCasoTb.value = 'verdadeiro';">Ignorado<BR>
+
+						<INPUT TYPE="RADIO" NAME="desfechoCasoTb" VALUE="Não se aplica" onClick="selecionouDesfechoCasoTb.value = 'verdadeiro';">N&atilde;o se aplica<BR></TD>
+
+				</TR>
+
+-->
+
+				<!--LINHA 49-->
+
+<!--                
+
+				<TR class=even>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Desfecho se contato<BR></TD>
+
+					<input type="hidden" name="selecionouDesfechoSeContato" value="falso">
+
+					<TD ALIGN="LEFT"> 
+
+						<INPUT TYPE="RADIO" NAME="desfechoSeContato" VALUE="TB" onClick="selecionouDesfechoSeContato.value = 'verdadeiro';">TB<BR>
+
+						<INPUT TYPE="RADIO" NAME="desfechoSeContato" VALUE="ILTB" onClick="selecionouDesfechoSeContato.value = 'verdadeiro';">ILTB<BR>
+
+						<INPUT TYPE="RADIO" NAME="desfechoSeContato" VALUE="Saudavel" onClick="selecionouDesfechoSeContato.value = 'verdadeiro';">Saud&aacute;vel<BR>
+
+						<INPUT TYPE="RADIO" NAME="desfechoSeContato" VALUE="Ignorado" onClick="selecionouDesfechoSeContato.value = 'verdadeiro';">Ignorado<BR>
+
+						<INPUT TYPE="RADIO" NAME="desfechoSeContato" VALUE="Não se aplica" onClick="selecionouDesfechoSeContato.value = 'verdadeiro';">N&atilde;o se aplica<BR></TD>
+
+				</TR>
+
+-->
+
+				<!--LINHA 50-->
+
+<!--                               
+
+				<TR class=odd>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Desfecho se SR<BR></TD>
+
+					<input type="hidden" name="selecionouDesfechoSeSr" value="falso">
+
+					<TD ALIGN="LEFT"> 
+
+						<INPUT TYPE="RADIO" NAME="desfechoSeSR" VALUE="TB" onClick="selecionouDesfechoSeSr.value = 'verdadeiro';">TB<BR>
+
+						<INPUT TYPE="RADIO" NAME="desfechoSeSR" VALUE="Outro diagnostico, ainda tossindo" onClick="selecionouDesfechoSeSr.value = 'verdadeiro';">Outro diagn&oacute;stico, ainda tossindo<BR>
+
+						<INPUT TYPE="RADIO" NAME="desfechoSeSR" VALUE="Outro diagnostico, sem tosse" onClick="selecionouDesfechoSeSr.value = 'verdadeiro';">Outro diagn&oacute;stico, sem tosse<BR>
+
+						<INPUT TYPE="RADIO" NAME="desfechoSeSR" VALUE="Sem diagnostico" onClick="selecionouDesfechoSeSr.value = 'verdadeiro';">Sem diagn&oacute;stico<BR>
+
+						<INPUT TYPE="RADIO" NAME="desfechoSeSR" VALUE="Ignorado" onClick="selecionouDesfechoSeSr.value = 'verdadeiro';">Ignorado<BR>
+
+						<INPUT TYPE="RADIO" NAME="desfechoSeSR" VALUE="Não se aplica" onClick="selecionouDesfechoSeSr.value = 'verdadeiro';">N&atilde;o se aplica<BR></TD>
+
+				</TR>
+
+-->
+
+				<!--LINHA 51-->
+
+<!--                
+
+				<TR class=even>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Desfecho se suspeito<BR></TD>
+
+					<input type="hidden" name="selecionouDesfechoSeSuspeito" value="falso">
+
+					<TD ALIGN="LEFT"> 
+
+						<INPUT TYPE="RADIO" NAME="desfechoSeSuspeito" VALUE="TB" onClick="selecionouDesfechoSeSuspeito.value = 'verdadeiro';">TB<BR>
+
+						<INPUT TYPE="RADIO" NAME="desfechoSeSuspeito" VALUE="Outro diagnostico" onClick="selecionouDesfechoSeSuspeito.value = 'verdadeiro';">Outro diagn&oacute;stico<BR>
+
+						<INPUT TYPE="RADIO" NAME="desfechoSeSuspeito" VALUE="Sem diagnostico" onClick="selecionouDesfechoSeSuspeito.value = 'verdadeiro';">Sem diagn&oacute;stico<BR>
+
+						<INPUT TYPE="RADIO" NAME="desfechoSeSuspeito" VALUE="Ignorado" onClick="selecionouDesfechoSeSuspeito.value = 'verdadeiro';">Ignorado<BR>
+
+						<INPUT TYPE="RADIO" NAME="desfechoSeSuspeito" VALUE="Não se aplica" onClick="selecionouDesfechoSeSuspeito.value = 'verdadeiro';">N&atilde;o se aplica<BR></TD>
+
+				</TR>
+
+-->                 
+
+				<!--LINHA 52-->
+
+				<TR class=even>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Data da &uacute;ltima consulta/VD</TD>
+
+					<TD><INPUT TYPE="TEXT" NAME="txt_diaUltima" SIZE=1 MAXLENGTH=2
+
+					onKeyUp="if(txt_diaUltima.value.length < 2)
+								validarCampoNumerico(txt_diaUltima);
+							else
+								if(txt_diaUltima.value.length == 2)
+
+									if (validarDia(txt_diaUltima))
+
+									{
+
+											if (txt_mesUltima.value == '')
+
+												txt_mesUltima.focus();
+
+											else
+
+												txt_anoUltima.focus();
+
+									}"
+
+					onfocus="this.className = 'CSS_FOCUS_IN';"
+
+					onblur ="this.className = 'CSS_FOCUS_OUT';">/
+
+					<INPUT TYPE="TEXT" NAME="txt_mesUltima" SIZE=1 MAXLENGTH=2
+
+					onKeyUp="if(txt_mesUltima.value.length < 2)
+								validarCampoNumerico(txt_mesUltima);
+							else
+								if(txt_mesUltima.value.length == 2)
+
+									{
+
+									if (validarMes(txt_mesUltima))
+
+										if (txt_diaUltima.value == '')
+
+											txt_diaUltima.focus();
+
+										else
+
+											txt_anoUltima.focus();
+
+									}"
+
+					onfocus="this.className = 'CSS_FOCUS_IN';"
+
+					onblur ="this.className = 'CSS_FOCUS_OUT';">/
+
+					<INPUT TYPE="TEXT" NAME="txt_anoUltima" SIZE=3 MAXLENGTH=4
+
+					onKeyUp="if(txt_anoUltima.value.length < 4)
+								validarCampoNumerico(txt_anoUltima);
+							else
+								if(txt_anoUltima.value.length == 4)
+								
+									if (validarAno(txt_anoUltima))
+
+										if (validarDataUltima(document.frm_avaliacaoComplementar))
+
+											txt_anoUltima.blur();"
+
+					onfocus="this.className = 'CSS_FOCUS_IN';"
+
+					onblur ="this.className = 'CSS_FOCUS_OUT';"><I>(dd/mm/aaaa)</I></TD>
+
+				</TR>
+
+				<!--LINHA 53-->
+
+				<TR class=odd>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Observa&ccedil;&otilde;es</TD>
+
+					<TD><TEXTAREA NAME="observacoesUltima" COLS=50 ROWS=6 MAXLENGTH=500></TEXTAREA>
+					<BR>
+					<INPUT type="checkbox" onclick="disableText(observacoesUltima)">N&atilde;o foi definido
+					</TD>		
+
+				</TR>
+
+			</TABLE>
+
+			<BR>
+
+			<TABLE BORDER="0" WIDTH="90%" ALIGN="CENTER" CELLSPACING="0" id="tabelaDiagnostico">
+
+					<H3><CENTER>4. Diagn&oacute;stico final do m&eacute;dico<CENTER></H3>
+
+					<TH width="5%"></TH>
+
+					<TH width="50%"></TH>
+
+					<TH width="45%"></TH>
+
+				<!--LINHA 1-->
+
+				<TR class=even>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Diagn&oacute;sticos mais freq&uuml;entes</TD>
+
+					<TD ALIGN="LEFT">
+						<input type = "hidden" name="selecionouDiagnosticosFrequentes" value = "falso">
+						<INPUT TYPE="checkbox" NAME="tuberculosePleural" value="tuberculose pleural" onclick="if(this.checked == true){ selecionouDiagnosticosFrequentes.value = 'verdadeiro'; nenhumDiagnostico.checked=false; } else{ if(tuberculosePleuroPumonar.checked == false && neoplasias.checked == false && colagenoses.checked == false && insuficienciaCardiaca.checked == false && hepatopatia.checked == false && nefropatia.checked == false && outrosDiagnosticos.checked == false) { selecionouDiagnosticosFrequentes.value = 'falso';} }"> tuberculose pleural<BR>
+						<INPUT TYPE="checkbox" NAME="tuberculosePleuroPumonar" value="tuberculose pleuro pumonar" onclick="if(this.checked == true){ selecionouDiagnosticosFrequentes.value = 'verdadeiro'; nenhumDiagnostico.checked=false; } else{ if(tuberculosePleural.checked == false && neoplasias.checked == false && colagenoses.checked == false && insuficienciaCardiaca.checked == false && hepatopatia.checked == false && nefropatia.checked == false && outrosDiagnosticos.checked == false) { selecionouDiagnosticosFrequentes.value = 'falso';} }"> tuberculose pleuro pumonar<BR>
+						<INPUT TYPE="checkbox" NAME="neoplasias" value="neoplasias" onclick="if(this.checked == true){ selecionouDiagnosticosFrequentes.value = 'verdadeiro'; nenhumDiagnostico.checked=false; } else{ if(tuberculosePleural.checked == false && tuberculosePleuroPumonar.checked == false && colagenoses.checked == false && insuficienciaCardiaca.checked == false && hepatopatia.checked == false && nefropatia.checked == false && outrosDiagnosticos.checked == false) { selecionouDiagnosticosFrequentes.value = 'falso';} }"> neoplasias<BR>
+						<INPUT TYPE="checkbox" NAME="colagenoses" value="colagenoses" onclick="if(this.checked == true){ selecionouDiagnosticosFrequentes.value = 'verdadeiro'; nenhumDiagnostico.checked=false; } else{ if(tuberculosePleural.checked == false && tuberculosePleuroPumonar.checked == false && neoplasias.checked == false && insuficienciaCardiaca.checked == false && hepatopatia.checked == false && nefropatia.checked == false && outrosDiagnosticos.checked == false) { selecionouDiagnosticosFrequentes.value = 'falso';} }"> colagenoses<BR>
+						<INPUT TYPE="checkbox" NAME="insuficienciaCardiaca" value="if(this.checked == true){ selecionouDiagnosticosFrequentes.value = 'verdadeiro'; nenhumDiagnostico.checked=false; } else{ if(tuberculosePleural.checked == false && tuberculosePleuroPumonar.checked == false && neoplasias.checked == false && colagenoses.checked == false && hepatopatia.checked == false && nefropatia.checked == false && outrosDiagnosticos.checked == false) { selecionouDiagnosticosFrequentes.value = 'falso';} }"> insufici&ecirc;ncia card&iacute;aca<BR>
+						<INPUT TYPE="checkbox" NAME="hepatopatia" value="hepatopatia" onclick="if(this.checked == true){ selecionouDiagnosticosFrequentes.value = 'verdadeiro'; nenhumDiagnostico.checked=false; } else{ if(tuberculosePleural.checked == false && tuberculosePleuroPumonar.checked == false && neoplasias.checked == false && colagenoses.checked == false && insuficienciaCardiaca.checked == false && nefropatia.checked == false && outrosDiagnosticos.checked == false) { selecionouDiagnosticosFrequentes.value = 'falso';} }"> hepatopatia<BR>
+						<INPUT TYPE="checkbox" NAME="nefropatia" value="nefropatia" onclick="if(this.checked == true){ selecionouDiagnosticosFrequentes.value = 'verdadeiro'; nenhumDiagnostico.checked=false; } else{ if(tuberculosePleural.checked == false && tuberculosePleuroPumonar.checked == false && neoplasias.checked == false && colagenoses.checked == false && insuficienciaCardiaca.checked == false && hepatopatia.checked == false && outrosDiagnosticos.checked == false) { selecionouDiagnosticosFrequentes.value = 'falso';} }"> nefropatia<BR>
+						<INPUT TYPE="checkbox" NAME="outrosDiagnosticos" onclick="if(this.checked == true){ quaisDiagnosticosOutros.readOnly = false; quaisDiagnosticosOutros.focus(); selecionouDiagnosticosFrequentes.value = 'verdadeiro';} else{ if(tuberculosePleural.checked == false && tuberculosePleuroPumonar.checked == false && neoplasias.checked == false && colagenoses.checked == false && insuficienciaCardiaca.checked == false && hepatopatia.checked == false && nefropatia.checked == false ) { selecionouDiagnosticosFrequentes.value = 'falso';} quaisDiagnosticosOutros.readOnly = true; outrosDiagnosticos.focus(); quaisDiagnosticosOutros.value = '';}" > outros<BR>
+						<INPUT TYPE="TEXT" NAME="quaisDiagnosticosOutros" SIZE=15 
+
+													onfocus="if (this.readOnly == false)
+
+															 {
+
+																this.className = 'CSS_FOCUS_IN';
+
+															 }
+
+															 else
+
+															 {
+
+																this.className = 'CSS_ENABLED_FALSE';
+
+															 }
+															 this.className = 'CSS_FOCUS_IN';"
+
+													onblur= "if (this.readOnly == false)
+
+															 {
+
+																this.className = 'CSS_FOCUS_OUT';
+
+															 }
+
+															 else
+
+															 {
+
+																this.className = 'CSS_ENABLED_FALSE';
+
+															 }
+															 validarCampoAlfabetico(this); this.className = 'CSS_FOCUS_OUT';"><BR>
+
+
+						<INPUT TYPE="checkbox" NAME="nenhumDiagnostico" onclick="if(this.checked == true){ selecionouDiagnosticosFrequentes.value = 'verdadeiro'; tuberculosePleural.checked = false; tuberculosePleuroPumonar.checked = false; neoplasias.checked = false; colagenoses.checked = false; insuficienciaCardiaca.checked = false; hepatopatia.checked = false; nefropatia.checked = false; outrosDiagnosticos.checked = false;} else{ if(tuberculosePleural.checked == false && tuberculosePleuroPumonar.checked == false && neoplasias.checked == false && colagenoses.checked == false && insuficienciaCardiaca.checked == false && hepatopatia.checked == false && nefropatia.checked == false && outrosDiagnosticos.checked == false) { selecionouDiagnosticosFrequentes.value = 'falso';} }" > nenhum
+					</TD>
+
+				</TR>
+
+				<!--LINHA 2-->
+
+				<TR class=odd>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Diag&oacute;stico TB</TD>
+
+					<TD ALIGN="LEFT">
+					<input type = "hidden" name="selecionouDiagnosticoTB" value = "falso">
+						<INPUT TYPE="radio" NAME="diagnosticoTB" value="comprovado TB"> comprovado TB<BR>
+						<INPUT TYPE="radio" NAME="diagnosticoTB" value="probabilidade TB"> probabilidade TB
+					</TD>
+
+				</TR>
+
+				<!--LINHA 3-->
+
+				<TR class=even>
+
+					<TD ALIGN="RIGHT"></TD>
+
+					<TD ALIGN="LEFT">Diag&oacute;stico ap&oacute;s tratamento</TD>
+
+					<TD ALIGN="LEFT">
+					<input type = "hidden" name="selecionouConfirmaCura" value = "falso">
+						<INPUT TYPE="radio" NAME="confirmaCura" value="sim"> sim<BR>
+						<INPUT TYPE="radio" NAME="confirmaCura" value="não"> n&atilde;o
+					</TD>
+
+				</TR>
+			</TABLE>
+
+<BR><BR>
+			<CENTER>
+
+			<INPUT TYPE="submit" VALUE="Salvar Dados do Paciente">
+
+			</CENTER>
+
+		</FORM>
+
+	</BODY>
+
+</HTML>
+
