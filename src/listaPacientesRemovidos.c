@@ -16,15 +16,15 @@ int main ()
 {
 	FILE *xml;
 		
-	if ((xml=fopen(LOCAL_PATH_FILE_MORRYS_PACIENTE_ADICIONADO_XML, "r")) == NULL)
+	if ((xml=fopen(PATH_XML_PACIENTE_ADICIONADO, "r")) == NULL)
 	{
 		printf("Content-type: text/html\n\n");
 		printf("<html>\n");
 		printf("<head>\n");
-		printf("<title>Sem Pacientes Cadastrados</title>\n");
+		printf("<title>Sem Pacientes Removidos</title>\n");
 		printf("</head>\n");
 		printf("<body>\n");
-		printf("Sem Pacientes Cadastrados\n");
+		printf("Sem Pacientes Removidos\n");
 		printf("</body>\n");
 		printf("</html>");
 	}
@@ -108,8 +108,8 @@ int main ()
 		printf("}\n");
 		printf("function displayResult()\n");
 		printf("{\n");
-			printf("xml = loadXMLDoc(\"%s\");\n",WEB_PATH_FILE_MORRYS_PACIENTES_REMOVIDOS_XML);
-			printf("xsl = loadXMLDoc(\"%s\");\n",WEB_PATH_FILE_MORRYS_LISTA_PACIENTES_REMOVIDOS_XSL);
+			printf("xml = loadXMLDoc(\"%s\");\n",PATH_XML_PACIENTES_REMOVIDOS);
+			printf("xsl = loadXMLDoc(\"%s\");\n",PATH_XSL_LISTA_PACIENTES_REMOVIDOS);
 			printf("\n");
 			// code for IE
 			printf("if (window.ActiveXObject)\n");

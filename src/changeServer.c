@@ -75,7 +75,6 @@
 #define PATH_FILE_PACIENTE_ADICIONADO_XSL "/xml/pacienteAdicionado.xsl"
 #define PATH_FILE_LISTA_PACIENTES_XSL "/xml/listaPacientes.xsl"
 #define PATH_FILE_BUSCA_XSL "/xml/busca.xsl"
-#define PATH_FILE_VER_PACIENTE_XSL "/xml/verPaciente.xsl"
 
 
 #define PATH_FILE_REMOVE_PACIENTE_CGI "/cgi-bin/removePatient.cgi"
@@ -257,13 +256,6 @@ int main ()
 			{
 				strcpy(name,WEB_SERVER_MORRYS);
 				strcat(name,PATH_FILE_LISTA_PACIENTES_XSL);
-				fprintf(tempArq,"#define %s \"%s\"\n",firstPart,name);
-				found=1;
-			}
-			if(!strcmp("LOCAL_PATH_FILE_MORRYS_VER_PACIENTE_XSL",firstPart))
-			{
-				strcpy(name,LOCAL_PATH_MORRYS);
-				strcat(name,PATH_FILE_VER_PACIENTE_XSL);
 				fprintf(tempArq,"#define %s \"%s\"\n",firstPart,name);
 				found=1;
 			}
@@ -451,13 +443,7 @@ int main ()
 				fprintf(tempArq,"#define %s \"%s\"\n",firstPart,name);
 				found=1;
 			}
-			if(!strcmp("LOCAL_PATH_FILE_DOENTES_NOVOS_VER_PACIENTE_XSL",firstPart))
-			{
-				strcpy(name,LOCAL_PATH_DOENTES_NOVOS);
-				strcat(name,PATH_FILE_VER_PACIENTE_XSL);
-				fprintf(tempArq,"#define %s \"%s\"\n",firstPart,name);
-				found=1;
-			}
+			
 			
 			if(!found)
 				fputs(buffer,tempArq);

@@ -27,7 +27,6 @@ int main (void)
 	char *temp2;
 	char edita[10240];
 	char remove[10240];
-	char ver[10240];
 	char originalString[10240];
 	char processedString[10240];
 	char hexa[3];
@@ -50,6 +49,7 @@ int main (void)
 		exit(OK);
 	}
 	
+		
 	//converte string com o tamanho em long int
 	contentLength=strtol(length, NULL, 10);
     //le linha das informacoes 1 vez com o tamanho de contentLength do stdin
@@ -129,7 +129,7 @@ int main (void)
 		printf("</html>");
 		exit(OK);
 	}
-	xml = fopen(LOCAL_PATH_FILE_DOENTES_NOVOS_PACIENTE_ADICIONADO_XML,"r");
+	xml = fopen(PATH_XML_PACIENTE_ADICIONADO,"r");
 	if(xml == NULL)
 	{
 		printf("Content-type: text/html\n\n");
@@ -145,9 +145,10 @@ int main (void)
 	}
 	else
 	{
+	
 		fclose(xml);
 //		xsl = fopen(LOCAL_PATH_FILE_MORRYS_BUSCA_XSL, "r");
-		xsl = fopen(LOCAL_PATH_FILE_DOENTES_NOVOS_BUSCA_XSL, "w");
+		xsl = fopen(PATH_XSL_BUSCA, "w");
 		fprintf(xsl, "<?xml version=\"1.0\" encoding=\"iso-8859-1\"?>\n");
 		fprintf(xsl, "<xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\">\n");
 		fprintf(xsl, "<xsl:template match=\"/\">\r\n");
@@ -175,41 +176,30 @@ int main (void)
 //		fprintf(xsl, "<xsl:if test=\"%s = '%s'\">\n",form->option,form->value);
 		fprintf(xsl, "<table border=\"2\" cellspacing=\"0\" width=\"50%%\">");	
 		fprintf(xsl, "<tr>\n");
-		fprintf(xsl, "  <td>ver</td>\n");
 		fprintf(xsl, "  <td>editar</td>\n");
 		fprintf(xsl, "  <td>remover</td>\n");
 		fprintf(xsl, "	<td>Numero Paciente</td>\n");
-		fprintf(xsl, "	<td>Endere√ßo</td>\n");
+		fprintf(xsl, "	<td>EndereÁo</td>\n");
 		fprintf(xsl, "</tr>\n");
 		fprintf(xsl, "<tr>\n");
 
-		strcat(edita,WEB_PATH_FILE_DOENTES_NOVOS_APOS_BUSCA_EDITA_PACIENTE_CGI);
+		strcat(edita,PATH_CGI_APOS_BUSCA_EDITA_PACIENTE);
 		strcat(edita,form->value);
 		//strcat(edita,"&id=");
-		strcat(remove,WEB_PATH_FILE_DOENTES_NOVOS_APOS_BUSCA_REMOVE_PACIENTE_CGI);
+		strcat(remove,PATH_CGI_APOS_BUSCA_REMOVE_PACIENTE);
 		strcat(remove,form->value);
-		
-
-		strcat(ver,WEB_PATH_FILE_DOENTES_NOVOS_APOS_BUSCA_VER_PACIENTE_CGI);
-		strcat(ver,form->value);
-
 		//strcat(remove,"&id=");
-		/*para lembrar a primeira linha √© a posicao 0
+		/*para lembrar a primeira linha È a posicao 0
 		*/
 		
 		fprintf(xsl, "<xsl:variable name=\"posicaoPacienteBusca\" select=\"(position()-1)\" />\n");
 		
 		//alterar !!!
 		//fprintf(xsl,"<xsl:variable name=\"edita\" select=\"concat('%s',$posicaoPacienteBusca)\"/>\n",edita);
-		
-
-		fprintf(xsl,"<xsl:variable name=\"ver\" select=\"'%s'\"/>\n",ver);
-
 		fprintf(xsl,"<xsl:variable name=\"edita\" select=\"'%s'\"/>\n",edita);
 		//fprintf(xsl,"<xsl:variable name=\"remove\" select=\"concat('%s',$posicaoPacienteBusca)\"/>\n",remove);
 		fprintf(xsl,"<xsl:variable name=\"remove\" select=\"'%s'\"/>\n",remove);
 		//fim !!
-		fprintf(xsl, "<td> <a href=\"{$ver}\">ver</a></td>\n");
 		fprintf(xsl, "<td> <a href=\"{$edita}\">editar</a></td>\n");
 		fprintf(xsl, "<td> <a href=\"{$remove}\">remover</a></td>\n");
 		fprintf(xsl, "<td> <xsl:value-of select=\"numeroPaciente\"/> </td>\n");
@@ -218,7 +208,7 @@ int main (void)
 		fprintf(xsl, "	<td> <xsl:value-of select=\"logradouro\"/> </td>\n");
 		fprintf(xsl, "</xsl:when>\n");
 		fprintf(xsl, "<xsl:otherwise>\n");
-		fprintf(xsl, "	<td> n√£o possui endere√ßo</td>\n");
+		fprintf(xsl, "	<td> n„o possui endereÁo</td>\n");
 		fprintf(xsl, "</xsl:otherwise>\n");
 		fprintf(xsl, "</xsl:choose>\n");
 		fprintf(xsl, "</tr>\n");
@@ -226,14 +216,14 @@ int main (void)
 		fprintf(xsl, "</table>\n");
 //		fprintf(xsl, "</xsl:when>\n");
 //		fprintf(xsl, "<xsl:otherwise>\n");
-//		fprintf(xsl, "N√£o possui paciente %s\n",form->value);
+//		fprintf(xsl, "N„o possui paciente %s\n",form->value);
 //		fprintf(xsl, "</xsl:otherwise>\n");
 //		fprintf(xsl, "</xsl:choose>\n");
 		fprintf(xsl, "</xsl:for-each>\n");
 		fprintf(xsl, "</xsl:when>\n");
 		fprintf(xsl, "<xsl:otherwise>\n");
-		fprintf(xsl, "N√£o possui paciente %s\n",form->value);
-       		fprintf(xsl, "</xsl:otherwise>\n");
+		fprintf(xsl, "N„o possui paciente %s\n",form->value);
+        fprintf(xsl, "</xsl:otherwise>\n");
 		fprintf(xsl, "</xsl:choose>\n");
 //		fprintf(xsl, "</table>\n");
 		fprintf(xsl,"</body>\n");
@@ -246,25 +236,29 @@ int main (void)
 		printf("<html>\n");
 		printf("<head>\n");
 		printf("<title>Busca Concluida</title>\n");	
+		printf("</head>\n");
 		printf("<script type=\"text/javascript\">\n");
-	
+
+/*		
 	/////////////////////// load xml ///////////////////////
 	
-/*		printf("var xml = new ActiveXObject(\"Microsoft.XMLDOM\");\n");
+		printf("var xml = new ActiveXObject(\"Microsoft.XMLDOM\");\n");
 		printf("xml.async = false;\n");
-		printf("xml.load(\"%s\");\n",WEB_PATH_MORRYS_PACIENTE_ADICIONADO_XML);
+		printf("xml.load(\"%s\");\n",PATH_XML_PACIENTE_ADICIONADO);
 	
 	/////////////////////// load xsl ///////////////////////
 	
 		printf("var xsl = new ActiveXObject(\"Microsoft.XMLDOM\");\n");
 		printf("xsl.async = false;\n");
-		printf("xsl.load(\"%s\");\n",WEB_PATH_FILE_MORRYS_BUSCA_XSL);
+		printf("xsl.load(\"%s\");\n",PATH_XSL_BUSCA);
 	
 	/////////////////////// show xhtml ///////////////////////
 	
 		printf("document.write(xml.transformNode(xsl));\n");
 		printf("</script>\n");
-*/
+		printf("</body>\n");
+		printf("</html>");
+*/		
 		printf("function loadXMLDoc(fname)\n");
 		printf("{\n");
 			printf("var xmlDoc;\n");
@@ -288,8 +282,8 @@ int main (void)
 		printf("}\n");
 		printf("function displayResult()\n");
 		printf("{\n");
-			printf("xml = loadXMLDoc(\"%s\");\n",WEB_PATH_DOENTES_NOVOS_PACIENTE_ADICIONADO_XML);
-			printf("xsl = loadXMLDoc(\"%s\");\n",WEB_PATH_FILE_DOENTES_NOVOS_BUSCA_XSL);
+			printf("xml = loadXMLDoc(\"%s\");\n",PATH_XML_PACIENTE_ADICIONADO);
+			printf("xsl = loadXMLDoc(\"%s\");\n",PATH_XSL_BUSCA);
 			printf("\n");
 			// code for IE
 			printf("if (window.ActiveXObject)\n");

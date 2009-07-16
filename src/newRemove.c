@@ -194,7 +194,7 @@ int main (void)
 		printf("</html>");
 		exit(OK);
 */
-	doc = xmlReadFile(LOCAL_PATH_FILE_DOENTES_NOVOS_PACIENTE_ADICIONADO_XML, NULL, 256);
+	doc = xmlReadFile(PATH_XML_PACIENTE_ADICIONADO, NULL, 256);
 
 	if (doc == NULL) 
 	{
@@ -205,7 +205,7 @@ int main (void)
 		printf("</head>\n");
 		printf("<body>\n");
 		printf("erro ao tentar abrir o arquivo.\n");
-		printf("%s",LOCAL_PATH_FILE_DOENTES_NOVOS_PACIENTE_ADICIONADO_XML);
+		printf("%s",PATH_XML_PACIENTE_ADICIONADO);
 		printf("</body>\n");
 		printf("</html>");
 		exit(OK);
@@ -244,7 +244,7 @@ int main (void)
 	//xmlUnlinkNode(currently);
 //	printf("%s\n",xmlNodeGetContent(extracted->children));
 
-	test = fopen(LOCAL_PATH_FILE_DOENTES_NOVOS_PACIENTES_REMOVIDOS_XML,"r");
+	test = fopen(PATH_XML_PACIENTES_REMOVIDOS,"r");
 	if(test == NULL)
 	{
 		docNew = xmlNewDoc("1.0");
@@ -256,7 +256,7 @@ int main (void)
 	else
 	{
 		fclose(test);
-		docNew = xmlReadFile(LOCAL_PATH_FILE_DOENTES_NOVOS_PACIENTES_REMOVIDOS_XML, NULL, 256);
+		docNew = xmlReadFile(PATH_XML_PACIENTES_REMOVIDOS, NULL, 256);
 		root_element_new = xmlDocGetRootElement(docNew);
 //		xmlNewTextChild(extracted->children,NULL,"motivo",aux->next->value);
         	xmlAddChild(root_element_new,extracted);
@@ -264,7 +264,7 @@ int main (void)
 
 	/*  save the file that contents removed patients and free memory */
 
-	if(xmlSaveFormatFileEnc(LOCAL_PATH_FILE_DOENTES_NOVOS_PACIENTES_REMOVIDOS_XML,docNew,"UTF-8",1) < 0 )
+	if(xmlSaveFormatFileEnc(PATH_XML_PACIENTES_REMOVIDOS,docNew,"UTF-8",1) < 0 )
 	{
 		printf("Content-type: text/html\n\n");
 		printf("<html>\n");
@@ -273,7 +273,7 @@ int main (void)
 		printf("</head>\n");
 		printf("<body>\n");
 		printf("erro ao salvar arquivo<BR>\n");
-		printf("%s",LOCAL_PATH_FILE_DOENTES_NOVOS_PACIENTES_REMOVIDOS_XML);
+		printf("%s",PATH_XML_PACIENTES_REMOVIDOS);
 		printf("</body>\n");
 		printf("</html>");
 		exit(OK);
@@ -284,7 +284,7 @@ int main (void)
 	xmlMemoryDump();
 	
 	/*  save the file of patients and free memory */
-	if(xmlSaveFormatFileEnc(LOCAL_PATH_FILE_DOENTES_NOVOS_PACIENTE_ADICIONADO_XML,doc,"UTF-8",1) < 0 )
+	if(xmlSaveFormatFileEnc(PATH_XML_PACIENTE_ADICIONADO,doc,"UTF-8",1) < 0 )
 	{
 		printf("Content-type: text/html\n\n");
 		printf("<html>\n");
@@ -293,7 +293,7 @@ int main (void)
 		printf("</head>\n");
 		printf("<body>\n");
 		printf("erro ao salvar arquivo\n");
-		printf("%s",LOCAL_PATH_FILE_DOENTES_NOVOS_PACIENTE_ADICIONADO_XML);
+		printf("%s",PATH_XML_PACIENTE_ADICIONADO);
 		printf("</body>\n");
 		printf("</html>");
 		exit(OK);
@@ -315,7 +315,7 @@ int main (void)
 		printf("</html>");
 		exit(OK);
 */		
-	test = fopen(LOCAL_PATH_FILE_DOENTES_NOVOS_HISTORICO_XML,"r");
+	test = fopen(PATH_XML_HISTORICO,"r");
 
 	/* File Historic.xml doesn´t exist */
 
@@ -334,7 +334,7 @@ int main (void)
 	else
 	{
 		fclose(test);
-		docNew = xmlReadFile(LOCAL_PATH_FILE_DOENTES_NOVOS_HISTORICO_XML, NULL, 256);
+		docNew = xmlReadFile(PATH_XML_HISTORICO, NULL, 256);
 		root_element_new = xmlDocGetRootElement(docNew);
 		for (currently = root_element_new->children; ((naoAchado == 0) && (strcmp(xmlNodeGetContent(currently->children),aux->value) ) ); )
 		{
@@ -403,7 +403,7 @@ int main (void)
 	xmlAddChild(extracted,info);
 	xmlAddChild(root_element_new,extracted);
 
-	if(xmlSaveFormatFileEnc(LOCAL_PATH_FILE_DOENTES_NOVOS_HISTORICO_XML,docNew,"UTF-8",1) < 0 )
+	if(xmlSaveFormatFileEnc(PATH_XML_HISTORICO,docNew,"UTF-8",1) < 0 )
 	{
 		printf("Content-type: text/html\n\n");
 		printf("<html>\n");
@@ -412,7 +412,7 @@ int main (void)
 		printf("</head>\n");
 		printf("<body>\n");
 		printf("erro ao salvar arquivo<BR>\n");
-		printf("%s",LOCAL_PATH_FILE_DOENTES_NOVOS_HISTORICO_XML);
+		printf("%s",PATH_XML_HISTORICO);
 		printf("</body>\n");
 		printf("</html>");
 		exit(OK);

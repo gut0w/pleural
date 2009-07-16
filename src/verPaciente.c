@@ -72,7 +72,7 @@ int main (void)
 
 	paciente = strsep(&queryString,"\0");
 
-	xsl = fopen(LOCAL_PATH_FILE_DOENTES_NOVOS_VER_PACIENTE_XSL, "w");
+	xsl = fopen(PATH_XSL_VER_PACIENTE, "w");
 	
 	fprintf(xsl,"<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n");
 	fprintf(xsl,"\r\n");
@@ -84,7 +84,7 @@ int main (void)
 	fprintf(xsl,"<xsl:template match=\"/doc\">\r\n");
 	fprintf(xsl,"\r\n");
 	fprintf(xsl,"	<xsl:for-each select=\"paciente[numeroPaciente='%s']\">\r\n",paciente);
-	fprintf(xsl,"			<p align=\"right\"> <a target=\"blank\" href=\"imprimir.cgi?pid=%s\">Versão para Impressão</a></p>\r\n", paciente);
+	fprintf(xsl,"			<p align=\"right\"> <a target=\"blank\" href=\"imprimir.cgi?paciente=%s\">Versão para Impressão</a></p>\r\n", paciente);
 //	fprintf(xsl,"	<xsl:for-each select=\"doc/paciente\">\r\n");
 //	fprintf(xsl,"	<xsl:sort select=\"descendant::nomeCompleto\" />\r\n");
 //	fprintf(xsl,"		<xsl:if test=\"numeroPaciente = '%s'\">\r\n", paciente);
@@ -136,8 +136,8 @@ int main (void)
 	printf("}\n");
 	printf("function displayResult()\n");
 	printf("{\n");
-		printf("xml = loadXMLDoc(\"%s\");\n",WEB_PATH_DOENTES_NOVOS_PACIENTE_ADICIONADO_XML);
-		printf("xsl = loadXMLDoc(\"%s\");\n",WEB_PATH_DOENTES_NOVOS_VER_PACIENTE_XSL);
+		printf("xml = loadXMLDoc(\"%s\");\n",PATH_XML_PACIENTE_ADICIONADO);
+		printf("xsl = loadXMLDoc(\"%s\");\n",PATH_XSL_VER_PACIENTE);
 		printf("\n");
 		// code for IE
 		printf("if (window.ActiveXObject)\n");

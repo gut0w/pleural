@@ -14,9 +14,10 @@
 /* falta o test.xsl */
 int main ()
 {
-	FILE *xml;
-		
-	if ((xml=fopen(LOCAL_PATH_FILE_DOENTES_NOVOS_PACIENTE_ADICIONADO_XML, "r")) == NULL)
+FILE *xml;
+
+	//if ((xml=fopen(LOCAL_PATH_FILE_DOENTES_NOVOS_PACIENTE_ADICIONADO_XML, "r")) == NULL)
+	if ((xml=fopen("../xml/pacienteAdicionado.xml", "r")) == NULL)
 	{
 		printf("Content-type: text/html\n\n");
 		printf("<html>\n");
@@ -29,17 +30,20 @@ int main ()
 		printf("</html>");
 	}
 	else
+
 	{
         	fclose(xml);
 			printf("Content-type: text/html\n\n");
     printf("<html>\n");
 	printf("<head>\n");
 	printf("<title>Pacientes adicionados</title>\n");	
+	printf("</head>\n");
+	printf("<body bgcolor=\"white\">\n");	
     printf("<script type=\"text/javascript\">\n");
+	
 /*	
-
 	printf("var xml=null\n");
-	printf("var xsl=null\n");
+	printf("var xsl=null\n");	
 	printf("if (window.ActiveXObject)\n");
 	printf("{\n");
 
@@ -47,15 +51,19 @@ int main ()
 
 	printf("xml = new ActiveXObject(\"Microsoft.XMLDOM\");\n");
 	printf("xml.async = false;\n");
-    printf("xml.load(\"%s\");\n",WEB_PATH_MORRYS_PACIENTE_ADICIONADO_XML);
+    printf("xml.load(\"%s\");\n",PATH_XML_PACIENTE_ADICIONADO);
 
 /////////////////////// load xsl ///////////////////////
 
 	printf("xsl = new ActiveXObject(\"Microsoft.XMLDOM\");\n");
 	printf("xsl.async = false;\n");
-	printf("xsl.load(\"/~pleural/dev/xml/test.xsl\");\n");
+	printf("xsl.load(\"../xml/test.xsl\");\n");
 
 /////////////////////// show xhtml ///////////////////////
+	//printf("xsltProcessor=new XSLTProcessor();\n");
+	//printf("xsltProcessor.importStylesheet(xsl);\n");
+	//printf("resultDocument = xsltProcessor.transformToFragment(xml,document);\n");
+	//printf("document.getElementById(id).appendChild(resultDocument);\n");
 
     printf("document.write(xml.transformNode(xsl));\n");
 	printf("}\n");
@@ -66,13 +74,13 @@ int main ()
 
 	printf("xml = document.implementation.createDocument(\"\",\"\",null);\n");
 	printf("xml.async = false;\n");
-    printf("xml.load(\"%s\");\n",LOCAL_PATH_FILE_MORRYS_PACIENTE_ADICIONADO_XML);
+    printf("xml.load(\"%s\");\n",PATH_XML_PACIENTE_ADICIONADO);
 
 /////////////////////// load xsl ///////////////////////
 
 	printf("xsl = document.implementation.createDocument(\"\",\"\",null);\n");
 	printf("xsl.async = false;\n");
-    printf("xsl.load(\"~/public_html/desenvolvimento/xsl/test.xsl\");\n");
+    printf("xsl.load(\"../xml/test.xsl\");\n");
     printf("document.write(xml.transformNode(xsl));\n");
 	printf("}\n");
 	printf("else\n");
@@ -83,7 +91,6 @@ int main ()
 	printf("</script>\n");
     printf("</body>\n");
 	printf("</html>");
-
 */
 		printf("function loadXMLDoc(fname)\n");
 		printf("{\n");
@@ -108,8 +115,8 @@ int main ()
 		printf("}\n");
 		printf("function displayResult()\n");
 		printf("{\n");
-			printf("xml = loadXMLDoc(\"%s\");\n",WEB_PATH_DOENTES_NOVOS_PACIENTE_ADICIONADO_XML);
-			printf("xsl = loadXMLDoc(\"%s\");\n",WEB_PATH_FILE_DOENTES_NOVOS_LISTA_PACIENTES_XSL);
+			printf("xml = loadXMLDoc(\"%s\");\n",PATH_XML_PACIENTE_ADICIONADO);
+			printf("xsl = loadXMLDoc(\"%s\");\n",PATH_XSL_LISTA_PACIENTES);
 			printf("\n");
 			// code for IE
 			printf("if (window.ActiveXObject)\n");

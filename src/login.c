@@ -201,9 +201,9 @@ int main (void)
 		printf("<html>\n");
 		printf("<head>\n");
 		if(!strcmp(user->project,"Morrys"))
-			printf("<META HTTP-EQUIV=\"Refresh\" CONTENT=\"0 ; URL=%s\">\n ",WEB_PATH_FILE_MORRYS_INDEX_SISTEMA_2);
+			printf("<META HTTP-EQUIV=\"Refresh\" CONTENT=\"0 ; URL=%s\">\n ",PATH_HTML_MORRYS_INDEX_SISTEMA_2);
 		else
-			printf("<META HTTP-EQUIV=\"Refresh\" CONTENT=\"0 ; URL=%s\">\n ",WEB_PATH_FILE_DOENTES_NOVOS_INDEX_SISTEMA_2);
+			printf("<META HTTP-EQUIV=\"Refresh\" CONTENT=\"0 ; URL=%s\">\n ",PATH_HTML_DOENTES_NOVOS_INDEX_SISTEMA_2);
 		printf("<title>Resultado</title>\n");
 		printf("</head>\n");
 		printf("<body>\n");
@@ -221,7 +221,7 @@ int main (void)
 		printf("<title>Resultado</title>\n");
 		printf("</head>\n");
 		printf("<body>\n");
-		printf("LOGIN OU SENHA INV√ÅLIDOS\n");
+		printf("LOGIN OU SENHA INV¡LIDOS\n");
 		printf("</body>\n");
 		printf("</html>");
 		exit(OK);
