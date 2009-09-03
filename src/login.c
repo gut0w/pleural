@@ -200,10 +200,7 @@ int main (void)
 		printf("Content-type: text/html\n\n");
 		printf("<html>\n");
 		printf("<head>\n");
-		if(!strcmp(user->project,"Morrys"))
-			printf("<META HTTP-EQUIV=\"Refresh\" CONTENT=\"0 ; URL=%s\">\n ",PATH_HTML_MORRYS_INDEX_SISTEMA_2);
-		else
-			printf("<META HTTP-EQUIV=\"Refresh\" CONTENT=\"0 ; URL=%s\">\n ",PATH_HTML_DOENTES_NOVOS_INDEX_SISTEMA_2);
+		printf("<META HTTP-EQUIV=\"Refresh\" CONTENT=\"0 ; URL=%s\">\n ",PATH_HTML_DOENTES_NOVOS_INDEX_SISTEMA_2);
 		printf("<title>Resultado</title>\n");
 		printf("</head>\n");
 		printf("<body>\n");
