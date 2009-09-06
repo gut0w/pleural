@@ -46,7 +46,7 @@ void printSuccess (char *username)
 	printf ("<html>\n");
 	printf ("\t<head>\n");
 	printf ("\t\t<title>Usu&aacute;rio Editado</title>\n");
-	printf ("\t\t<meta http-equiv=\"refresh\" content=\"2\" URL=\"../doentesNovos/indexSistema2.html\" />\n");
+	printf ("\t\t<meta http-equiv=\"refresh\" content=\"2; URL=../inicio.html\" />\n");
 	printf ("\t</head>\n");
 	printf ("\t<body>\n");
 	printf ("<span style=\"background-color:green; color: white; font-family: Verdana, Arial; font-size:15pt; padding: 5px\">");
