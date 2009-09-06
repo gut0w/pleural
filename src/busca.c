@@ -183,11 +183,11 @@ int main (void)
 		fprintf(xsl, "</tr>\n");
 		fprintf(xsl, "<tr>\n");
 
-		strcat(edita,PATH_CGI_APOS_BUSCA_EDITA_PACIENTE);
-		strcat(edita,form->value);
+		///strcat(edita,PATH_CGI_APOS_BUSCA_EDITA_PACIENTE);
+		///strcat(edita,form->value);
 		//strcat(edita,"&id=");
-		strcat(remove,PATH_CGI_APOS_BUSCA_REMOVE_PACIENTE);
-		strcat(remove,form->value);
+		///strcat(remove,PATH_CGI_APOS_BUSCA_REMOVE_PACIENTE);
+		///strcat(remove,form->value);
 		//strcat(remove,"&id=");
 		/*para lembrar a primeira linha é a posicao 0
 		*/
@@ -200,8 +200,10 @@ int main (void)
 		//fprintf(xsl,"<xsl:variable name=\"remove\" select=\"concat('%s',$posicaoPacienteBusca)\"/>\n",remove);
 		fprintf(xsl,"<xsl:variable name=\"remove\" select=\"'%s'\"/>\n",remove);
 		//fim !!
-		fprintf(xsl, "<td> <a href=\"{$edita}\">editar</a></td>\n");
-		fprintf(xsl, "<td> <a href=\"{$remove}\">remover</a></td>\n");
+		//fprintf(xsl, "<td> <a href=\"{$edita}\">editar</a></td>\n");
+		//fprintf(xsl, "<td> <a href=\"{$remove}\">remover</a></td>\n");
+		fprintf(xsl, "<td> <a>editar</a></td>\n");
+		fprintf(xsl, "<td> <a>remover</a></td>\n");
 		fprintf(xsl, "<td> <xsl:value-of select=\"numeroPaciente\"/> </td>\n");
 		fprintf(xsl, "<xsl:choose>\n");
 		fprintf(xsl, "<xsl:when test=\"logradouro != ''\">\n");
