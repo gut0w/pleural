@@ -35,7 +35,7 @@ FILE *xml;
         	fclose(xml);
 			printf("Content-type: text/html\n\n");
     printf("<html>\n");
-	printf("<head>\n");
+	printf("<head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n");
 	printf("<title>Pacientes adicionados</title>\n");	
 	printf("</head>\n");
 	printf("<body bgcolor=\"white\">\n");	
